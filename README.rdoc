@@ -1,0 +1,3 @@
+== README
+
+Junior-dev-only project. Only juniors can push to this repo, which means if you're not Beth, please don't push to this repo.
