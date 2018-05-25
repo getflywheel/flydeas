@@ -1,0 +1,66 @@
+---
+engines:
+  brakeman:
+    enabled: true
+    checks:
+      # Disabled because Code Climate doesn't detect Rails 4 for some reason
+      no_attr_accessible:
+        enabled: false
+    exclude_fingerprints:
+  bundler-audit:
+    enabled: true
+  csslint:
+    enabled: false
+  eslint:
+    enabled: false
+    channel: eslint-3
+  haml-lint:
+    enabled: true
+    channel: beta
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+      #- javascript
+  fixme:
+    enabled: false
+  rubocop:
+    enabled: true
+    checks:
+      # CodeClimate is doing stupid things on this rule, so turn it off.
+      Rubocop/Style/EmptyMethod:
+        enabled: false
+    exclude_fingerprints:
+
+  sass-lint:
+    enabled: true
+    channel: beta
+    config:
+      file:
+    exclude_paths:
+
+ratings:
+  paths:
+  - Gemfile.lock
+  - "**.erb"
+  - "**.haml"
+  - "**.rb"
+  - "**.rhtml"
+  - "**.slim"
+  - "**.css"
+  - "**.coffee"
+  - "**.inc"
+  - "**.js"
+  - "**.jsx"
+  - "**.module"
+  - "**.php"
+  - "**.py"
+exclude_paths:
+- app/assets/javascripts/external/
+- config/
+- db/
+- node_modules/
+- script/
+- spec/
+- doc/
