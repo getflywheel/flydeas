@@ -2,4 +2,4 @@
 
 Junior-dev-only project. Only juniors can push to this repo, which means if you're not Beth, please don't push to this repo.
 
-If you're contributing to this application, please use TDD.
+If you're contributing to this application, please use TDD. 🐈💨
