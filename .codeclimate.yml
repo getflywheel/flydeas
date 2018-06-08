@@ -1,0 +1,25 @@
+---
+plugins:
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - ruby
+  reek:
+    enabled: true
+  rubocop:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  haml-lint:
+    enabled: true
+    channel: beta
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+  fixme:
+    enabled: false
+exclude_patterns:
+  - spec/**/*

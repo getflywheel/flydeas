@@ -1,0 +1,32 @@
+cache: bundler
+language: ruby
+rvm:
+  - 2.1
+#  - jruby-head
+#  - ruby-head
+script: bundle exec rspec
+sudo: false
+
+before_install:
+  - gem update --system --no-doc
+  - gem install bundler -v 1.14.1
+
+bundler_args: --without production
+
+#matrix:
+#  allow_failures:
+#    - rvm: jruby-head
+#    - rvm: ruby-head
+#  fast_finish: true
+#  include:
+#    - rvm: 2.4.0
+#      before_script:
+#        - bundle exec danger
+#      after_script:
+#        - bundle exec codeclimate-test-reporter
+#    - rvm: jruby-9.1.5.0
+#      env: JRUBY_OPTS=''
+
+addons:
+  code_climate:
+    repo_token: 0bba613046b97e569c57a2c1aa38d264f99ae68b9705a08b7482278d9f6f5f7c
