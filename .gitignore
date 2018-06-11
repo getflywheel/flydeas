@@ -1,2 +1,2 @@
 .rspec
-
+/db/*.sqlite3
