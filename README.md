@@ -26,3 +26,7 @@ Project Glossary
 
 ###Concepts to Research
     - `%i` vs `%I`
+    - How class attributes are defined in Ruby vs Rails 
+
+###Coding Standards
+    - Line character limit: 80 characters 
