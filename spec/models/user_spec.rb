@@ -22,4 +22,7 @@ RSpec.describe User, type: :model do
 		subject.password = nil
 		expect(subject).to_not be_valid	
 	end
+	it "matches the password correctly" do
+		expect(subject.password).matches("123456xX$")
+	end
 end
