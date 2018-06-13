@@ -2154,3 +2154,174 @@ WARNING: Can't mass-assign protected attributes for User: password_confirmation
   Rendered shared/_error_messages.html.erb (0.1ms)
   Rendered logins/new.html.erb within layouts/application (3.2ms)
 Completed 200 OK in 91ms (Views: 19.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2018-06-13 13:29:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (1.3ms)
+Completed 200 OK in 20ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logins/new" for ::1 at 2018-06-13 13:29:21 -0500
+Processing by LoginsController#new as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+NameError (undefined local variable or method `params' for #<Class:0x00007ffb08010d00>):
+  app/models/user.rb:14:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/logins_controller.rb:3:in `new'
+
+
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (101.8ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (97.5ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (212.8ms)
+
+
+Started GET "/logins/new" for ::1 at 2018-06-13 13:31:18 -0500
+Processing by LoginsController#new as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+NameError (undefined local variable or method `user_params' for #<Class:0x00007ffb05ce5ce0>):
+  app/models/user.rb:14:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/logins_controller.rb:3:in `new'
+
+
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (97.2ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (86.5ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (197.6ms)
+
+
+Started GET "/logins/new" for ::1 at 2018-06-13 13:41:09 -0500
+Processing by LoginsController#new as HTML
+  Rendered shared/_error_messages.html.erb (1.9ms)
+  Rendered logins/new.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 203ms (Views: 196.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logins/new" for ::1 at 2018-06-13 13:42:29 -0500
+Processing by LoginsController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered logins/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logins/new" for ::1 at 2018-06-13 13:42:31 -0500
+Processing by LoginsController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered logins/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 13:43:08 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yqFs/8r0PBn1/n5RCf506K2h7opmpvySjbdUGIKGr3venSiydDgtlVxxb/560Jz9fwmDVcWJkGUztIJ9fzyQ7A==", "user"=>{"username"=>"test123", "email"=>"test4@getflywheel.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/logins_controller.rb:7:in `create'
+
+
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (95.7ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (84.8ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (190.9ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 13:44:20 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yqFs/8r0PBn1/n5RCf506K2h7opmpvySjbdUGIKGr3venSiydDgtlVxxb/560Jz9fwmDVcWJkGUztIJ9fzyQ7A==", "user"=>{"username"=>"test123", "email"=>"test4@getflywheel.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms)
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'password_confirmation' for User.):
+  app/controllers/logins_controller.rb:7:in `create'
+
+
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.6ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (85.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (194.8ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 13:44:47 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yqFs/8r0PBn1/n5RCf506K2h7opmpvySjbdUGIKGr3venSiydDgtlVxxb/560Jz9fwmDVcWJkGUztIJ9fzyQ7A==", "user"=>{"username"=>"test123", "email"=>"test4@getflywheel.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('test123') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered shared/_error_messages.html.erb (0.9ms)
+  Rendered logins/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 33ms (Views: 18.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 13:45:26 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B/7oG398afRz+sgVImSEYpP4+99T+gidoe+0PHsfKD8TwqxWwbB4eNp12bpRSmx3QVCWAPDVZGof7GJZhqUXqA==", "user"=>{"username"=>"test123", "email"=>"test4@getflywheel.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+Unpermitted parameters: password, password_confirmation
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('test123') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered shared/_error_messages.html.erb (0.9ms)
+  Rendered logins/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 19ms (Views: 15.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 13:46:17 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fGUimf20SzCnT+4FRN464S9WVBkT6VMJJ9UyrewrHwRoWWbUQ3havA7A/6o38NL0/f45xrDGP/6Z1uTIEZEgkw==", "user"=>{"username"=>"test123asdfasdfsdf", "email"=>"test3334@getflywheel.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('test123asdfasdfsdf') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered logins/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 13:49:34 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PrzYgtZgZn9GLXvXHIqrFapgH0BWwOmsaICBFavVB28qgJzPaKx38++ianhvpEMAeMhyn/XvhVvWg1dwVm84+A==", "user"=>{"username"=>"test123asdfasdfsdf", "email"=>"test3334@getflywheel.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+Unpermitted parameter: password_confirmation
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('test123asdfasdfsdf') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("username", "email", "password", "salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "test123asdfasdfsdf"], ["email", "test3334@getflywheel.com"], ["password", "$2a$10$ehRBVrBZbXq3GkdzXHmTcuCbrFHK4N6bZnNpeYMgqknaV7GC1C6w."], ["salt", "$2a$10$ehRBVrBZbXq3GkdzXHmTcu"], ["created_at", "2018-06-13 18:49:34.754042"], ["updated_at", "2018-06-13 18:49:34.754042"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered logins/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 95ms (Views: 18.6ms | ActiveRecord: 1.9ms)

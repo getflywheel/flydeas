@@ -4,7 +4,7 @@ class LoginsController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
     @user.encrypt_password
     if @user.save
       flash[:notice] = "Woo you signed up"
@@ -16,4 +16,8 @@ class LoginsController < ApplicationController
     render "new"
   end
 
+  private
+  def user_params
+     params.require(:user).permit(:username, :email, :password)
+  end
 end
