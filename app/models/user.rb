@@ -6,14 +6,16 @@ class User < ActiveRecord::Base
     	format: { with:  USERNAME_REGEX}
   validates :email, presence: true, format: { with: EMAIL_REGEX }
   validates :password, presence: true, format: { with: PASSWORD_REGEX}
-  validates :salt, presence: true
+  #validates :salt, presence: true
 
+	def create(username, email, password, salt)
+		username
+ 
   def encrypt_password 
     if password.present?
-      salt = BCrypt::Engine.generate_salt
-      self.salt = salt
-		  #salt = BCrypt::Engine.hash_secret(password, salt)
-		  self.password = BCrypt::Engine.hash_secret(self.password, salt)
+ 	self.salt = BCrypt::Engine.generate_salt
+	#salt = BCrypt::Engine.hash_secret(password, salt)
+		  self.password = BCrypt::Engine.hash_secret(self.password, self.salt)
 	  end
   end
   def clear_password
@@ -32,7 +34,7 @@ class User < ActiveRecord::Base
     end
   end
   def match_password(login_password="")
-    password == BCrypt::Engine.hash_secret(login_password, salt)
+    self.password == BCrypt::Engine.hash_secret(login_password, salt)
   end
 
 end

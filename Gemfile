@@ -24,6 +24,9 @@ source 'https://rubygems.org'
 
 	# Use ActiveModel has_secure_password
 	gem 'bcrypt', '~> 3.1.7'
+	
+	# For using attr_accessible method
+	gem 'protected_attributes'
 
 	# Use Unicorn as the app server
 	# gem 'unicorn'
@@ -36,6 +39,8 @@ group :development, :test do
   gem 'byebug'
 	gem 'rspec'
 	gem 'rspec-rails'
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 group :development do
