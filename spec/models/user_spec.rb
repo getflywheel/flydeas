@@ -19,10 +19,20 @@ RSpec.describe User, type: :model do
 		expect(subject).to_not be_valid
 	end
 	it "is not valid without a password" do
-		subject.password = nil
-		expect(subject).to_not be_valid	
+	    subject.password = nil
+	    expect(subject).to_not be_valid	
 	end
+    
 	it "matches the password correctly" do
-		expect(subject.password).matches("123456xX$")
-	end
-end
+            subject.salt = nil
+            subject.encrypt_password
+            expect(subject.match_password("123456xX$")).to be true
+        end
+
+ 	it "matches the password correctly" do
+            subject.salt = nil
+            subject.encrypt_password
+            expect(subject.match_password("123")).to be false 
+        end       
+
+   end
