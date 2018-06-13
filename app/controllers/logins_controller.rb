@@ -4,10 +4,10 @@ class LoginsController < ApplicationController
   end
   def create
     #binding.pry
-    puts '------------------------------------------------------------'
-    puts params[:user]
-    @user = User.new#(params[:user])
-    @user.update_attributes(params[:user]), permit(:username, :password, :email, :salt) )
+    #puts '------------------------------------------------------------'
+    #puts params[:user]
+    @user = User.new(params[:user])
+    #@user.update_attributes(params[:user]), permit(:username, :password, :email, :salt) )
     @user.encrypt_password
     puts "hi"
     if @user.save

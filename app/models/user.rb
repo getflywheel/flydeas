@@ -8,9 +8,8 @@ class User < ActiveRecord::Base
   validates :password, presence: true, format: { with: PASSWORD_REGEX}
   #validates :salt, presence: true
 
-	def create(username, email, password, salt)
-		username
- 
+#	def create(username, email, password, salt)	username
+  attr_accessible :username, :password, :email, :salt
   def encrypt_password 
     if password.present?
  	self.salt = BCrypt::Engine.generate_salt

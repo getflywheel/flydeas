@@ -1665,3 +1665,208 @@ e, :password, :email, :salt) )
   Rendered /Users/grahmmanley/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
   Rendered /Users/grahmmanley/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
   Rendered /Users/grahmmanley/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (153.6ms)
+
+
+Started GET "/" for ::1 at 2018-06-13 09:58:24 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (1.8ms)
+Completed 200 OK in 23ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logins/new" for ::1 at 2018-06-13 09:58:30 -0500
+
+SyntaxError (/Users/neilkoul/Projects/flypoll/app/controllers/logins_controller.rb:10: syntax error, unexpected ',', expecting keyword_end
+ate_attributes(params[:user]), permit(:username, :password, 
+                              ^
+/Users/neilkoul/Projects/flypoll/app/controllers/logins_controller.rb:10: syntax error, unexpected ')', expecting keyword_end
+e, :password, :email, :salt) )
+                              ^):
+  app/controllers/logins_controller.rb:10: syntax error, unexpected ',', expecting keyword_end
+  app/controllers/logins_controller.rb:10: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (114.1ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (102.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (229.4ms)
+
+
+Started GET "/logins/new" for ::1 at 2018-06-13 09:58:50 -0500
+Processing by LoginsController#new as HTML
+  Rendered logins/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 366ms (Views: 357.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/logins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-06-13 09:58:50 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2018-06-13 09:58:50 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2018-06-13 09:58:50 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2018-06-13 09:58:50 -0500
+
+
+Started GET "/assets/turbolinks.self-2db6ec539b9190f75e1d477b305df53d12904d5cafdd47c7ffd91ba25cbec128.js?body=1" for ::1 at 2018-06-13 09:58:50 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2018-06-13 09:58:50 -0500
+
+
+Started GET "/assets/logins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-06-13 09:58:50 -0500
+
+
+Started POST "/logins" for ::1 at 2018-06-13 09:59:44 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wo5caJLK+MrP6NXtY5yq0YXUNzzKfTzfbnpZ3n5byD5OshglLAbpRmZnxEIQskLEV3xa42lSUCjQeY+7g+H3qQ==", "user"=>{"username"=>"test", "email"=>"test@getflywheel.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered logins/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 26ms (Views: 12.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 10:02:37 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3X2M9yGkU5c/ruTLjbJgWAQgafOrRCScJ2+puiYO3oDJQci6n2hCG5Yh9WT+nIhN1ogELAhrSGuZbH/f27ThFw==", "user"=>{"username"=>"test123", "email"=>"test@getflywheel.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered logins/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 10:04:55 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aQ0DpPK5n4dlu4pNYxB/7YiFZi0tsFEXNbHOC8gjUEJ9MUfpTHWOC8w0m+IQPpf4Wi0L8o6fPeCLshhuNZlv1Q==", "user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered logins/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 10:04:55 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ERw/g+Ar17aypdqC6GokbeuhC1Q9OhxidaeJETKEFHgFIHvOXufGOhsqyy2bRMx4OQlmi54VcJXLpF90zz4r7w==", "user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered logins/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 10:04:56 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QeTKYdArpm8zECnKl2Yfi+vVr7ceNRe6n5GJVJkMYitV2I4sbue345qfOGXkSPeeOX3CaL0ae00hkl8xZLZdvA==", "user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered logins/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 18ms (Views: 14.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 10:04:56 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n+KP3PgnLnCZVRJcAcJaQuh9WKS/FrFoxq0paApTMROL3suRRus//DDaA/Ny7LJXOtU1exw53Z94rv8N9+kOhA==", "user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered logins/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 10:04:57 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LQ3CJ/jp+HDyGCgrwmXilwqNUQORkICf5LJN96rU44U5MYZqRiXp/FuXOYSxSwqC2CU83DK/7GhasZuSV27cEg==", "user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered logins/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 28ms (Views: 22.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 10:04:57 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DmMHeXYHCR5dGLR+Ko8S1usYR7p8rUPX3avTc0FoAjIaX0M0yMsYkvSXpdFZofrDObAqZd+CLyBjqAUWvNI9pQ==", "user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered logins/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 32ms (Views: 21.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 10:04:57 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5Fi0Em+fMpyju4nWtgimQxR32dFCnY5xZytkgMBkG4zwZPBf0VMjEAo0mHnFJk5Wxt+0DuGy4obZKLLlPd4kGw==", "user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered logins/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 10:04:58 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2XkcKX0WapD+jzWisFaJReTNhXamnV/+afG5wv0v7WfNRVhkw9p7HFcAJA3DeGFQNmXoqQWyMwnX8m+nAJXS8A==", "user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered logins/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 26ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 10:04:58 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cFzJiokybshNcQGoiq/Vt+RI30J3bAj9I/puRM2q4TFkYI3HN/5/ROT+EAf5gT2iNuCyndRDZAqd+bghMBDepg==", "user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered logins/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logins/new" for ::1 at 2018-06-13 10:05:03 -0500
+Processing by LoginsController#new as HTML
+  Rendered logins/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 10:06:30 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uYf8RV+nYkdgyiZLC1Ts56IZwKrAI3mqQxXZicK33qitu7gI4Wtzy8lFN+R4egTycLGtdWMMFV39Fg/sPw3hPw==", "user"=>{"username"=>"test123", "email"=>"testss@getflywheel.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered logins/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logins/new" for ::1 at 2018-06-13 10:07:35 -0500
+Processing by LoginsController#new as HTML
+  Rendered logins/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 21ms (Views: 15.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-13 10:08:07 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PeZd5SQxT6qKo/WVwwh1vKOajoChrckirCcGNEN+0M4p2hmomv1eJiMs5DqwJp2pcTLjXwKCpdUSJNBRvsTvWQ==", "user"=>{"username"=>"test123", "email"=>"test@getflywheel.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Signup"}
+WARNING: Can't mass-assign protected attributes for User: password_confirmation
+	app/controllers/logins_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('test123') LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("username", "email", "password", "salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["username", "test123"], ["email", "test@getflywheel.com"], ["password", "$2a$10$3nOB.4eY4vl4/qZCeHRBkew2SLjJz.oFRog/wlYnpe7iSzT3E/AVG"], ["salt", "$2a$10$3nOB.4eY4vl4/qZCeHRBke"], ["created_at", "2018-06-13 15:08:07.321285"], ["updated_at", "2018-06-13 15:08:07.321285"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  Rendered logins/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 88ms (Views: 16.3ms | ActiveRecord: 1.8ms)
