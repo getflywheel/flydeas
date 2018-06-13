@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 	# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-	gem 'rails', '4.2.6'
+	gem 'rails', '4.2.10'
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
 	# Use SCSS for stylesheets
@@ -23,7 +23,10 @@ source 'https://rubygems.org'
 	gem 'sdoc', '~> 0.4.0', group: :doc
 
 	# Use ActiveModel has_secure_password
-	# gem 'bcrypt', '~> 3.1.7'
+	gem 'bcrypt', '~> 3.1.7'
+	
+	# For using attr_accessible method
+	gem 'protected_attributes'
 
 	# Use Unicorn as the app server
 	# gem 'unicorn'
@@ -36,6 +39,8 @@ group :development, :test do
   gem 'byebug'
 	gem 'rspec'
 	gem 'rspec-rails'
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 group :development do
