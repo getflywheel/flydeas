@@ -1,12 +1,9 @@
 require 'rails_helper'
-
+#require 'user.rb'
 RSpec.describe LoginsController, type: :controller do
 
-  describe "GET #new" do
     it "returns http success" do
       get :new
       expect(response).to have_http_status(:success)
     end
-  end
-
 end
