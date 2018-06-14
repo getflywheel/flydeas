@@ -4,8 +4,8 @@ require File.expand_path('../application', __FILE__)
 # Initialize the Rails application.
 Rails.application.initialize!
 ActionMailer::Base.smtp_settings ={
-    :user_name => 'flywheeldev',
-    :password => ENV["SENDGRID_PASSWORD"],
+    :user_name => 'nkkoul62@gmail.com',
+    :password => '@SnehNeil41@',
     :domain => 'getflywheel.com',
     :address => 'smtp.sendgrid.net',
     :port => 587,

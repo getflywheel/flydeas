@@ -7,10 +7,12 @@ class LoginsController < ApplicationController
     @user = User.new(user_params)
     @user.encrypt_password
     if @user.save
-      flash[:notice] = "Woo you signed up"
-      flash[:color] = "valid"
-      UserNotifier.send_signup_email(@user).deliver
-      redirect_to(@user, :notice => 'User created')
+      flash[:info] = "Woo you signed up"
+      #flash[:color] = "valid"
+      UserMailer.account_activation(@user).deliver_now
+	  flash[:info] = "Please check your email to activate you account."
+	  redircect_to(@user, :notice => 'user created')
+	  format.html { redirect_to @user, notice: 'User was successfully created.' }
     else
       flash[:notice] = "Form is invalid"
       flash[:color] = "invalid"
