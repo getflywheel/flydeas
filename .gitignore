@@ -3,3 +3,4 @@
 **/*.swp
 .envrc
 tmp/
+log/
