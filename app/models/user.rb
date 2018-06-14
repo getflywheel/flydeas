@@ -42,7 +42,8 @@ class User < ActiveRecord::Base
     def match_password(login_password="")
         self.password == BCrypt::Engine.hash_secret(login_password, salt)
     end
-	#Generates a new, random token
+	
+        #Generates a new, random token
 	def User.new_token
 		SecureRandom.urlsafe_base64
 	end
@@ -71,4 +72,11 @@ class User < ActiveRecord::Base
 		self.activation_token = User.new_token
 		self.activation_digest = User.digest(activation_token)
 	end
+
+    def create_reset_digest
+        # TODO: Set up tokenization
+        self.reset_token = User.new_token
+        update_attribute(:reset_digest, User.digest(reset_token))
+        update_attribute(:reset_sent_at, Time.zone.now)
+    end
 end
