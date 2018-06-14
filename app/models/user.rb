@@ -37,4 +37,11 @@ class User < ActiveRecord::Base
     def match_password(login_password="")
         self.password == BCrypt::Engine.hash_secret(login_password, salt)
     end
+
+    def create_reset_digest
+        # TODO: Set up tokenization
+        self.reset_token = User.new_token
+        update_attribute(:reset_digest, User.digest(reset_token))
+        update_attribute(:reset_sent_at, Time.zone.now)
+    end
 end
