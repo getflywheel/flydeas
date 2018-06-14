@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
     USERNAME_REGEX = /[a-zA-Z0-9\-_]{0,20}/
-    EMAIL_REGEX = /[a-zA-Z_0-9.]+@getflywheel.com/
+    EMAIL_REGEX = /[a-zA-Z_0-9-.]+@getflywheel.com/i
     PASSWORD_REGEX = /.*(?=.{8,32})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^+=]).*/ 
 
     validates :username, presence: true, uniqueness: { case_sensitive: false }, 

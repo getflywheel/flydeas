@@ -9,6 +9,8 @@ class LoginsController < ApplicationController
     if @user.save
       flash[:notice] = "Woo you signed up"
       flash[:color] = "valid"
+      UserNotifier.send_signup_email(@user).deliver
+      redirect_to(@user, :notice => 'User created')
     else
       flash[:notice] = "Form is invalid"
       flash[:color] = "invalid"
