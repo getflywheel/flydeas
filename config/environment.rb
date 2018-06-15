@@ -3,10 +3,10 @@ require File.expand_path('../application', __FILE__)
 #require '~/.envrc'
 # Initialize the Rails application.
 Rails.application.initialize!
-ActionMailer::Base.smtp_settings ={
-    :user_name => 'nkkoul62@gmail.com',
-    :password => '@SnehNeil41@',
-    :domain => 'getflywheel.com',
+ActionMailer::Base.smtp_settings = {
+    :user_name => ENV["SENDGRID_USERNAME"],
+    :password => ENV["SENDGRID_PASSWORD"],
+    :domain => 'mail.flywheeldevservers.com',
     :address => 'smtp.sendgrid.net',
     :port => 587,
     :authentication => :plain,

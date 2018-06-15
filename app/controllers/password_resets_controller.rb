@@ -16,9 +16,12 @@ class PasswordResetsController < ApplicationController
             # TODO: Enable sending an email
             # @user.send_password_reset_email
             # flash[:info] = "Email sent with password reset instructions"
-            flash[:info] = "Link for resetting will go here"
-
+            reset_user_link = edit_password_reset_url(@user.reset_token, 
+                email: @user.email) 
+            flash[:info] = "Link: #{reset_user_link}"
+            
             #redirect_to root_url
+            render 'new'
         else
             flash.now[:danger] = "Email address not found"
             render 'new'

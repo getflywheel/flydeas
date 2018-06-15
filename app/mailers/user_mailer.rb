@@ -7,9 +7,9 @@ class UserMailer < ApplicationMailer
    #
 	def account_activation(user)
 		@user = user
-		mail to: user.email, subject: "Account activation"
-		 flash[:info] = "Please check your email to activate you account."
-      redircect_to(@user, :notice => 'user created')
+	  mail to: user.email, subject: "Account activation"
+    #flash[:notice] = "Please check your email to activate you account."
+    #redirect_to(@user, :notice => 'user created')
 	end
 									
    # Subject can be set in your I18n file at config/locales/en.yml
