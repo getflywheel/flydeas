@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "dev@getflywheel.com"
+  default from: "Flydeas@getflywheel.com"
   layout 'mailer'
 end

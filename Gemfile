@@ -28,8 +28,8 @@ source 'https://rubygems.org'
 	# For using attr_accessible method
 	gem 'protected_attributes'
         
-        # For the Sendgrid
-        gem 'sendgrid-ruby'       
+	# For the Sendgrid
+	gem 'sendgrid-ruby'       
 
 	# Use Unicorn as the app server
 	# gem 'unicorn'

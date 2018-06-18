@@ -1,13 +1,13 @@
 class User < ActiveRecord::Base
 
     USERNAME_REGEX = /[a-zA-Z0-9\-_]{0,20}/
-    EMAIL_REGEX = /[a-zA-Z_0-9-.]+@getflywheel.com/i
+    EMAIL_REGEX = #/[a-zA-Z_0-9-.]+@getflywheel.com/i
     PASSWORD_REGEX = /.*(?=.{8,32})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^+=]).*/ 
 	attr_accessor :remember_token, :activation_token, :reset_token
 	
 	#NOT FINAL IMPLEMENTATION
 	before_save :downcase_email
-	before_create :create_activation_digest
+	before_create :create_activation_digest 
 
     validates :username, presence: true#, uniqueness: { case_sensitive: false }#, 
     #	format: { with:  USERNAME_REGEX}
@@ -46,28 +46,17 @@ class User < ActiveRecord::Base
     def match_password(login_password="")
         self.password == BCrypt::Engine.hash_secret(login_password, salt)
     end
-	
+
     #Generates a new, random token
 	def new_token
 		SecureRandom.urlsafe_base64
     end
-    
-	#make sure the token is stored in the DB so that they can be authenticated
-	def remember
-		self.remember_token = User.new_token
-		update_attribute(:remember_digest, User.digest(remember_token))
-    end 
-    
-	#Compares digest to token
-	def self.digest(string)
-		cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-			BCrypt::Engine.cost
-		BCrypt::Password.create(string, cost: cost)
-    end
-    
-	#Returns true if token matches digest
-	def authenticated?(remember_token)
-		 BCrypt::Password.new(remember_digest).is_password?(remember_token)
+
+    #activates the account
+    def email_activate
+        self.activated = true
+        self.activation_digest = nil
+        save!(:validate => false)
     end
 
 	def create_reset_digest
@@ -77,14 +66,16 @@ class User < ActiveRecord::Base
         update_attribute(:reset_sent_at, Time.zone.now)
     end
 
-	private
+    private
+    #makes email lowercase for easier searching
 	def downcase_email
 		self.email = email.downcase
 	end
-	
+    
+    #token generation
 	def create_activation_digest
 		self.activation_token = new_token
-		self.activation_digest = User.digest(activation_token)
+        self.activation_digest = new_token
 	end
 
 end

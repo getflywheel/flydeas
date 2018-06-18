@@ -2,8 +2,8 @@
 class UserMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/user_mailer/accout_activation
-  def accout_activation
-    UserMailer.accout_activation
+  def account_activation
+    UserMailer.account_activation
   end
 
   # Preview this email at http://localhost:3000/rails/mailers/user_mailer/password_reset
