@@ -9,6 +9,7 @@ class LoginsController < ApplicationController
     if @user.save
       flash[:notice] = "Woo you signed up"
       flash[:color] = "valid"
+      log_in @user
     else
       flash[:notice] = "Form is invalid"
       flash[:color] = "invalid"
