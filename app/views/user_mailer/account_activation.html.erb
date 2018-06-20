@@ -1,0 +1,9 @@
+<html>
+<h1>Flydeas Account Activation</h1>
+
+
+<p>
+    Welcome to Flydeas!! Thanks for signing up, <%= @user.username %>. Click on the link below to activate your account:
+</p>
+<%= link_to "Activate", edit_account_activation_url(@user.activation_digest, host: "http://localhost:3000")%>
+</html>

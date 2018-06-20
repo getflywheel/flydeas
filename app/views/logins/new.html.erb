@@ -15,8 +15,10 @@
        <%= f.label :password_confirmation, "Confirmation" %>
        <%= f.password_field :password_confirmation, class:'form-control' %>
 
+
        <%= f.submit "Create my account", class: "btn btn-primary" %>
        <%= render 'shared/error_messages' %>
    <% end %>
+   <%= link_to "(forgot password)", new_password_reset_path %>
  </div>
 </div>
