@@ -1,6 +1,6 @@
+.envrc
 .rspec
 /db/*.sqlite3
 **/*.swp
-.envrc
-tmp/
-log/
+tmp/*
+log/*
