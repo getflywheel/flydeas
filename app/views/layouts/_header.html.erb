@@ -1,0 +1,9 @@
+<h1> Header (exciting I know)</h1>
+<% if logged_in? %>
+    Logged in
+    <%= link_to "Log out", logout_path, method: :delete %>
+<% else %>
+    Not logged in   
+    <%= link_to "Log in", login_path %> 
+<% end %>
+
