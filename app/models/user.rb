@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
     validates :password, presence: true, format: { with: PASSWORD_REGEX}
     validates :salt, presence: true
 
+    #PASSWORD STUFF
 	#encrypts the password
     def encrypt_password 
         if password.present?
@@ -23,7 +24,7 @@ class User < ActiveRecord::Base
         end
     end
 
-	#Cleas password after logout
+	#Clears password after logout
     def clear_password
           self.password = nil
     end
@@ -47,6 +48,7 @@ class User < ActiveRecord::Base
         self.password == BCrypt::Engine.hash_secret(login_password, salt)
     end
 
+    #USER CONFIRMATION
     #Generates a new, random token
 	def new_token
 		SecureRandom.urlsafe_base64
@@ -58,7 +60,10 @@ class User < ActiveRecord::Base
         self.activation_digest = nil
         save!(:validate => false)
     end
+    
+ 
 
+    #PASSWORD RESET
 	def create_reset_digest
         # TODO: Set up tokenization
         reset_token = new_token
@@ -70,12 +75,11 @@ class User < ActiveRecord::Base
     #makes email lowercase for easier searching
 	def downcase_email
 		self.email = email.downcase
-	end
+    end
     
     #token generation
 	def create_activation_digest
 		self.activation_token = new_token
         self.activation_digest = new_token
 	end
-
 end
