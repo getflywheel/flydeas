@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
     USERNAME_REGEX = /[a-zA-Z0-9\-_]{0,20}/
-    EMAIL_REGEX = #/[a-zA-Z_0-9-.]+@getflywheel.com/i
+    EMAIL_REGEX = /[a-zA-Z_0-9-.]+@getflywheel.com/i
     PASSWORD_REGEX = /.*(?=.{8,32})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^+=]).*/ 
 	attr_accessor :remember_token, :activation_token, :reset_token
 	
@@ -9,10 +9,10 @@ class User < ActiveRecord::Base
 	before_save :downcase_email
 	before_create :create_activation_digest 
 
-    validates :username, presence: true#, uniqueness: { case_sensitive: false }#, 
-    #	format: { with:  USERNAME_REGEX}
-    validates :email, presence: true#, format: { with: EMAIL_REGEX }
-    validates :password, presence: true#, format: { with: PASSWORD_REGEX}
+    validates :username, presence: true, uniqueness: { case_sensitive: false }, 
+    	format: { with:  USERNAME_REGEX}
+    validates :email, presence: true, format: { with: EMAIL_REGEX }
+    validates :password, presence: true, format: { with: PASSWORD_REGEX}
     validates :salt, presence: true
 
 	#encrypts the password

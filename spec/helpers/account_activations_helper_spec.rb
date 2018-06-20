@@ -11,5 +11,9 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe AccountActivationsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:user) {User.create(username: "testus3e4drw1", email: "test@getflywheel.com", password: "123456xX$", salt: "1234")}
+  it "Authenticates the User" do
+      user.email_activate
+      expect(user.activated?).to be true
+  end
 end
