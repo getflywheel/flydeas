@@ -1,3 +1,5 @@
 .rspec
 /db/*.sqlite3
 **.swp
+tmp/*
+log/*

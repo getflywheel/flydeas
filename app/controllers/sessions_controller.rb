@@ -7,12 +7,8 @@ class SessionsController < ApplicationController
         if user && user.match_password(params[:session][:password])
             # log in
             log_in user
-            puts("--------------------------------successful login--------------------")
            render 'new' 
         else   
-            # show error
-            # TODO: remove debugging stuff
-            puts("--------------------------------failed login--------------------")
             flash.now[:danger] = 'Invalid email/password combination' 
             render 'new'
         end 
