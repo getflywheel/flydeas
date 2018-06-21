@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Submissions:</strong>
+  <%= @micropost.Submissions %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @micropost.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @micropost.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @micropost.user_id %>
+</p>
+
+<p>
+  <strong>Upvotes:</strong>
+  <%= @micropost.upvotes %>
+</p>
+
+<p>
+  <strong>Donwvotes:</strong>
+  <%= @micropost.donwvotes %>
+</p>
+
+<%= link_to 'Edit', edit_micropost_path(@micropost) %> |
+<%= link_to 'Back', microposts_path %>
