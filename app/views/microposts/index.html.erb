@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Submissions</th>
+      <th>Category</th>
       <th>Title</th>
       <th>Content</th>
       <th>User</th>
@@ -18,7 +18,7 @@
   <tbody>
     <% @microposts.each do |micropost| %>
       <tr>
-        <td><%= micropost.Submissions %></td>
+        <td><%= micropost.category %></td>
         <td><%= micropost.title %></td>
         <td><%= micropost.content %></td>
         <td><%= micropost.user_id %></td>
