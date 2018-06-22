@@ -25,7 +25,6 @@ RSpec.describe PasswordResetsController, type: :controller do
        
         it "denies unactivated account changing its password" do
             get :create, {:password_reset => {email: 'test@getflywheel.com' } }
-            get :edit, {
             expect(response.body).to include("Please confirm your email address before you reset your password") 
         end
         
@@ -38,12 +37,4 @@ RSpec.describe PasswordResetsController, type: :controller do
         end 
     end
     
-=begin
-  describe "GET #edit" do
-    it "returns http success" do
-      get :edit
-      expect(response).to have_http_status(:success)
-    end
-  end
-=end
 end

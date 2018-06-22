@@ -12,7 +12,6 @@ class LoginsController < ApplicationController
       UserMailer.account_activation(@user).deliver_now
       #TODO make a homepage, redirct users after signup
       flash[:sucess] = "Please check your email to activate your account."
-      flash[:notice] = "Woo you signed up"
       log_in @user
       redirect_to root_url
 

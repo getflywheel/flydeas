@@ -4,7 +4,7 @@ class AccountActivationsController < ApplicationController
         user = User.find_by_activation_digest(params[:id])
         if user
           user.email_activate
-          flash[:sucess] = "Welcome to Flydeas! Your email has been confirmed!!"
+          flash[:sucess] = "Welcome to Flydeas! Your email has been confirmed!"
           #TODO Uncomment this when completed with session control
           redirect_to new_login_url
         else

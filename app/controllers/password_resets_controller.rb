@@ -2,6 +2,7 @@ class PasswordResetsController < ApplicationController
     before_action :get_user, only: [:edit, :update]
     before_action :valid_user, only: [:edit, :update]    
     before_action :check_expiration, only: [:edit, :update]
+    before_action :valid_token, only: [:edit, :update]
 
     def new
     end
@@ -14,12 +15,8 @@ class PasswordResetsController < ApplicationController
         @user = User.find_by(email: params[:password_reset][:email].downcase)
         if @user
             @user.create_reset_digest
-            # TODO: Enable sending an email            
-            # @user.send_password_reset_email
+            @user.send_password_reset_email
             flash[:info] = "Email sent with password reset instructions"
-            reset_user_link = edit_password_reset_url(@user.reset_token, 
-                email: @user.email) 
-            flash[:info] = "Link: #{reset_user_link}"
             redirect_to root_url
         else
             flash.now[:danger] = "Email address not found"
@@ -63,9 +60,15 @@ class PasswordResetsController < ApplicationController
 
         # Confirms a valid user
         def valid_user
-            # TODO: Add flash message
             unless (@user && @user.activated?) 
                 flash[:danger] = "Please confirm your email address before you reset your password"
+                redirect_to root_url
+            end
+        end
+        
+        def valid_token
+            unless(@user.valid_reset_token?(params[:id]))
+                flash[:danger] = "Invalid token" 
                 redirect_to root_url
             end
         end

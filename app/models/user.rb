@@ -43,9 +43,7 @@ class User < ActiveRecord::Base
     end
 
     def User.digest(string)
-        cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                    BCrypt::Engine.cost 
-        BCrypt::Password.create(string, cost: cost)
+        Digest::MD5.hexdigest string
     end
 
     # USER CONFIRMATION
@@ -65,7 +63,6 @@ class User < ActiveRecord::Base
     # PASSWORD RESET
 
     def create_reset_digest
-        # TODO: Set up tokenization
         self.reset_token = new_token
         update_attribute(:reset_digest, User.digest(reset_token))
         update_attribute(:reset_sent_at, Time.zone.now)
@@ -85,6 +82,11 @@ class User < ActiveRecord::Base
     def password_reset_expired?
         reset_sent_at < 2.hours.ago
     end  
+
+    def valid_reset_token?(reset_token)
+        reset_digest = User.digest(reset_token)
+        reset_digest == self.reset_digest
+    end 
     
     # encrypts the password
     def encrypt_password 
