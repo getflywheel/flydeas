@@ -3,7 +3,7 @@ class LoginsController < ApplicationController
     @user = User.new 
   end
 
-  #Creates a User (add to DB)
+  #Creates a User (add to DBe)
   def create
     @user = User.new(user_params)
     @user.encrypt_password

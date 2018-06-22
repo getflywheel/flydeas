@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :submissions
   root :to =>'sessions#new'
-  resources :microposts, :path => 'posts'
+  resources :submissions, :path => 'posts'
   
   resources :account_activations, only: [:edit] do
   end

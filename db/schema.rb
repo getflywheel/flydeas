@@ -11,17 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180621145952) do
+ActiveRecord::Schema.define(version: 20180622132828) do
 
-  create_table "microposts", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
-    t.string   "user_id"
-    t.string   "upvotes"
-    t.string   "donwvotes"
+  create_table "submissions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "category"
+    t.string   "title"
+    t.string   "content"
+    t.string   "user_id"
+    t.string   "upvotes"
+    t.string   "donwvotes"
   end
 
   create_table "users", force: :cascade do |t|
