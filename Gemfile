@@ -29,8 +29,11 @@ source 'https://rubygems.org'
 	gem 'protected_attributes'
         
 	# For the Sendgrid
-	gem 'sendgrid-ruby'       
+	gem 'sendgrid-ruby'
 
+	# FactoryBot for instance testing stuff
+	gem 'factory_bot'
+	
 	# Use Unicorn as the app server
 	# gem 'unicorn'
 

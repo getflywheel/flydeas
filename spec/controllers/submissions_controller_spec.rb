@@ -28,12 +28,10 @@ RSpec.describe SubmissionsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Submission. As you add validations to Submission, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip(category: 'category', title: 'title', content:'content', user_id:'username')
-  }
+  let(:valid_attributes) {{ category: 'category', title: 'title', content:'content', user_id:'username'}}
 
   let(:invalid_attributes) {
-    skip(category: nil, title: nil, content:nil, user_id:nil)
+    {category: nil, title: nil, content:nil, user_id:nil}
   }
 
   # This should return the minimal set of values that should be in the session
@@ -97,14 +95,13 @@ RSpec.describe SubmissionsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        { category: 'category', title: 'title', content:'content', user_id:'username'}
       }
 
       it "updates the requested submission" do
         submission = Submission.create! valid_attributes
         put :update, {:id => submission.to_param, :submission => new_attributes}, valid_session
         submission.reload
-        skip("Add assertions for updated state")
       end
 
       it "redirects to the submission" do

@@ -7,7 +7,7 @@ class AccountActivationsController < ApplicationController
           flash[:sucess] = "Welcome to Flydeas! Your email has been confirmed!!"
           #TODO Uncomment this when completed with session control
           redirect_to root_url
-        else
+        elsecode
           flash[:error] = "Sorry, User does not exist"
           #TODO uncomment this when a homepage is implemented
           redirect_to root_url
