@@ -29,11 +29,11 @@ RSpec.describe SubmissionsController, type: :controller do
   # Submission. As you add validations to Submission, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    skip(category: 'category', title: 'title', content:'content', user_id:'username')
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    skip(category: nil, title: nil, content:nil, user_id:nil)
   }
 
   # This should return the minimal set of values that should be in the session

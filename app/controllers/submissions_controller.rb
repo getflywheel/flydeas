@@ -25,11 +25,6 @@ class SubmissionsController < ApplicationController
   # POST /submissions.json
   def create
     @submission = Submission.new(submission_params)
-    puts "--------------------------------------hi---------------"
-    puts @submission.content
-    puts "----------------------------------------------"
-    #binding.pry
-    #@submission.save
     if @submission.save
       flash[:info] = "You created a post"
       redirect_to @submission
