@@ -1,7 +1,7 @@
 class PasswordResetsController < ApplicationController
     before_action :get_user, only: [:edit, :update]
-    # TODO: Re-enable valid user check
-    # before_action :valid_user, only: [:edit, :update]
+    before_action :valid_user, only: [:edit, :update]    
+    before_action :check_expiration, only: [:edit, :update]
 
     def new
     end
@@ -20,14 +20,14 @@ class PasswordResetsController < ApplicationController
             reset_user_link = edit_password_reset_url(@user.reset_token, 
                 email: @user.email) 
             flash[:info] = "Link: #{reset_user_link}"
-            #redirect_to root_url
+            redirect_to root_url
+        else
             flash.now[:danger] = "Email address not found"
             render 'new'
         end
     end
 
     def update
-        check_expiration
         if params[:user][:password].empty?
             @user.errors.add(:password, "can't be empty")
             render 'edit'      
@@ -42,16 +42,16 @@ class PasswordResetsController < ApplicationController
             render 'edit'
         end
     end
-
-    def check_expiration
-        if @user.password_reset
-            flash[:danger] = "Password reset has expired."
-            redirect_to new_password_reset_url
-        end
-    end
-
+   
     private
-        
+
+        def check_expiration
+            if @user.password_reset_expired?
+                flash[:danger] = "Password reset has expired."
+                redirect_to new_password_reset_url
+            end
+        end
+
         def user_params
             params.require(:user).permit(:password)
         end
@@ -63,9 +63,9 @@ class PasswordResetsController < ApplicationController
 
         # Confirms a valid user
         def valid_user
-            # TODO: Re-enable user activation test
-            unless (@user && @user.activated? &&
-                    @user.authenticated?(:reset, params[:id]))
+            # TODO: Add flash message
+            unless (@user && @user.activated?) 
+                flash[:danger] = "Please confirm your email address before you reset your password"
                 redirect_to root_url
             end
         end
