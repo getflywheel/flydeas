@@ -3,34 +3,28 @@ class User < ActiveRecord::Base
     USERNAME_REGEX = /[a-zA-Z0-9\-_]{0,20}/
     EMAIL_REGEX = /[a-zA-Z_0-9-.]+@getflywheel.com/i
     PASSWORD_REGEX = /.*(?=.{8,32})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^+=]).*/ 
-	attr_accessor :remember_token, :activation_token, :reset_token
+    
+    attr_accessor :remember_token, :activation_token, :reset_token
 	
-	#NOT FINAL IMPLEMENTATION
-	before_save :downcase_email
-	before_create :create_activation_digest 
+    # NOT FINAL IMPLEMENTATION
+    before_save :downcase_email
+    before_create :create_activation_digest
 
     validates :username, presence: true, uniqueness: { case_sensitive: false }, 
     	format: { with:  USERNAME_REGEX}
     validates :email, presence: true, format: { with: EMAIL_REGEX }
-    validates :password, presence: true, format: { with: PASSWORD_REGEX}
-    validates :salt, presence: true
+    validates :password, presence: true#, format: { with: PASSWORD_REGEX}
+    validates :salt, presence: true 
+    
+    # PASSWORD STUFF
 
-    #PASSWORD STUFF
-	#encrypts the password
-    def encrypt_password 
-        if password.present?
-            self.salt = BCrypt::Engine.generate_salt
-            self.password = BCrypt::Engine.hash_secret(self.password, self.salt)
-        end
-    end
-
-	#Clears password after logout
+    # Clears password after logout
     def clear_password
           self.password = nil
     end
 
-	#Authenticates User
-   def authenticate(username_or_email="", login_password="")
+    # Authenticates User
+    def authenticate(username_or_email="", login_password="")
         if EMAIL_REGEX.match(username_or_email)
             user = User.find_by_email(username_or_email)
         else
@@ -43,43 +37,76 @@ class User < ActiveRecord::Base
         end
     end
 
-	#Matches the Password (returns if login_password matches database)
+    # Matches the Password (returns if login_password matches database)
     def match_password(login_password="")
         self.password == BCrypt::Engine.hash_secret(login_password, salt)
     end
 
-    #USER CONFIRMATION
-    #Generates a new, random token
-	def new_token
-		SecureRandom.urlsafe_base64
+    def User.digest(string)
+        cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                    BCrypt::Engine.cost 
+        BCrypt::Password.create(string, cost: cost)
     end
 
-    #activates the account
+    # USER CONFIRMATION
+
+    # Generates a new, random token
+    def new_token
+        SecureRandom.urlsafe_base64
+    end
+
+    # Activates the account
     def email_activate
         self.activated = true
         self.activation_digest = nil
         save!(:validate => false)
     end
-    
- 
 
-    #PASSWORD RESET
-	def create_reset_digest
+    # PASSWORD RESET
+
+    def create_reset_digest
         # TODO: Set up tokenization
-        reset_token = new_token
+        self.reset_token = new_token
         update_attribute(:reset_digest, User.digest(reset_token))
         update_attribute(:reset_sent_at, Time.zone.now)
     end
-
-    private
-    #makes email lowercase for easier searching
-	def downcase_email
-		self.email = email.downcase
+        
+    def send_password_reset_email
+        UserMailer.password_reset(self).deliver_now
     end
+
+    def create_salt
+        if self.salt.nil?
+            self.salt = BCrypt::Engine.generate_salt
+        end
+    end
+
+    # Returns true if a password reset has expired
+    def password_reset_expired?
+        reset_sent_at < 2.hours.ago
+    end  
     
-    #token generation
+    # encrypts the password
+    def encrypt_password 
+        if self.salt.nil?
+            create_salt
+        end
+        if password.present?
+            self.password = BCrypt::Engine.hash_secret(self.password, self.salt)
+        end
+
+    end   
+    
+    private
+        
+        # Makes email lowercase for easier searching
+	def downcase_email
+            self.email = email.downcase
+        end
+    
+        # Token generation
 	def create_activation_digest
-		self.activation_token = new_token
-        self.activation_digest = new_token
+	    self.activation_token = new_token
+            self.activation_digest = new_token
 	end
 end

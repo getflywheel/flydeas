@@ -19,13 +19,13 @@ ActiveRecord::Schema.define(version: 20180614155559) do
     t.string   "password"
     t.string   "salt"
     t.boolean  "admin"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "activation_digest"
-    t.boolean  "activated"
-    t.datetime "activated_at"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.string   "activation_digest"
+    t.boolean  "activated",         default: false
+    t.datetime "activated_at"
   end
 
 end
