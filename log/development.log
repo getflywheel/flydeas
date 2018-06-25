@@ -17000,3 +17000,575 @@ Migrating to ChangeUserColName (20180625184934)
   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180625184934"]]
   [1m[35m (1.5ms)[0m  commit transaction
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "submissions" ADD "user_id" integer
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "submissions" ADD "user_id_id" integer
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "submissions" ADD "user_id_id" integer
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "submissions" ADD "user_id_id" integer
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "submissions" ADD "user_id_id" integer
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "submissions" ADD "user_id_id" integer
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "submissions" ADD "user_id_id" integer
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "submissions" ADD "user_id_id" integer
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "submissions" ADD "user_id_id" integer
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "submissions" ADD "user_id_id" integer
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_[:user_id, :submission_id]_on_unique_and_true" ON "[:user_id, :submission_id]" ("[:unique, true]")
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  CREATE  INDEX "index_[:user_id, :submission_id]_on_unique_and_true" ON "[:user_id, :submission_id]" ("[:unique, true]")
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "submission_id" integer, "weight" integer DEFAULT 1 NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_[:user_id, :submission_id]_on_unique_and_true" ON "[:user_id, :submission_id]" ("[:unique, true]")[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "submission_id" integer, "weight" integer DEFAULT 1 NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_user_id_on_submission_id" ON "user_id" ("submission_id")[0m
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20180625190156)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "submission_id" integer, "weight" integer DEFAULT 1 NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180625190156"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddIndexToVotes (20180625195911)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  CREATE UNIQUE INDEX "index_user_id_on_submission_id" ON "user_id" ("submission_id")
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddIndexToVotes (20180625195911)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (2.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_submission_id" ON "users" ("submission_id")
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddIndexToVotes (20180625195911)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_submission_id" ON "users" ("submission_id")
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddIndexToVotes (20180625195911)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_user_id_on_submission_id" ON "user_id" ("submission_id")
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddIndexToVotes (20180625195911)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddIndexToVotes (20180625195911)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddIndexToVotes (20180625195911)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  CREATE UNIQUE INDEX "index_votes_on_user_id_and_submission_id" ON "votes" ("user_id", "submission_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180625195911"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_votes_on_user_id_and_submission_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_votes_on_user_id_and_submission_id' AND type='index'
+
+
+
+Started GET "/logins/new" for ::1 at 2018-06-25 15:30:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LoginsController#new as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/neilkoul/Projects/flypoll/app/models/user.rb:2: syntax error, unexpected ':', expecting keyword_end
+    has_many: submissions
+             ^):
+  app/models/user.rb:2: syntax error, unexpected ':', expecting keyword_end
+  app/controllers/logins_controller.rb:3:in `new'
+
+
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (120.5ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (110.8ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (248.0ms)
+
+
+Started GET "/logins/new" for ::1 at 2018-06-25 15:30:20 -0500
+Processing by LoginsController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered logins/new.html.erb within layouts/application (19.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (4.7ms)
+Completed 200 OK in 280ms (Views: 268.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-06-25 15:30:27 -0500
+Processing by SubmissionsController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/neilkoul/Projects/flypoll/app/models/submission.rb:3: syntax error, unexpected ':', expecting keyword_end
+    hasy_many: votes
+              ^):
+  app/models/submission.rb:3: syntax error, unexpected ':', expecting keyword_end
+  app/controllers/submissions_controller.rb:17:in `new'
+
+
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (102.8ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (96.0ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (215.2ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-06-25 15:30:38 -0500
+Processing by SubmissionsController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/neilkoul/Projects/flypoll/app/models/submission.rb:3: syntax error, unexpected ':', expecting keyword_end
+    has_many: votes
+             ^):
+  app/models/submission.rb:3: syntax error, unexpected ':', expecting keyword_end
+  app/controllers/submissions_controller.rb:17:in `new'
+
+
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (106.6ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (92.6ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (209.9ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-06-25 15:30:51 -0500
+Processing by SubmissionsController#new as HTML
+  Rendered submissions/_form.html.erb (3.6ms)
+  Rendered submissions/new.html.erb within layouts/application (5.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (3.5ms)
+Completed 200 OK in 49ms (Views: 35.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-06-25 15:31:10 -0500
+Processing by SubmissionsController#new as HTML
+  Rendered submissions/_form.html.erb (2.2ms)
+  Rendered submissions/new.html.erb within layouts/application (4.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (5.0ms)
+Completed 200 OK in 46ms (Views: 39.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/logins/new" for ::1 at 2018-06-25 15:31:15 -0500
+Processing by LoginsController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered logins/new.html.erb within layouts/application (9.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 50ms (Views: 40.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logins/new" for ::1 at 2018-06-25 15:31:16 -0500
+Processing by LoginsController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered logins/new.html.erb within layouts/application (3.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logins/new" for ::1 at 2018-06-25 15:32:19 -0500
+Processing by LoginsController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered logins/new.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 43ms (Views: 32.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/submissions" for ::1 at 2018-06-25 15:32:26 -0500
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.1ms)[0m  SELECT "submissions".* FROM "submissions"
+  Rendered submissions/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 48ms (Views: 36.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for ::1 at 2018-06-25 15:32:29 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 35ms (Views: 34.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for ::1 at 2018-06-25 15:33:41 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.3ms)
+Completed 200 OK in 33ms (Views: 32.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logins/new" for ::1 at 2018-06-25 15:33:44 -0500
+Processing by LoginsController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered logins/new.html.erb within layouts/application (3.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 33ms (Views: 32.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/logins" for ::1 at 2018-06-25 15:34:07 -0500
+Processing by LoginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AoKbPT1wVCnNGeWmkcS0ZAkLbFtrW6j1CFe7UUo+EosWvt9wg7xFpWSW9Ani6lxx26MBhMh0xAK2VG00t4QtHA==", "user"=>{"username"=>"test123", "email"=>"neil.koul@getFlywheel.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+Unpermitted parameter: password_confirmation
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('test123') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("username", "email", "password", "salt", "activation_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "test123"], ["email", "neil.koul@getflywheel.com"], ["password", "$2a$10$qu2vbtLybZY5vPFAc1tGKO.YhRfTdtj7kt3BxXzYdjfvJ4nSL8Q1m"], ["salt", "$2a$10$qu2vbtLybZY5vPFAc1tGKO"], ["activation_digest", "sdkq-tIojzVJE6R-qhm04Q"], ["created_at", "2018-06-25 20:34:07.924550"], ["updated_at", "2018-06-25 20:34:07.924550"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (0.6ms)
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.4ms)
+
+UserMailer#account_activation: processed outbound mail in 285.0ms
+
+Sent mail to neil.koul@getflywheel.com (412.6ms)
+Date: Mon, 25 Jun 2018 15:34:08 -0500
+From: Flydeas@getflywheel.com
+To: neil.koul@getflywheel.com
+Message-ID: <5b3151c0388d0_a6813fc787ea51e4964a6@Neil-Kouls-MacBook-Pro.local.mail>
+Subject: Account activation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5b3151c036454_a6813fc787ea51e496316";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5b3151c036454_a6813fc787ea51e496316
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi test123
+
+Welcome to Flydeas! Click on the link below to activvat your accout:
+http://localhost/account_activations/zSt5g-kKDaeCWWLhIcBdhA/edit?email=neil.koul%40getflywheel.com
+
+
+----==_mimepart_5b3151c036454_a6813fc787ea51e496316
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <html>
+<h1>Flydeas Account Activation</h1>
+
+
+<p>
+    Welcome to Flydeas!! Thanks for signing up, test123. Click on the link below to activate your account:
+</p>
+<a href="http://localhost:3000/account_activations/sdkq-tIojzVJE6R-qhm04Q/edit">Activate</a>
+</html>
+
+  </body>
+</html>
+
+----==_mimepart_5b3151c036454_a6813fc787ea51e496316--
+
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered logins/new.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 109]]
+  Rendered layouts/_header.html.erb (3.6ms)
+Completed 200 OK in 835ms (Views: 35.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/account_activations/sdkq-tIojzVJE6R-qhm04Q/edit" for ::1 at 2018-06-25 15:34:15 -0500
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"id"=>"sdkq-tIojzVJE6R-qhm04Q"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."activation_digest" = ? LIMIT 1  [["activation_digest", "sdkq-tIojzVJE6R-qhm04Q"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "activated" = ?, "activation_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["activated", "t"], ["activation_digest", nil], ["updated_at", "2018-06-25 20:34:15.709017"], ["id", 109]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.9ms)
+
+NameError (undefined local variable or method `elsecode' for #<AccountActivationsController:0x00007f8f18ccb268>):
+  app/controllers/account_activations_controller.rb:10:in `edit'
+
+
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (106.5ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (92.6ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (211.2ms)
+
+
+Started POST "/__web_console/repl_sessions/7d209bd1146a72220bb962bebc6bc00f/trace" for ::1 at 2018-06-25 15:34:23 -0500
+
+
+Started POST "/__web_console/repl_sessions/7d209bd1146a72220bb962bebc6bc00f/trace" for ::1 at 2018-06-25 15:34:25 -0500
+
+
+Started POST "/__web_console/repl_sessions/7d209bd1146a72220bb962bebc6bc00f/trace" for ::1 at 2018-06-25 15:34:26 -0500
+
+
+Started GET "/account_activations/sdkq-tIojzVJE6R-qhm04Q/edit" for ::1 at 2018-06-25 15:34:47 -0500
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"id"=>"sdkq-tIojzVJE6R-qhm04Q"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."activation_digest" = ? LIMIT 1  [["activation_digest", "sdkq-tIojzVJE6R-qhm04Q"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2018-06-25 15:34:47 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 109]]
+  Rendered layouts/_header.html.erb (9.1ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/account_activations/sdkq-tIojzVJE6R-qhm04Q/edit" for ::1 at 2018-06-25 15:34:51 -0500
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"id"=>"sdkq-tIojzVJE6R-qhm04Q"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."activation_digest" = ? LIMIT 1  [["activation_digest", "sdkq-tIojzVJE6R-qhm04Q"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2018-06-25 15:34:51 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 109]]
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 27ms (Views: 26.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/login" for ::1 at 2018-06-25 15:35:28 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1q7iR0OW9BDbHQ4kOuu9l9/GKWYOEQ+pI6vAqkd6WqvCkqYK/VrlnHKSH4tJxVWCDW5Eua0+Y16dqBbPusBlPA==", "session"=>{"email"=>"neil.koul@getflywheel.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "neil.koul@getflywheel.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 105]]
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 94ms (Views: 24.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/submissions" for ::1 at 2018-06-25 15:35:35 -0500
+Processing by SubmissionsController#index as HTML
+  [1m[35mSubmission Load (0.2ms)[0m  SELECT "submissions".* FROM "submissions"
+  Rendered submissions/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 105]]
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-06-25 15:35:37 -0500
+Processing by SubmissionsController#new as HTML
+  Rendered submissions/_form.html.erb (2.7ms)
+  Rendered submissions/new.html.erb within layouts/application (4.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 105]]
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 35ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/submissions" for ::1 at 2018-06-25 15:35:41 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iW/UZzJ9fsvOP2sowwoyFm+t3D8QMlYPVZtYoaBKjbidU5AqjLFvR2eweoewJNoDvQWx4LMdOvjrmI7EXfCyLw==", "submission"=>{"category"=>"asd", "title"=>"sd", "content"=>"asd", "user_id"=>"sdf"}, "commit"=>"Create Submission"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "submissions" ("category", "title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["category", "asd"], ["title", "sd"], ["content", "asd"], ["user_id", "sdf"], ["created_at", "2018-06-25 20:35:41.754853"], ["updated_at", "2018-06-25 20:35:41.754853"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/submissions/1
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/submissions/1" for ::1 at 2018-06-25 15:35:41 -0500
+Processing by SubmissionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSubmission Load (0.2ms)[0m  SELECT  "submissions".* FROM "submissions" WHERE "submissions"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 105]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/" for ::1 at 2018-06-25 15:56:05 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 105]]
+  Rendered layouts/_header.html.erb (10.9ms)
+Completed 200 OK in 42ms (Views: 40.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/submissions" for ::1 at 2018-06-25 15:56:10 -0500
+
+ActionController::RoutingError (undefined method `logged_in?' for :@user:Symbol):
+  app/controllers/submissions_controller.rb:3:in `<class:SubmissionsController>'
+  app/controllers/submissions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (141.8ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (92.7ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (209.5ms)
+
+
+Started GET "/submissions" for ::1 at 2018-06-25 15:56:24 -0500
+
+ActionController::RoutingError (undefined method `logged_in?' for :User:Symbol):
+  app/controllers/submissions_controller.rb:3:in `<class:SubmissionsController>'
+  app/controllers/submissions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (134.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (91.8ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (209.8ms)
+
+
+Started GET "/submissions" for ::1 at 2018-06-25 15:56:40 -0500
+
+ActionController::RoutingError (undefined method `logged_in?' for :Sessions:Symbol):
+  app/controllers/submissions_controller.rb:3:in `<class:SubmissionsController>'
+  app/controllers/submissions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (141.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (94.7ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (219.5ms)
