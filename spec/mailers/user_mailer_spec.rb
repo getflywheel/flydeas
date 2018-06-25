@@ -6,12 +6,14 @@ RSpec.describe UserMailer, type: :mailer do
     let(:mail) {UserMailer.account_activation(user)}
 
     it "renders the headers" do
+      user.create_activation_digest
       expect(mail.subject).to eq("Account activation")
       expect(mail.to).to eq(['test@getflywheel.com'])
       expect(mail.from).to eq(['Flydeas@getflywheel.com'])
     end
 
     it "renders the body" do
+      user.create_activation_digest
       expect(mail.body.encoded).to match("Account Activation")
     end
   end
