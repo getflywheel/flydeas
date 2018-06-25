@@ -8,7 +8,6 @@ class PasswordResetsController < ApplicationController
     end
 
     def edit
-        check_expiration
     end
 
     def create

@@ -25,11 +25,21 @@ RSpec.describe PasswordResetsController, type: :controller do
        
         it "denies unactivated account changing its password" do
             get :create, {:password_reset => {email: 'test@getflywheel.com' } }
-            expect(response.body).to include("Please confirm your email address before you reset your password") 
+            expect(response).to redirect_to(root_url) 
         end
-        
+       
+        # TODO: Implement this test      
         it "denies expired reset request" do
-            
+=begin
+            @user.activated = true
+            @user.reset_sent_at = 1.hours.ago
+            @user.reset_digest = User.digest("1234")
+            @user.save
+            # Issue: Getting token to access update  
+            #get :create, {:password_reset => {email: 'test@getflywheel.com' } }
+            get :update, {id: "1234", email: "test@getflywheel.com", :user => {password: "Flywheel2!"} }       
+            binding.pry 
+=end
         end
 
         it "allows a valid user and request to reset the password" do
