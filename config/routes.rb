@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :submissions
   root :to =>'sessions#new'
-  resources :submissions, :path => 'posts'
+  resources :submissions
   
   resources :account_activations, only: [:edit] do
   end
@@ -11,8 +11,6 @@ Rails.application.routes.draw do
   end
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
-  resources :logins, only: %i(new create) do
-  end
 
   # Log in and log out routes
   get '/login', to: 'sessions#new'

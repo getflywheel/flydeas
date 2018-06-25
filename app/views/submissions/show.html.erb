@@ -15,15 +15,6 @@
     <strong>User:</strong>
     <%= @submission.user_id%>
 </p>
-<!--#TODO add a method that counts the number of users who've upvoted--->
-<p>
-    
-    <strong>Upvotes:</strong>
-    <%= @submission.upvotes%>
-</p>
-<p>
-    <strong>Downvotes:</strong>
-    <%= @submission.donwvotes%>
-</p>
+
 <%= link_to 'Edit', edit_submission_path(@submission) %> |
 <%= link_to 'Back', submissions_path %>
