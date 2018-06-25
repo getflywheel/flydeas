@@ -1,5 +1,6 @@
 class SubmissionsController < ApplicationController
   before_action :set_submission, only: [:show, :edit, :update, :destroy]
+  #before_action :Sessions.logged_in?
 
   # GET /submissions
   # GET /submissions.json
