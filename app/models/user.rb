@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
     has_many :submissions
+    has_many :votes
     USERNAME_REGEX = /[a-zA-Z0-9\-_]{0,20}/
     EMAIL_REGEX = /[a-zA-Z_0-9.-]+@getflywheel.com/i
     PASSWORD_REGEX = /.*(?=.{8,32})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^+=]).*/ 
@@ -33,8 +34,16 @@ class User < ActiveRecord::Base
           self.password = nil
     end
 
+<<<<<<< HEAD
     # Authenticates User
     def authenticate(username_or_email="", login_password="")
+||||||| merged common ancestors
+	#Authenticates User
+   def authenticate(username_or_email="", login_password="")
+=======
+	#Authenticates User
+    def authenticate(username_or_email="", login_password="")
+>>>>>>> Vote model complete, inital dashboard stuff
         if EMAIL_REGEX.match(username_or_email)
             user = User.find_by_email(username_or_email)
         else

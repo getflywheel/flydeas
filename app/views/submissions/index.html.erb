@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Submissions</h1>
+<h1>Flydeas</h1>
 
 <table>
   <thead>
@@ -11,11 +11,27 @@
 
   <tbody>
     <% @submissions.each do |submission| %>
-      <tr>
-        <td><%= link_to 'Show', submission %></td>
-        <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
-        <td><%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div>
+        <div>
+          Vote Count |
+          <b><%= submission.category%></b> |
+          <%= submission.created_at%> 
+          <br>     
+          <h2><%= submission.title%></h2>
+          <br>
+          <%= submission.content%>
+          <br>
+          <%= link_to 'Show', submission %>
+          <%= link_to 'Edit', edit_submission_path(submission) %>
+          <%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Upvote', new_submission_vote_path(submission.id, +1) %>
+          <%= link_to 'Downvote', new_submission_vote_path(submission.id, -1)%>
+          <br>
+          <p>--------------------------------------------------------------</p>
+          <br>
+
+        </div>
+      </div>
     <% end %>
   </tbody>
 </table>

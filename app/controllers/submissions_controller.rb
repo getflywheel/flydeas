@@ -1,7 +1,15 @@
 class SubmissionsController < ApplicationController
   before_action :set_submission, only: [:show, :edit, :update, :destroy]
-  #before_action :Sessions.logged_in?
-
+  before_action :is_logged_in
+    
+  def is_logged_in
+    if logged_in?
+      
+    else
+      flash[:error] ="Not logged in"
+      redirect_to root_url
+    end
+  end
   # GET /submissions
   # GET /submissions.json
   def index
