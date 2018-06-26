@@ -20,7 +20,6 @@ class LoginsController < ApplicationController
         flash[:notice] = "Form is invalid"
         render "new"
     end
-    
   end
 
   private
