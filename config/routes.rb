@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :submissions
   root :to =>'sessions#new'
-  resources :submissions
-  
+  resources :submissions do
+    resources :votes#, module: :submission
+  end
+
   resources :account_activations, only: [:edit] do
   end
   default_url_options :host => "localhost"

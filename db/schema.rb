@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180625195911) do
+ActiveRecord::Schema.define(version: 20180626193336) do
 
   create_table "submissions", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -40,8 +40,10 @@ ActiveRecord::Schema.define(version: 20180625195911) do
   create_table "votes", force: :cascade do |t|
     t.integer "submission_id"
     t.integer "weight",        default: 1, null: false
+    t.integer "user_id"
   end
 
-  add_index "votes", [nil, "submission_id"], name: "index_votes_on_user_id_and_submission_id", unique: true
+  add_index "votes", ["user_id", "submission_id"], name: "index_votes_on_user_id_and_submission_id", unique: true
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end

@@ -8,7 +8,7 @@ class LoginsController < ApplicationController
     @user = User.new(user_params)
     @user.encrypt_password
     @user.create_activation_digest
-    if @user.save
+      if @user.save
       UserMailer.account_activation(@user).deliver_now
       #TODO make a homepage, redirct users after signup
       #redirect_to new_login_url
