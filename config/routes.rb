@@ -1,5 +1,8 @@
+require 'sessions_helper'
 Rails.application.routes.draw do
-  root :to =>'sessions#new'
+
+  root :to => 'sessions#new'
+
   resources :submissions do
     resources :votes#, module: :submission
   end

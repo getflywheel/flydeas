@@ -33,6 +33,7 @@ class SubmissionsController < ApplicationController
   # POST /submissions
   # POST /submissions.json
   def create
+    puts "paaaarams: #{params}"
     @submission = Submission.new(submission_params)
     if @submission.save
       flash[:info] = "You created a post"
@@ -69,7 +70,7 @@ class SubmissionsController < ApplicationController
 
   private
     def submission_params
-       params.require(:submission).permit(:title, :content, :user_id)
+       params.require(:submission).permit(:title, :content, :user_id, :category_id)
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_submission
