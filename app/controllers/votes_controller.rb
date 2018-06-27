@@ -1,25 +1,36 @@
 class VotesController < ApplicationController
     def new 
-        puts params
-        @vote = Vote.new(vote_params)
-        redirect_to submissions_url
+        @vote = Vote.find_by(submission_id: params[:submission_id], user_id: params[:user_id])
+        if @vote.nil?
+            create
+        else
+            update  
+        end           
     end
+
     def create
-        @vote.weight = vote
         @vote = Vote.new(vote_params)
         if @vote.save
+            flash[:info] = "voted"
+            #binding.pry
             redirect_to submissions_url
-        else
-            flash[:error]= "you have already voted"
+        #else
+        #    flash[:error]= "you have already voted"
+        #    redirect_to submissions_url
         end
+        redirect_to submissions_url
     end
 
-    def upvote
-        puts 2234234
-
+    def update
+        if @vote.weight != params[:weight]
+           @vote.weight = params[:weight]
+           @vote.save
+        end 
+        redirect_to submissions_url
     end
+
     private
         def vote_params
-            params.require(:vote).permit(:submission_id, :weight)
+            params.permit(:user_id, :submission_id, :weight)
         end
 end

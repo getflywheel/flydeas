@@ -11,14 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-
-ActiveRecord::Schema.define(version: 20180625195911) do
-||||||| merged common ancestors
-ActiveRecord::Schema.define(version: 20180625195911) do
-=======
-ActiveRecord::Schema.define(version: 20180626193336) do
->>>>>>> Vote model complete, inital dashboard stuff
+ActiveRecord::Schema.define(version: 20180627205239) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -33,6 +26,7 @@ ActiveRecord::Schema.define(version: 20180626193336) do
     t.string   "content"
     t.string   "user_id"
     t.integer  "category_id"
+    t.integer  "vote_count", default: 0
   end
 
   add_index "submissions", ["category_id"], name: "index_submissions_on_category_id"
