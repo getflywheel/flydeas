@@ -1,4 +1,3 @@
-require 'sessions_helper'
 Rails.application.routes.draw do
 
   root :to => 'sessions#new'
@@ -7,6 +6,10 @@ Rails.application.routes.draw do
     resources :votes#, module: :submission
   end
 
+  resources :submissions
+  root :to =>'sessions#new'
+  resources :submissions
+  
   resources :account_activations, only: [:edit] do
   end
   default_url_options :host => "localhost"
