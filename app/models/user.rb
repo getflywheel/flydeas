@@ -5,11 +5,8 @@ class User < ActiveRecord::Base
     PASSWORD_REGEX = /.*(?=.{8,32})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^+=]).*/ 
     attr_accessor :remember_token, :activation_token, :reset_token
     
-    #before_create :create_activation_digest
-    #attribute :activation_digest, :string, default: -> { SecureRandom.urlsafe_base64 }
-    #attribute :activation_token, :string, default: -> { SecureRandom.urlsafe_base64 }
 	
-    validates :username, presence: true, uniqueness: { case_sensitive: false }, 
+        validates :username, presence: true, uniqueness: { case_sensitive: false }, 
         format: { with:  USERNAME_REGEX}
     validates :email, presence: true, format: { with: EMAIL_REGEX }
     validates :password, presence: true, format: { with: PASSWORD_REGEX}
@@ -21,7 +18,8 @@ class User < ActiveRecord::Base
     end
 
     #PASSWORD STUFF
-	#encrypts the password
+
+    #encrypts the password
     def encrypt_password 
         if password.present?
             self.salt = BCrypt::Engine.generate_salt
@@ -29,13 +27,14 @@ class User < ActiveRecord::Base
         end
     end
 
-	#Clears password after logout
+
+    # Clears password after logout
     def clear_password
           self.password = nil
     end
 
-	#Authenticates User
-   def authenticate(username_or_email="", login_password="")
+    # Authenticates User
+    def authenticate(username_or_email="", login_password="")
         if EMAIL_REGEX.match(username_or_email)
             user = User.find_by_email(username_or_email)
         else
@@ -48,13 +47,25 @@ class User < ActiveRecord::Base
         end
     end
 
-	#Matches the Password (returns if login_password matches database)
+    # Matches the Password (returns if login_password matches database)
     def match_password(login_password="")
         self.password == BCrypt::Engine.hash_secret(login_password, salt)
     end
 
     #USER CONFIRMATION
-    #activates the account
+
+    #Generates a new, random token
+    def new_token
+	SecureRandom.urlsafe_base64
+    end
+
+     
+    def User.digest(string)
+        Digest::MD5.hexdigest string
+    end
+
+    
+    # Activates the account
     def email_activate
         self.activated = true
         self.activation_digest = nil
@@ -62,23 +73,47 @@ class User < ActiveRecord::Base
     end
     
     #token generation
-	def create_activation_digest
-		self.activation_token = SecureRandom.urlsafe_base64
-        self.activation_digest = SecureRandom.urlsafe_base64
+    def create_activation_digest
+	self.activation_token = new_token
+        self.activation_digest = new_token
     end
- 
 
-    #PASSWORD RESET
-	def create_reset_digest
-        # TODO: Set up tokenization
-        reset_token = new_token
+    # PASSWORD RESET
+
+    def create_reset_digest
+        self.reset_token = new_token
         update_attribute(:reset_digest, User.digest(reset_token))
         update_attribute(:reset_sent_at, Time.zone.now)
     end
-
-    private
-    #makes email lowercase for easier searching
-	def downcase_email
-		self.email = email.downcase
+        
+    def send_password_reset_email
+        UserMailer.password_reset(self).deliver_now
     end
+
+    def create_salt
+        if self.salt.nil?
+            self.salt = BCrypt::Engine.generate_salt
+        end
+    end
+
+    # Returns true if a password reset has expired
+    def password_reset_expired?
+        reset_sent_at < 2.hours.ago
+    end  
+
+    def valid_reset_token?(reset_token)
+        reset_digest = User.digest(reset_token)
+        reset_digest == self.reset_digest
+    end 
+    
+    # encrypts the password
+    def encrypt_password 
+        if self.salt.nil?
+            create_salt
+        end
+        if password.present?
+            self.password = BCrypt::Engine.hash_secret(self.password, self.salt)
+        end
+
+    end   
 end
