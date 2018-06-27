@@ -36,6 +36,8 @@ class SubmissionsController < ApplicationController
     @submission = Submission.new(submission_params)
     if @submission.save
       flash[:info] = "You created a post"
+      vote = Vote.new(submission_id: @submission.id, user_id: current_user.id, weight: 1)
+      vote.save
       redirect_to @submission
     else
       flash[:danger] = "failed"
@@ -45,17 +47,15 @@ class SubmissionsController < ApplicationController
 
   # PATCH/PUT /submissions/1
   # PATCH/PUT /submissions/1.json
-  def update
-    respond_to do |format|
-      if @submission.update(submission_params)
-        format.html { redirect_to @submission, notice: 'Submission was successfully updated.' }
-        format.json { render :show, status: :ok, location: @submission }
-      else
-        format.html { render :edit }
-        format.json { render json: @submission.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+    def update
+        if @submission.update(submission_params)
+            flash[:info] = 'Submission was successfully updated.'  
+            redirect_to @submission 
+        else 
+            flash[:info] = 'Submission edit failed'
+            render :edit 
+        end
+   end
 
   # DELETE /submissions/1
   # DELETE /submissions/1.json
