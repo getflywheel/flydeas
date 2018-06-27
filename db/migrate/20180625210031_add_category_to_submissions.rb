@@ -1,5 +1,5 @@
 class AddCategoryToSubmissions < ActiveRecord::Migration
   def change
-    add_column :submissions, :category, :string
+    add_reference :submissions, :category, index: true, foreign_key: true
   end
 end

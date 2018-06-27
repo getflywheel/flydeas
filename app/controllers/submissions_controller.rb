@@ -60,7 +60,7 @@ class SubmissionsController < ApplicationController
 
   private
     def submission_params
-       params.require(:submission).permit(:category, :title, :content, :user_id)
+       params.require(:submission).permit(:title, :content, :user_id)
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_submission

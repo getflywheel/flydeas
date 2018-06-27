@@ -28,11 +28,14 @@ RSpec.describe SubmissionsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Submission. As you add validations to Submission, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {{ category: 'category', title: 'title', content:'content', user_id:'username'}}
+  let(:valid_attributes) {{ category_id: 1, title: 'title', content:'content', user_id:'username'}}
+
 
   let(:invalid_attributes) {
     {category: nil, title: nil, content:nil, user_id:nil}
   }
+
+
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
