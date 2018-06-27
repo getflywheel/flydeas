@@ -21854,3 +21854,224 @@ ActionController::ParameterMissing (param is missing or the value is empty: vote
   Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
   Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
   Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (237.1ms)
+
+
+Started GET "/" for ::1 at 2018-06-27 10:08:03 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (19.1ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 105]]
+  Rendered layouts/_header.html.erb (28.4ms)
+Completed 200 OK in 276ms (Views: 265.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/login" for ::1 at 2018-06-27 10:08:12 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LAAaJhWljGLHmrUepTyChrXL/j4pNiwTlday0/5IArQ4PF5rq2md7m4VpLHWEmqTZ2OT4YoZQOQr1WS2A/I9Iw==", "session"=>{"email"=>"neil.koul@getflywheel.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "neil.koul@getflywheel.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 105]]
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 94ms (Views: 24.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/submissions" for ::1 at 2018-06-27 10:08:20 -0500
+Processing by SubmissionsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 105]]
+  [1m[35mSubmission Load (0.9ms)[0m  SELECT "submissions".* FROM "submissions"
+  Rendered submissions/index.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 33.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/submissions/1/votes/new.1" for ::1 at 2018-06-27 10:08:22 -0500
+Processing by VotesController#new as 
+  Parameters: {"submission_id"=>"1"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: vote):
+  app/controllers/votes_controller.rb:23:in `vote_params'
+  app/controllers/votes_controller.rb:4:in `new'
+
+
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (111.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (109.7ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (227.9ms)
+
+
+Started GET "/" for ::1 at 2018-06-27 10:08:26 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 105]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logins/new" for ::1 at 2018-06-27 10:08:38 -0500
+Processing by LoginsController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered logins/new.html.erb within layouts/application (7.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 105]]
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/logout" for ::1 at 2018-06-27 10:08:42 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8AXx8/mRK6MFVLMQrYwwnLeU3oS+T/edp0sbRRex5b/kObW+R106L6zbor/eotiJZTyzWx1gm2oZSM0g6gvaKA=="}
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions" for ::1 at 2018-06-27 10:08:54 -0500
+Processing by SubmissionsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :is_logged_in rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2018-06-27 10:08:54 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 25ms (Views: 24.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2018-06-27 10:08:56 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/submissions" for ::1 at 2018-06-27 10:09:03 -0500
+Processing by SubmissionsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :is_logged_in rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2018-06-27 10:09:03 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/login" for ::1 at 2018-06-27 10:09:15 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TXCa9tnS9vuepWikF6919D3oYk15tTlAHCuPzSBr9l5ZTN67Zx7ndzcqeQtkgZ3h70APktqaVbeiKFmo3dHJyQ==", "session"=>{"email"=>"neil.koul@getflywheel.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "neil.koul@getflywheel.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 105]]
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 94ms (Views: 24.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions" for ::1 at 2018-06-27 10:09:23 -0500
+Processing by SubmissionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 105]]
+  [1m[35mSubmission Load (0.1ms)[0m  SELECT "submissions".* FROM "submissions"
+  Rendered submissions/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions/1/votes/new.1" for ::1 at 2018-06-27 10:10:26 -0500
+Processing by VotesController#new as 
+  Parameters: {"submission_id"=>"1"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: vote):
+  app/controllers/votes_controller.rb:23:in `vote_params'
+  app/controllers/votes_controller.rb:4:in `new'
+
+
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (97.1ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (98.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/neilkoul/.asdf/installs/ruby/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (223.6ms)
+
+
+Started GET "/submissions/1" for ::1 at 2018-06-27 10:10:34 -0500
+Processing by SubmissionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubmission Load (0.2ms)[0m  [1mSELECT  "submissions".* FROM "submissions" WHERE "submissions"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 105]]
+  Rendered submissions/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/submissions/1/edit" for ::1 at 2018-06-27 10:10:54 -0500
+Processing by SubmissionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubmission Load (0.1ms)[0m  [1mSELECT  "submissions".* FROM "submissions" WHERE "submissions"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 105]]
+  Rendered submissions/_form.html.erb (4.7ms)
+  Rendered submissions/edit.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-06-27 10:11:15 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 105]]
+  Rendered submissions/_form.html.erb (1.9ms)
+  Rendered submissions/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/submissions" for ::1 at 2018-06-27 10:11:43 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OaBuv4FLdh8X1+O7xVnZby4xY38Ca5Nh8g9ExW/H3uQtnCryP4dnk75Y8hS2dzF6/JkOoKFE/5ZMDJKgkn3hcw==", "submission"=>{"category"=>"sdf", "title"=>"asdf", "content"=>"asdf", "user_id"=>"asdf"}, "commit"=>"Create Submission"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 105]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "submissions" ("category", "title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["category", "sdf"], ["title", "asdf"], ["content", "asdf"], ["user_id", "asdf"], ["created_at", "2018-06-27 15:11:43.208483"], ["updated_at", "2018-06-27 15:11:43.208483"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/submissions/4
+Completed 302 Found in 5ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/submissions/4" for ::1 at 2018-06-27 10:11:43 -0500
+Processing by SubmissionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSubmission Load (0.1ms)[0m  SELECT  "submissions".* FROM "submissions" WHERE "submissions"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 105]]
+  Rendered submissions/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions" for ::1 at 2018-06-27 10:11:45 -0500
+Processing by SubmissionsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 105]]
+  [1m[36mSubmission Load (0.2ms)[0m  [1mSELECT "submissions".* FROM "submissions"[0m
+  Rendered submissions/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.3ms)
