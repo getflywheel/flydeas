@@ -11,16 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180626193336) do
+ActiveRecord::Schema.define(version: 20180627205239) do
 
-  create_table "submissions", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "submissions", force: :cascade do |t|
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "title"
     t.string   "content"
-    t.string   "category"
     t.string   "user_id"
+    t.integer  "vote_count",  default: 0
+    t.integer  "category_id"
   end
+
+  add_index "submissions", ["category_id"], name: "index_submissions_on_category_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -28,13 +37,12 @@ ActiveRecord::Schema.define(version: 20180626193336) do
     t.string   "password"
     t.string   "salt"
     t.boolean  "admin"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "activation_digest"
-    t.boolean  "activated"
-    t.datetime "activated_at"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.string   "activation_digest" t.boolean  "activated",         default: false
+    t.datetime "activated_at"
   end
 
   create_table "votes", force: :cascade do |t|

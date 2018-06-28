@@ -1,9 +1,10 @@
-<h1> Header (exciting I know)</h1>
+<h1>Flydeas</h1>
+<li><%= link_to "Home", root_url %></li>
 <% if logged_in? %>
-    Logged in
-    <%= link_to "Log out", logout_path, method: :delete %>
+    <li><%= link_to "Log out #{@current_user.username}?", logout_path, method: :delete %></li>
 <% else %>
-    Not logged in   
-    <%= link_to "Log in", login_path %> 
+    <li><%= link_to "Log in", login_path %> </li>
+   <li> <%= link_to "Sign up", new_login_path %></li>
 <% end %>
+<p>------------------------------------------------------------------------------------------------------------------------------------------------------</p>
 

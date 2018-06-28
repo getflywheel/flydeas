@@ -10,28 +10,39 @@
   </thead>
 
   <tbody>
+    <p>--------------------------------------------------------------</p>
     <% @submissions.each do |submission| %>
       <div>
         <div>
-          Vote Count |
-          <b><%= submission.category%></b> |
+          <%= submission.vote_count %> |
+          <b><%= submission.category.name%></b> |
           <%= submission.created_at%> 
           <br>     
           <h2><%= submission.title%></h2>
           <br>
-          <%= submission.content%>
+          <%= submission.content %>
           <br>
           <%= link_to 'Show', submission %>
           <%= link_to 'Edit', edit_submission_path(submission) %>
           <%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <%= link_to 'Upvote', new_submission_vote_path(submission.id, +1) %>
-          <%= link_to 'Downvote', new_submission_vote_path(submission.id, -1)%>
+          <% vote = Vote.find_by(submission_id: submission.id, user_id: current_user.id) %>
+          <% if vote.nil? || vote.weight == 0 %> 
+            <%= link_to 'Upvote', new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 1) %>
+          <% else %>
+            <%= link_to 'Unvote', new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 0) %> 
+          <% end %>
+         <!-- <%= link_to 'Downvote', new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: -1) %> -->
           <br>
           <p>--------------------------------------------------------------</p>
           <br>
 
         </div>
       </div>
+      <tr>
+        <td><%= link_to 'Show', submission %></td>
+        <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
+        <td><%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>

@@ -1,5 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe VoteController, type: :controller do
+RSpec.describe VotesController, type: :controller do
 
 end
+
