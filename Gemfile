@@ -30,9 +30,6 @@ source 'https://rubygems.org'
         
 	# For the Sendgrid
 	gem 'sendgrid-ruby'
-
-	# FactoryBot for instance testing stuff
-	gem 'factory_bot'
 	
 	# Use Unicorn as the app server
 	# gem 'unicorn'
@@ -47,6 +44,7 @@ group :development, :test do
 	gem 'rspec-rails'
   gem 'pry'
   gem 'pry-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do

@@ -57,6 +57,9 @@ GEM
     execjs (2.7.0)
     factory_bot (4.10.0)
       activesupport (>= 3.0.0)
+    factory_bot_rails (4.10.0)
+      factory_bot (~> 4.10.0)
+      railties (>= 3.0.0)
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -199,7 +202,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
   coffee-rails (~> 4.1.0)
-  factory_bot
+  factory_bot_rails
   jbuilder (~> 2.0)
   jquery-rails
   protected_attributes
