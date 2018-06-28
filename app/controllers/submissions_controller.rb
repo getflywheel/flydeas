@@ -6,8 +6,8 @@ class SubmissionsController < ApplicationController
     if logged_in?
       
     else
-      flash[:error] ="Not logged in"
-      redirect_to root_url
+      #flash[:error] ="Not logged in"
+      redirect_to '/login'
     end
   end
   # GET /submissions

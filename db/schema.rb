@@ -20,13 +20,14 @@ ActiveRecord::Schema.define(version: 20180627205239) do
   end
 
   create_table "submissions", force: :cascade do |t|
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "title"
     t.string   "content"
+    t.string   "category"
     t.string   "user_id"
-    t.integer  "vote_count",  default: 0
     t.integer  "category_id"
+    t.integer  "vote_count",  default: 0
   end
 
   add_index "submissions", ["category_id"], name: "index_submissions_on_category_id"
@@ -41,7 +42,8 @@ ActiveRecord::Schema.define(version: 20180627205239) do
     t.datetime "updated_at",                        null: false
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
-    t.string   "activation_digest" t.boolean  "activated",         default: false
+    t.string   "activation_digest"
+    t.boolean  "activated",         default: false
     t.datetime "activated_at"
   end
 

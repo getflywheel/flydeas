@@ -12,13 +12,12 @@ class VotesController < ApplicationController
         @vote = Vote.new(vote_params)
         if @vote.save
             flash[:info] = "voted"
-            #binding.pry
+            update_submission
             redirect_to submissions_url
         #else
         #    flash[:error]= "you have already voted"
-        #    redirect_to submissions_url
+            #redirect_to submissions_url
         end
-        redirect_to submissions_url
     end
 
     def update
@@ -32,5 +31,12 @@ class VotesController < ApplicationController
     private
         def vote_params
             params.permit(:user_id, :submission_id, :weight)
+        end
+
+        def update_submission
+            submission = Submission.find_by(id: submission_id)
+            if not submission.nil? 
+                submission.update_vote_count
+            end
         end
 end
