@@ -28,7 +28,7 @@ RSpec.describe PasswordResetsController, type: :controller do
             expect(response).to redirect_to(root_url) 
         end
        
-        # TODO: Implement this test      
+        # TODO: Implement this test after testing workshop     
         it "denies expired reset request" do
 =begin
             @user.activated = true

@@ -22,12 +22,51 @@ require 'rails_helper'
 # expectations of assigns and templates rendered. These features have been
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
-require 'sessions_helper'
 RSpec.describe SubmissionsController, type: :controller do
+    render_views 
 
+    before(:each) do
+        @sub = create(:submission)
+        @user = create(:user)
+        login(@user)
+    end
+  
+    describe "Get #index" do
+        it "loads multiple submissions when logged in" do
+            @sub2 = create(:submission)
+            get :index 
+            expect(response.body).to include(@sub.content)
+            expect(response.body).to include(@sub2.content)
+        end
+        
+        it "redirects when not logged in" do
+            logout
+            get :index
+            expect(response).to redirect_to '/login'
+        end
+
+        it "Correctly registers upvotes / downvotes" do
+            
+        end
+    end
+    
+    describe "Get #new" do
+        it "returns a success response when logged in" do
+            get :new
+            expect(response).to have_http_status(:sucess)
+        end
+    
+        it "redirects when not logged in" do
+            logout
+            get :new
+            expect(reponse).to redirect_to '/login' 
+        end
+    end
+    
   # This should return the minimal set of attributes required to create a valid
   # Submission. As you add validations to Submission, be sure to
   # adjust the attributes here as well.
+=begin
   Category.new(name: "bug").save
   let(:valid_attributes) {{category_id: 1, title: 'title', content:'content', user_id:'username'}}
 
@@ -152,5 +191,5 @@ RSpec.describe SubmissionsController, type: :controller do
       expect(response).to redirect_to(submissions_url)
     end
   end
-
+=end
 end

@@ -3,10 +3,7 @@ class SubmissionsController < ApplicationController
   before_action :is_logged_in
     
   def is_logged_in
-    if logged_in?
-      
-    else
-      #flash[:error] ="Not logged in"
+    if ! logged_in?
       redirect_to '/login'
     end
   end
@@ -33,7 +30,6 @@ class SubmissionsController < ApplicationController
   # POST /submissions
   # POST /submissions.json
   def create
-    puts "paaaarams: #{params}"
     @submission = Submission.new(submission_params)
     if @submission.save
       flash[:info] = "You created a post"
