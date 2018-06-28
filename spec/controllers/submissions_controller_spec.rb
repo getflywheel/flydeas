@@ -22,21 +22,32 @@ require 'rails_helper'
 # expectations of assigns and templates rendered. These features have been
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
-
+require 'sessions_helper'
 RSpec.describe SubmissionsController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # Submission. As you add validations to Submission, be sure to
   # adjust the attributes here as well.
   Category.new(name: "bug").save
-  let(:valid_attributes) {{ category_id: 1, title: 'title', content:'content', user_id:'username'}}
+  let(:valid_attributes) {{category_id: 1, title: 'title', content:'content', user_id:'username'}}
 
 
   let(:invalid_attributes) {
-    {category_id: nil, title: nil, content:nil, user_id:nil}
+    {category: nil, category_id: nil, title: nil, content:nil, user_id:nil}
   }
 
-
+  before do
+    @user = User.new(
+      username: "test",
+      email: "test@getflywheel.com",
+      password: "Flywheel1!"
+    )
+    @user.encrypt_password
+    @user.activated = true
+    @user.save
+    #session[:user_id] = user.id
+    
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -45,9 +56,11 @@ RSpec.describe SubmissionsController, type: :controller do
 
   describe "GET #index" do
     it "returns a success response" do
+     binding.pry
       submission = Submission.create! valid_attributes
       get :index, {}, valid_session
-      expect(response).to be_success
+      #binding.pry
+      expect(response).to have_http_status(302)
     end
   end
 
@@ -98,8 +111,9 @@ RSpec.describe SubmissionsController, type: :controller do
 
   describe "PUT #update" do
     context "with valid params" do
+      Category.new(name: "bug").save
       let(:new_attributes) {
-        { category: 'category', title: 'title', content:'content', user_id:'username'}
+        { category_id: 1, title: 'title', content:'content', user_id:'username'}
       }
 
       it "updates the requested submission" do
