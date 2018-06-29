@@ -53,13 +53,13 @@ RSpec.describe SubmissionsController, type: :controller do
     describe "Get #new" do
         it "returns a success response when logged in" do
             get :new
-            expect(response).to have_http_status(:sucess)
+            expect(response).to have_http_status(:success)
         end
     
         it "redirects when not logged in" do
             logout
             get :new
-            expect(reponse).to redirect_to '/login' 
+            expect(response).to redirect_to '/login' 
         end
     end
     
