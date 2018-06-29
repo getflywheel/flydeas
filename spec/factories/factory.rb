@@ -21,7 +21,21 @@ FactoryBot.define do
         category factory: :category
         user factory: :user 
     end
+
+    factory :invalid_user do
+        username {nil}
+        email nil
+        activated false
+        password nil
+        after(:build) {|user| user.encrypt_password} #This might not work when password nil
+    end
     
+    factory :invalid_submission do
+        title nil
+        content nil
+        category factory: :category
+        invalid_user factory: :user
+    end
 end
 
 

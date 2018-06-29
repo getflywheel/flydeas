@@ -30,6 +30,8 @@ source 'https://rubygems.org'
         
 	# For the Sendgrid
 	gem 'sendgrid-ruby'
+
+	# Slack Not
 	
 	# Use Unicorn as the app server
 	# gem 'unicorn'
