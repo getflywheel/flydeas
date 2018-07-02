@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Flydeas</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-   <%= render 'layouts/header' %>
-   <% flash.each do |key, value| %>
-     <div class="alert alert-<%= key %>"><%= value %></div>
-   <% end %> 
-<%= yield %>
-<% debug(params) if Rails.env.development? %>
-</body>
+	<head>
+		<title>Flydeas</title>
+		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+		<link rel="stylesheet" type: "text/css" href="/fonts/museo_sans_rounded/museo_sans_rounded.css" media="all">
+		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+		<%= csrf_meta_tags %>
+	</head>
+
+	<body>
+		<%= render "layouts/header" %>
+
+		<div class="contain">
+			<% flash.each do |key, value| %>
+				<div class="alert alert-<%= key %>"><%= value %></div>
+			<% end %>
+
+			<%= yield %>
+		</div>
+
+		<% debug(params) if Rails.env.development? %>
+	</body>
 </html>

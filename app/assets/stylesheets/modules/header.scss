@@ -1,0 +1,30 @@
+@import "global/variables";
+
+.header {
+	padding: 2rem 0;
+	background: $primary;
+	color: $white;
+
+	&__contain {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		display: flex;
+		align-items: center;
+		margin-right: .4rem;
+	}
+
+	&__title {
+		display: flex;
+		align-items: center;
+		color: $white;
+		text-decoration: none;
+
+		h1 {
+			margin: 0;
+			font-weight: 500;
+		}
+	}
+}

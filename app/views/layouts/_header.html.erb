@@ -1,10 +1,17 @@
-<h1>Flydeas</h1>
-<li><%= link_to "Home", root_url %></li>
-<% if logged_in? %>
-    <li><%= link_to "Log out #{@current_user.username}?", logout_path, method: :delete %></li>
-<% else %>
-    <li><%= link_to "Log in", login_path %> </li>
-   <li> <%= link_to "Sign up", new_login_path %></li>
-<% end %>
-<p>------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<header class="header">
+	<div class="contain header__contain">
+		<%= link_to root_path, class: "header__title" do %>
+			<%= image_tag "logo.svg", class: "header__logo", alt: "Flywheel logo", width: "50", height: "50" %>
+			<h1>Flydeas</h1>
+		<% end %>
 
+		<ul>
+			<% if logged_in? %>
+				<li><%= link_to "Log out #{@current_user.username}?", logout_path, method: :delete %></li>
+			<% else %>
+				<li><%= link_to "Log in", login_path %> </li>
+				<li> <%= link_to "Sign up", new_login_path %></li>
+			<% end %>
+		</ul>
+	</div>
+</header>
