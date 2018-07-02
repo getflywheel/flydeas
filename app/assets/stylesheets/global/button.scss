@@ -1,0 +1,13 @@
+@import "global/variables";
+
+.button {
+    background: $primary;
+    color: $white;
+    border-radius: 3rem;
+    height: 5rem;
+    border: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 0 3rem;
+    text-transform: uppercase;
+}
