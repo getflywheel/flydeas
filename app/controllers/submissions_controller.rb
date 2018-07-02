@@ -7,6 +7,7 @@ class SubmissionsController < ApplicationController
       redirect_to '/login'
     end
   end
+
   # GET /submissions
   # GET /submissions.json
   def index
