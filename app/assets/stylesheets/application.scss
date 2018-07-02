@@ -13,11 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-// Global styles
-@import "global/normalize";
-@import "global/root";
-@import "global/typography";
-
-// Custom modules
-@import "modules/header";
