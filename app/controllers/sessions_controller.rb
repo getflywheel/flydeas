@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
     # login w/ email and password
     def create
         user = User.find_by(email: params[:session][:email].downcase)
-        if user.activated && user && user.match_password(params[:session][:password])
+        if user && user.activated && user.match_password(params[:session][:password])
             log_in user
            render 'new' 
-        elsif !user.activated
+        elsif user && !user.activated
             flash.now[:danger] = 'You have not activated your account'
             render 'new'
         else   
