@@ -9,16 +9,16 @@
 	</head>
 
 	<body>
-		<%= render "layouts/header" %>
+            <%= render "layouts/header" %>
 
-		<div class="contain">
-			<% flash.each do |key, value| %>
-				<div class="alert alert-<%= key %>"><%= value %></div>
-			<% end %>
+            <% flash.each do |key, value| %>
+                    <div class="flash-message --<%= key %>">
+                        <div class="contain"><%= value %></div>
+                    </div>
+            <% end %>
 
-			<%= yield %>
-		</div>
+            <%= yield %>
 
-		<% debug(params) if Rails.env.development? %>
+            <% debug(params) if Rails.env.development? %>
 	</body>
 </html>

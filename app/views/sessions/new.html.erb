@@ -1,19 +1,17 @@
-<section class="sessions">
+<section class="hero">
     <h1>Login</h1>
-    <%= form_for(:session, url: login_path, html:{class: "form"}) do |f| %>
-        <hr>
-        <%= f.label :email %>
-        <%= f.email_field :email %>
-        
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-
-        <hr>
-
-        <div class="form__actions">
-            <%= link_to "Forgot password?" , new_password_reset_path, class: "form__link" %>
-            <%= f.submit "Log in", class: "button" %>
-        </div>
-
-    <% end %>
 </section>
+
+<%= form_for(:session, url: login_path, html:{class: "form"}) do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <div class="form__actions">
+        <%= link_to "Forgot password?" , new_password_reset_path, class: "form__link" %>
+        <%= f.submit "Log in", class: "button" %>
+    </div>
+
+<% end %>
