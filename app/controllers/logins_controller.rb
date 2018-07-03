@@ -9,7 +9,7 @@ class LoginsController < ApplicationController
     @user.create_salt
     @user.encrypt_password
     @user.create_activation_digest
-    if @user.save
+      if @user.save
       UserMailer.account_activation(@user).deliver_now
       #TODO make a homepage, redirct users after signup
       flash[:sucess] = "Please check your email to activate your account."

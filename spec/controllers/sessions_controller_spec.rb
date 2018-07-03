@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe SessionsController, type: :controller do
     render_views
     before do
+=begin
         @user = User.new(
             username: "test",
             email: "test@getflywheel.com",
@@ -10,6 +11,8 @@ RSpec.describe SessionsController, type: :controller do
         )
         @user.encrypt_password
         @user.save
+=end
+        @user = create(:user)
     end
  
     context "When testing the SessionsController class" do
@@ -19,12 +22,12 @@ RSpec.describe SessionsController, type: :controller do
         end
         
         it "should log in sucessfully" do
-            get :create, {:session => {:email => 'test@getflywheel.com', :password => 'Flywheel1!' } } 
+            get :create, {:session => {:email => @user.email, :password => "Flywheel1!" } } 
             expect(response.body).to include("Log out")
         end
 
         it "should deny log in with incorrect password" do
-            get :create, {:session => {:email => 'test@getflywheel.com', :password => 'WrongPass' } } 
+            get :create, {:session => {:email => @user.email, :password => 'WrongPass' } } 
             expect(response.body).to_not include("Log out")
         end
 

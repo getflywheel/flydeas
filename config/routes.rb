@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :submissions
-  root :to =>'sessions#new'
-  resources :submissions
+
+  root :to => 'submissions#index'
+
+  resources :submissions do
+    resources :votes#, module: :submission
+  end
   
   resources :account_activations, only: [:edit] do
   end

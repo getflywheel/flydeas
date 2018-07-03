@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180626161940) do
+ActiveRecord::Schema.define(version: 20180628161133) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -20,12 +20,13 @@ ActiveRecord::Schema.define(version: 20180626161940) do
   end
 
   create_table "submissions", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "title"
     t.string   "content"
     t.string   "user_id"
     t.integer  "category_id"
+    t.integer  "vote_count",  default: 0
   end
 
   add_index "submissions", ["category_id"], name: "index_submissions_on_category_id"
@@ -36,13 +37,22 @@ ActiveRecord::Schema.define(version: 20180626161940) do
     t.string   "password"
     t.string   "salt"
     t.boolean  "admin"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "activation_digest"
+    t.boolean  "activated"
+    t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
-    t.string   "activation_digest"
-    t.boolean  "activated",         default: false
-    t.datetime "activated_at"
   end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer "submission_id"
+    t.integer "weight",        default: 1, null: false
+    t.integer "user_id"
+  end
+
+  add_index "votes", ["user_id", "submission_id"], name: "index_votes_on_user_id_and_submission_id", unique: true
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end
