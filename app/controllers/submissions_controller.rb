@@ -1,5 +1,12 @@
 class SubmissionsController < ApplicationController
   before_action :set_submission, only: [:show, :edit, :update, :destroy]
+  before_action :is_logged_in
+    
+  def is_logged_in
+    if ! logged_in?
+      redirect_to '/login'
+    end
+  end
 
   # GET /submissions
   # GET /submissions.json
@@ -27,6 +34,8 @@ class SubmissionsController < ApplicationController
     @submission = Submission.new(submission_params)
     if @submission.save
       flash[:info] = "You created a post"
+      vote = Vote.new(submission_id: @submission.id, user_id: current_user.id, weight: 1)
+      vote.save
       redirect_to @submission
     else
       flash[:danger] = "failed"
@@ -36,17 +45,15 @@ class SubmissionsController < ApplicationController
 
   # PATCH/PUT /submissions/1
   # PATCH/PUT /submissions/1.json
-  def update
-    respond_to do |format|
-      if @submission.update(submission_params)
-        format.html { redirect_to @submission, notice: 'Submission was successfully updated.' }
-        format.json { render :show, status: :ok, location: @submission }
-      else
-        format.html { render :edit }
-        format.json { render json: @submission.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+    def update
+        if @submission.update(submission_params)
+            flash[:info] = 'Submission was successfully updated.'  
+            redirect_to @submission 
+        else 
+            flash[:info] = 'Submission edit failed'
+            render :edit 
+        end
+   end
 
   # DELETE /submissions/1
   # DELETE /submissions/1.json
@@ -60,7 +67,7 @@ class SubmissionsController < ApplicationController
 
   private
     def submission_params
-       params.require(:submission).permit(:title, :content, :user_id)
+       params.require(:submission).permit(:title, :content, :user_id, :category_id)
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_submission
