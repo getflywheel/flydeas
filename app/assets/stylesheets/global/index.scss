@@ -1,0 +1,43 @@
+@import "global/variables";
+
+.index {
+    max-width: 100rem;
+    margin: 0 auto;
+    //background: $gray15;
+
+    &__submission
+    {
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        border: .3rem $primary;
+        border-style: solid;
+        border-radius: 1rem;
+        padding: 1rem;
+        background-color: $gray5;
+        margin: .3rem;
+    }
+
+    &__vote {
+        padding-left: 1rem;
+        text-align: center;
+        a {
+            font-size: 4rem;
+            color: $gray-dark;
+            height: 24px;
+            //margin-right: 6px;
+            //padding-right: 18px; /* sliding doors padding */
+            text-decoration: none;
+        } 
+
+    }
+    .upvote {
+        color: $secondary;
+        font-weight: 1000;
+    } 
+    .unvote {
+        color: $primary-dark;
+        font-weight: 1000;
+    }
+
+}
