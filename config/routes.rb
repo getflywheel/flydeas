@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root :to =>'submissions#index'
   resources :submissions do
      resources :votes
-    end
+  end
+  resources :account_activations
   default_url_options :host => "localhost"
   resources :password_resets, only: [:new, :create, :edit, :update]
   # Log in and log out routes
