@@ -37,3 +37,8 @@
 
 <%= link_to "Cancel", root_path, class: "form__link" %>
 <%= button_to 'New Submission', new_submission_path, class:"button" %>
+				<div class="form__actions">
+					<%= link_to 'Show', submission, class:"form__link" %>
+					<%= link_to 'Edit', edit_submission_path(submission), class:"form__link" %>
+					<%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' }, class:"form__link" %>
+				</div>

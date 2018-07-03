@@ -10,12 +10,12 @@
         display:flex;
         align-items: center;
         justify-content: space-between;
-        border: .3rem $primary;
+        border: .4rem $primary-dark;
         border-style: solid;
         border-radius: 1rem;
         padding: 1rem;
         background-color: $gray5;
-        margin: .3rem;
+        margin: .4rem;
     }
 
     &__vote {
@@ -31,13 +31,43 @@
         } 
 
     }
+
+    &__submissionvotegroup {
+       display: flex;
+    }
+
+    &__content {
+        padding-left: 2rem;
+        h2 {
+            margin-top: .5rem;
+        }
+        a {
+            text-decoration: none;
+            color: $gray-dark;
+        }
+    }
+
+    &__tag {
+        font-size: 1.3rem;
+        color: $white;
+        margin: 0 2rem;
+        padding: 0.5rem 1rem;
+        border: .2rem $tag-pink;
+        border-radius: .8rem;
+        background-color: $tag-pink;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+
     .upvote {
         color: $secondary;
-        font-weight: 1000;
+        font-weight: 900;
     } 
+
     .unvote {
         color: $primary-dark;
-        font-weight: 1000;
+        font-weight: 900;
     }
 
 }
