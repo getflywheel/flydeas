@@ -3,44 +3,47 @@
 .index {
     max-width: 100rem;
     margin: 0 auto;
-    //background: $gray15;
+    border-radius: 1rem;
 
-    &__submission
-    {
-        display:flex;
+    &__submission {
+        display: flex;
         align-items: center;
         justify-content: space-between;
-        border: .4rem $primary-dark;
-        border-style: solid;
-        border-radius: 1rem;
-        padding: 1rem;
         background-color: $gray5;
-        margin: .4rem;
+        padding: .5rem 0;
+        border-top: .1rem $gray-dark;
+        border-bottom: 0;
+        border-left: 0;
+        border-right: 0;
+        border-style: solid;
     }
 
     &__vote {
         padding-left: 1rem;
         text-align: center;
+        color:
+
         a {
             font-size: 4rem;
             color: $gray-dark;
-            height: 24px;
-            //margin-right: 6px;
-            //padding-right: 18px; /* sliding doors padding */
+            height: 2.4rem;
             text-decoration: none;
         } 
 
     }
 
-    &__submissionvotegroup {
+    &__submission-vote-group {
        display: flex;
+       align-items: center;
     }
 
     &__content {
         padding-left: 2rem;
+
         h2 {
-            margin-top: .5rem;
+            padding: 0rem;
         }
+
         a {
             text-decoration: none;
             color: $gray-dark;
@@ -51,12 +54,19 @@
         font-size: 1.3rem;
         color: $white;
         margin: 0 2rem;
-        padding: 0.5rem 1rem;
-        border: .2rem $tag-pink;
-        border-radius: .8rem;
-        background-color: $tag-pink;
+        padding: .5rem 1rem;
+        border: .2rem $pink;
+        border-radius: .3rem;
+        background-color: $pink;
+        
+        a {
+            text-decoration: none;
+            color: $white;
+        }
     }
+
     p {
+        padding-right: .3rem;
         font-size: 1.5rem;
     }
 

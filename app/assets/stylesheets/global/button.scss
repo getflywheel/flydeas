@@ -12,8 +12,9 @@
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
-    transition: background .1s;   
-     &:hover {
+    transition: background .1s;  
+
+    &:hover {
         background: $primary-dark; 
     }
 }

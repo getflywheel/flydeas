@@ -1,35 +1,49 @@
 <section class="hero">
 	<h1>Flydeas</h1>
 </section>
+
 <div class="index">
+	<div class="index__dropdown">
+		<button class="button">All Categories</button>
+		<% category=Category.all%>
+		<% category.each do |category| %>
+			<a href="<%=category_url(category.id)%>"><%=category.name%></a>
+		<%end%>
+	</div>
 	<% @submissions.each do |submission| %>
 		<div class="index__submission">
-			<div class="index__submissionvotegroup">
+			<div class="index__submission-vote-group">
 				<div class="index__vote">
 					<% vote = Vote.find_by(submission_id: submission.id, user_id: current_user.id) %>
-					<% if vote.nil? || vote.weight == 0 %> 
-						<%= link_to '^', new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 1), class: "upvote"%>
+					<% if vote.nil? || vote. weight == 0 %> 
+						<%= link_to new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 1), class: "upvote" do %>
+							<%= image_tag "chevron_up.svg", alt: "Upvote", width: "20", height: "20" %>
+						<%end%>
 					<% else %>
-						<%= link_to '^', new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 0), class: "unvote" %> 
+						<%= link_to  new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 0), class: "unvote" do %> 
+							<%= image_tag "chevron_up.svg", alt:"Upvote", width: "20", height: "20" %>
+						<%end%>
 					<% end %>
-					<!-- <%= link_to 'Downvote: link version', new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: -1) %> -->
+					<!-- <%= link_to "Downvote: link version", new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: -1) %> -->
 					<br><p><%= submission.vote_count%></p>
 				</div>
 				<div class="index__content">
 					<%= link_to submission do%>
 						<h2><%= submission.title%></h2>
-						<%= submission.content %>
+						<!--<%= submission.content %>-->
 					<%end%>
 				</div>
 			</div>
 			<div class="index__tag">
-				<b><%= submission.category.name%></b>
-			</div>
-
-			
+				<a href="<%=category_url(submission.category.id)%>">
+				<%= submission.category.name%>
+				</a>
+			</div>			
 		</div>
 	<% end %>
 	<div class="form__actions">
-		<%= link_to 'New Submission', new_submission_path, class: "button"%>
+		<form action="<%=new_submission_url%>">
+   			<input type="submit" value="New Submission" class="button" />
+		</form>
 	</div>
 </div>

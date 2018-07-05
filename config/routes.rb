@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  root :to =>'submissions#index'
+	root :to =>'submissions#index'
   resources :submissions do
      resources :votes
   end
+  resources :categories, only: [:show]
   resources :account_activations
   default_url_options :host => "localhost"
   resources :password_resets, only: [:new, :create, :edit, :update]
