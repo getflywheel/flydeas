@@ -6,11 +6,13 @@ Rails.application.routes.draw do
 	resources :submissions do
 		resources :votes
 	end
-	resources :logins, only: %i[new create] # Sign up resource
+
+	# Sign up resource
+	resources :logins, only: %i[new create] 
 	resources :account_activations, only: %i[edit]
 	resources :password_resets, only: %i[new create edit update]
 
-	# Nice session control routes 
+	# Named session control routes 
 	get "/login", to: "sessions#new"
 	post "/login", to: "sessions#create"
 	delete "/logout", to: "sessions#destroy"
