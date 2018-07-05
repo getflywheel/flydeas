@@ -4,12 +4,23 @@
 
 <div class="index">
 	<div class="index__dropdown">
-		<button class="button">All Categories</button>
-		<% category=Category.all%>
-		<% category.each do |category| %>
-			<a href="<%=category_url(category.id)%>"><%=category.name%></a>
-		<%end%>
-	</div>
+		<select name="menu1" id="menu1">
+			<% category=Category.all%>
+			<% category.each do |category| %>
+				<option value="<%=category_url(category.id)%>" selected= "All Categories">
+					<%=category.name%>
+				</option>
+			<%end%>
+			<option selected="selected"> All Categories </option>
+		</select>
+		<hr style="padding:0">
+		<script type="text/javascript">
+			var urlmenu = document.getElementById( 'menu1' );
+			urlmenu.onchange = function() {
+				window.location.replace(  this.options[ this.selectedIndex ].value );
+			};
+		</script>
+	<div>
 	<% @submissions.each do |submission| %>
 		<div class="index__submission">
 			<div class="index__submission-vote-group">
@@ -38,7 +49,7 @@
 				<a href="<%=category_url(submission.category.id)%>">
 				<%= submission.category.name%>
 				</a>
-			</div>			
+			</div>	
 		</div>
 	<% end %>
 	<div class="form__actions">

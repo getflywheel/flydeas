@@ -57,7 +57,7 @@
         padding: .5rem 1rem;
         border: .2rem $pink;
         border-radius: .3rem;
-        background-color: $pink;
+        background-color: $secondary;
         
         a {
             text-decoration: none;
@@ -65,6 +65,16 @@
         }
     }
 
+    select {
+        border-radius: .4rem;
+        padding: 2rem;
+        font-size: 1.5rem;
+        border: .1rem solid $gray15;
+        outline: none;
+        width: 100%;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+    }
     p {
         padding-right: .3rem;
         font-size: 1.5rem;
