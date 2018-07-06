@@ -16,12 +16,16 @@
         border-left: 0;
         border-right: 0;
         border-style: solid;
+
+        &:last-child {
+            border-bottom: .1rem solid $gray-dark;
+        }
     }
 
     &__vote {
         padding-left: 1rem;
         text-align: center;
-        color:
+        text-decoration: none;
 
         a {
             font-size: 4rem;
@@ -76,7 +80,7 @@
         text-transform: uppercase;
     }
     p {
-        padding-right: .3rem;
+        padding-right: .8rem;
         font-size: 1.5rem;
     }
 
@@ -89,5 +93,48 @@
         color: $primary-dark;
         font-weight: 900;
     }
-
 }
+
+.dropdown {
+    text-align: center;
+    padding-bottom: 2.5rem;
+    outline: none;
+}
+
+.dropdownbtn {
+    background-color: $gray15;
+    color: $gray-dark;
+    text-align: center;
+    padding: 1.6rem;
+    font-size: 1.6rem;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover, &:focus {
+        background-color: $primary-dark;
+        border: none;
+    }
+}
+
+.dropdown-content {
+    position: absolute;
+    display: none;
+    background-color: $gray15;
+    min-width: 16rem;
+    z-index: 1;
+
+    a {
+        color: $gray-dark;
+        padding: 1.2rem 1.6rem;
+        text-decoration: none;
+        display: block;
+
+        &:hover {
+            background-color: $gray15;
+        }
+    }
+}
+
+.show {display:block;}

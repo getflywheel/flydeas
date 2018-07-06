@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 	resources :submissions do
 		resources :votes
 	end
+	resources :categories, only: [:show]
 
 	# Sign up resource
 	resources :logins, only: %i[new create] 

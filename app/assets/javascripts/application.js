@@ -14,3 +14,28 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+fuction myFunction() {
+    document.getElementById("dropdown-trigger").classList.toggle("show");
+    //var trigger = document.getElementById('dropdown-trigger');
+}
+
+window.onclick  = function(event) {
+    if (!event.target.matches('.dropdown-trigger')) {
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
+trigger.addEventListener('click', toggleDropdown);
+
+var toggleDropdown = function (event) {
+    event.preventDefault();
+
+    yourelement.classList.togggle('active');
+}
