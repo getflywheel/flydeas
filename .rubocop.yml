@@ -1,0 +1,136 @@
+AllCops:
+  #TargetRubyVersion: 2.4
+  Include:
+    - bin/setup
+  Exclude:
+    - db/**/*
+    - lib/**/*.rake
+    - node_modules/**/*
+    - tmp/**/*
+    - vendor/**/*
+
+################################ Style #################################
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+# Disabled because we don't need to "worry" about non-English speakers
+Style/AsciiComments:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+################################ Layout ################################
+
+# We use single-tab indentation for our layout. Since RuboCop does not
+# explicitly support tabs, we have to do some disabling and configuring
+# of rules to not have false positives.
+
+Layout/IndentArray:
+  EnforcedStyle: consistent
+
+Layout/IndentHeredoc:
+  EnforcedStyle: active_support
+
+Layout/IndentationWidth:
+  Enabled: true
+  Width: 1
+
+Layout/Tab:
+  Enabled: false
+
+# This gripes about the standard RSpec block expectation syntax
+# but it works fine
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
+############################ Documentation ############################
+
+Style/Documentation:
+  Enabled: false
+
+Style/DocumentationMethod:
+  Enabled: false
+
+################################ Rails #################################
+
+Rails:
+  Enabled: true
+
+Rails/ActionFilter:
+  Enabled: true
+  EnforcedStyle: action
+
+Rails/ActiveSupportAliases:
+  Enabled: false
+
+Rails/ApplicationJob:
+  Enabled: false
+
+Rails/ApplicationRecord:
+  Exclude:
+    - 'providers/digitalocean/app/models/digitalocean/base.rb'
+    - 'providers/ec2/app/models/ec2/base.rb'
+    - 'providers/linode_engine/app/models/linode_engine/base.rb'
+
+Rails/Blank:
+  Enabled: false
+
+Rails/Date:
+  Enabled: false
+
+Rails/Delegate:
+  Enabled: false
+
+Rails/DelegateAllowBlank:
+  Enabled: false
+
+Rails/DynamicFindBy:
+  Whitelist:
+    - find_by_sql
+    - find_by_email_or_username
+    - find_by_id_or_hash
+    - find_by_invoice_number
+    - find_by_braintree_code
+    - find_by_class
+
+Rails/FilePath:
+  Enabled: false
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/NotNullColumn:
+  Enabled: false
+
+Rails/Output:
+  Enabled: false
+
+Rails/OutputSafety:
+  Enabled: false
+
+Rails/Present:
+  Enabled: false
+
+Rails/ReadWriteAttribute:
+  Enabled: false
+
+Rails/RequestReferer:
+  EnforcedStyle: referrer
+
+Rails/ReversibleMigration:
+  Enabled: false
+
+Rails/SafeNavigation:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
