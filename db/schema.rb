@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180628161133) do
+ActiveRecord::Schema.define(version: 20180709150327) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -47,12 +47,13 @@ ActiveRecord::Schema.define(version: 20180628161133) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer "submission_id"
-    t.integer "weight",        default: 1, null: false
+    t.integer "post_id"
+    t.integer "weight",    default: 1, null: false
     t.integer "user_id"
+    t.string  "post_type"
   end
 
-  add_index "votes", ["user_id", "submission_id"], name: "index_votes_on_user_id_and_submission_id", unique: true
+  add_index "votes", ["user_id", "post_id"], name: "index_votes_on_user_id_and_post_id", unique: true
   add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end

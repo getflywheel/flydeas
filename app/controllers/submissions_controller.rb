@@ -33,7 +33,7 @@ class SubmissionsController < ApplicationController
 		)
 		if @submission.save
 			Vote.create(
-				submission_id: @submission.id, user_id: current_user.id,
+				post: @submission, user_id: current_user.id,
 				weight: 1
 			)
 			redirect_to @submission

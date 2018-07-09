@@ -1,54 +1,47 @@
-<section class="hero">
-	<h1>Flydeas</h1>
-</section>
+<p id="notice"><%= notice %></p>
 
-<div class="index">
-	<div class="dropdown">
-		<span class="dropbtn">All Categories <%= image_tag "chevron_up.svg", class: "header__logo", alt: "Dropdown icon", width: "15", height: "15" %></span>
-		<hr>
-		<div class="dropdown-content">
-		<% category = Category.all %>
-		<% category.each do |category| %>
-			<a href="<%= category_url(category.id)%>"><%=category.name%></a>
-		<% end %>
-		</div>
-	</div>
+<h1>Flydeas</h1>
 
-	<div>
-	<% @submissions.each do |submission| %>
-		<div class="index__submission" id="submission">
-			<div class="index__submission-vote-group">
-				<div class="index__vote" id="vote-box">
-					<% vote = Vote.find_by(submission_id: submission.id, user_id: current_user.id) %>
-					<% if vote.nil? || vote. weight == 0 %> 
-						<%= link_to new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 1), class: "upvote", id: "upvote" do %>
-							<%= image_tag "chevron_up.svg", alt: "Upvote", width: "20", height: "20" %>
-						<%end%>
-					<% else %>
-						<%= link_to  new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 0), class: "unvote" do %> 
-							<%= image_tag "chevron_up.svg", alt:"Upvote", width: "20", height: "20" %>
-						<%end%>
-					<% end %>
-					<!-- <%= link_to "Downvote: link version", new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: -1) %> -->
-					<br><p><%= submission.vote_count%></p>
-				</div>
-				<div class="index__content" id="submission-content">
-					<%= link_to submission do%>
-						<h2><%= submission.title%></h2>
-					<%end%>
-				</div>
-			</div>
-			<div class="index__tag">
-				<a href="<%=category_url(submission.category.id)%>">
-				<%= submission.category.name%>
-				</a>
-			</div>	
-		</div>
-	<% end %>
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-</div>	
-<div class="form__actions">
-	<form action="<%=new_submission_url%>">
-		<input type="submit" value="New Submission" class="button" />
-	</form>
-</div>
+  <tbody>
+    <hr>
+    <% @submissions.each do |submission| %>
+      <div>
+        <div>
+          <%= submission.vote_count %> |
+          <b><%= submission.category.name%></b> |
+          <%= submission.created_at%> 
+          <br>     
+          <h2><%= submission.title%></h2>
+          <br>
+          <%= submission.content %>
+          <br>
+          <%= link_to 'Show', submission %>
+          <%= link_to 'Edit', edit_submission_path(submission) %>
+          <%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% vote = Vote.find_by(post: submission, user_id: current_user.id) %>
+          <% if vote.nil? || vote.weight == 0 %> 
+            <%= link_to 'Upvote', new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 1) %>
+          <% else %>
+            <%= link_to 'Unvote', new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 0) %> 
+          <% end %>
+         <!-- <%= link_to 'Downvote', new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: -1) %> -->
+          <br>
+          <% vote = Vote.find_by(post: submission, user_id: current_user.id) %>
+          <hr>
+          <br>
+
+        </div>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Submission', new_submission_path %>

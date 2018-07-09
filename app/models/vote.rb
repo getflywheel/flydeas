@@ -1,15 +1,17 @@
 class Vote < ActiveRecord::Base
     belongs_to :user
-    belongs_to :submission
-    validates :submission_id, uniqueness: {scope: :user_id}
+    belongs_to :post, polymorphic: true
+		
+    validates :post_id, uniqueness: {scope: :user_id}
     validates_inclusion_of :weight, :in => -1..1
-    after_save :update_submission
+    after_save :update_post
 
     private
-        def update_submission
-            submission = Submission.find_by(id: submission_id)
-            if not submission.nil? 
-                submission.update_vote_count
-            end
+        def update_post
+			#if post_type == "Submission"
+				post = Submission.find_by(id: post_id)
+			#end
+   			return if post.nil?
+			post.update_vote_score		         
         end
 end
