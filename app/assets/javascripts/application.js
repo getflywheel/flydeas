@@ -15,27 +15,13 @@
 //= require turbolinks
 //= require_tree .
 
-fuction myFunction() {
-    document.getElementById("dropdown-trigger").classList.toggle("show");
-    //var trigger = document.getElementById('dropdown-trigger');
-}
+var element = document.querySelectorAll('.upvote');
+element.forEach(function(item){ 
+    item.addEventListener('click', upvote);
+})
 
-window.onclick  = function(event) {
-    if (!event.target.matches('.dropdown-trigger')) {
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
-    }
-}
-
-trigger.addEventListener('click', toggleDropdown);
-
-var toggleDropdown = function (event) {
+function upvote (event) {
     event.preventDefault();
-
-    yourelement.classList.togggle('active');
+    var parent = event.target.parentElement.parentElement.parentElement;
+    parent.classList.add("upvoted");
 }

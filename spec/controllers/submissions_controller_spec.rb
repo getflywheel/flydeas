@@ -13,8 +13,8 @@ RSpec.describe SubmissionsController, type: :controller do
       it "loads multiple submissions when logged in" do
           @sub2 = create(:submission)
           get :index 
-          expect(response.body).to include(@sub.content)
-          expect(response.body).to include(@sub2.content)
+          expect(response.body).to include(@sub.title)
+          expect(response.body).to include(@sub2.title)
       end
       
       it "redirects when not logged in" do

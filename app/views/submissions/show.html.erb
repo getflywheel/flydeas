@@ -14,6 +14,7 @@
         <%= @submission.user_id%>
     </p>
     <div class="form__actions">
+        <%= link_to 'Destroy', @submission, method: :delete, data: { confirm: 'Are you sure?' }, class:"form__link" %>
         <%= link_to 'Back', submissions_path, class:"form__link"%>
         <%= link_to 'Edit', edit_submission_path(@submission), class: "form__link"%>
     </div>

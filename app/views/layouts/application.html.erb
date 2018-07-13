@@ -4,7 +4,7 @@
 		<title>Flydeas</title>
 		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 		<link rel="stylesheet" type: "text/css" href="/fonts/museo_sans_rounded/museo_sans_rounded.css" media="all">
-		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+		
 		<%= csrf_meta_tags %>
 	</head>
 
@@ -20,5 +20,6 @@
             <%= yield %>
 
             <% debug(params) if Rails.env.development? %>
+			<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	</body>
 </html>
