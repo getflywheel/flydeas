@@ -10,7 +10,15 @@ FactoryBot.define do
         password 'Flywheel1!'
         after(:build) { |user| user.encrypt_password } 
     end
-   
+ 
+	factory :invalid_user do
+        username {nil}
+        email nil
+        activated false
+        password nil
+        after(:build) {|user| user.encrypt_password}
+    end
+  
     factory :category do
         name 'some category'
     end
@@ -22,20 +30,19 @@ FactoryBot.define do
         user factory: :user 
     end
 
-    factory :invalid_user do
-        username {nil}
-        email nil
-        activated false
-        password nil
-        after(:build) {|user| user.encrypt_password} #This might not work when password nil
-    end
-    
     factory :invalid_submission do
         title nil
         content nil
         category factory: :category
         invalid_user factory: :user
     end
+
+	factory :comment do
+		content "some comment"
+		submission factory: :submission
+		parent_comment nil
+		user factory: :user
+	end
 end
 
 

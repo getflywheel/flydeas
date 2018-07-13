@@ -3,11 +3,20 @@ class LoginsController < ApplicationController
 		@user = User.new
 	end
 
-	# Creates a User (add to DB)
 	def create
 		@user = User.new(user_params)
+		encrypt
+		send_activation_email
+	end
+
+	private
+
+	def encrypt
 		@user.create_salt
 		@user.encrypt_password
+	end
+
+	def send_activate_email
 		@user.create_activation_digest
 		if @user.save
 			UserMailer.account_activation(@user).deliver_now
@@ -18,8 +27,6 @@ class LoginsController < ApplicationController
 			render "new"
 		end
 	end
-
-	private
 
 	def user_params
 	 params.require(:user).permit(:username, :email, :password)

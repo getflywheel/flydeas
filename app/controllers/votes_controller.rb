@@ -1,39 +1,36 @@
 class VotesController < ApplicationController
-	def new
-		@vote = Vote.find_by(
-			post_id: params[:submission_id], # || params[:comment_id]
-			#post_type: params[:post_type],
-			user_id: params[:user_id]
-		)
-		if @vote.nil?
-			create
-		else
-			update
-		end
-	end
-
-	def create
-		@vote = Vote.new(vote_params)
-		redirect_to submissions_url unless @vote.save
-		#redirect_to root_url
-		flash[:info] = "voted"
-		update_submission
-		redirect_to submissions_url
-		#redirect_to root_url
-	end
-
 	def update
+		find_or_create_vote
 		if @vote.weight != params[:weight]
 			@vote.weight = params[:weight]
 			@vote.save
 		end
-		redirect_to submissions_url
+		redirect_to :back
 	end
 
 	private
 
+	def find_or_create_vote
+		@vote = Vote.where(
+			post_id: post.id,
+			user_id: params[:user_id],
+			post_type: post.class.name
+		).first_or_create
+	end
+
+	def post
+		return @post if @post
+		@post =
+			if params[:comment_id]
+				Comment.find(params[:comment_id])
+			else
+				Submission.find(params[:submission_id])
+			end
+		post # recursion
+	end
+
 	def vote_params
-		params.permit(:user_id, :comment_id, :submission_id, :post_type, :weight)
+		params.permit(:user, :comment_id, :submission_id, :post_type, :weight)
 	end
 
 	def update_submission

@@ -7,30 +7,20 @@ class SubmissionsController < ApplicationController
 		redirect_to "/login"
 	end
 
-	# GET /submissions
-	# GET /submissions.json
 	def index
 		@submissions = Submission.order(vote_count: :desc, created_at: :desc)
 	end
 
-	# GET /submissions/1
-	# GET /submissions/1.json
 	def show; end
 
-	# GET /submissions/new
 	def new
 		@submission = Submission.new
 	end
 
-	# GET /submissions/1/edit
 	def edit; end
 
-	# POST /submissions
-	# POST /submissions.json
 	def create
-		@submission = Submission.new(
-			submission_params.merge(user_id: current_user.id)
-		)
+		@submission = Submission.new(submission_params)
 		if @submission.save
 			Vote.create(
 				post: @submission, user_id: current_user.id,
@@ -42,8 +32,6 @@ class SubmissionsController < ApplicationController
 		render "new"
 	end
 
-	# PATCH/PUT /submissions/1
-	# PATCH/PUT /submissions/1.json
 	def update
 		if @submission.update(submission_params)
 			flash[:info] = "Submission was successfully updated."
@@ -54,8 +42,6 @@ class SubmissionsController < ApplicationController
 		end
 	end
 
-	# DELETE /submissions/1
-	# DELETE /submissions/1.json
 	def destroy
 		@submission.destroy
 		redirect_to submissions_url
@@ -64,7 +50,8 @@ class SubmissionsController < ApplicationController
 	private
 
 	def submission_params
-		params.require(:submission).permit(:title, :content, :category_id)
+		sub = params.require(:submission).permit(:title, :content, :category_id)
+		sub.merge(user_id: current_user.id)
 	end
 
 	# Use callbacks to share common setup or constraints between actions.
