@@ -1,0 +1,14 @@
+@import "global/variables";
+@import "global/mixins";
+
+.flash-message {
+    padding: 1rem 0;
+    background: $secondary;
+    color: $white;
+    font-size: 1.5rem;
+    text-align: center;
+    
+    @include state(danger) {
+       background: $error;     
+    }  
+}

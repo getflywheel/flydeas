@@ -1,0 +1,30 @@
+@import "variables";
+
+html {
+	box-sizing: border-box;
+	font-family: $museo;
+	color: $gray-dark;
+	background: $gray5;
+	font-size: 62.5%; // 10px
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
+.contain {
+	max-width: $max-width;
+	margin: 0 auto;
+}
+
+hr {
+	border: 0;
+	height: .2rem;
+	margin: 3rem 0;
+	background: $gray15;
+}

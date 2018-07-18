@@ -1,0 +1,47 @@
+@import "global/variables";
+
+.header {
+	padding: 1.75rem 0;
+	background: $primary;
+	color: $white;
+
+	&__contain {
+		display: flex;
+		justify-content: space-between;
+		align-items: center
+	}
+
+	&__logo {
+		display: flex;
+		align-items: center;
+		margin-right: 1rem;
+	}
+
+	&__title {
+		display: flex;
+		align-items: center;
+		color: $white;
+		text-decoration: none;
+
+		h1 {
+			margin: 0;
+			font-weight: 500;
+		}
+	}
+	&__nav {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			display: inline-block;
+			padding: 0 1rem;
+		}
+		
+		a {
+			color: $white;
+			text-decoration: none;
+			font-size: 1.6rem;
+		}
+	}
+}
