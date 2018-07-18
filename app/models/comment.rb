@@ -5,6 +5,7 @@ class Comment < ActiveRecord::Base
 	belongs_to :submission
 	belongs_to :parent_comment
 	has_many :votes
+	has_many :comments
 	
 	
 	validates :content, presence: true

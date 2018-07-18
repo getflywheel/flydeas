@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-		sub_id = params.permit(:submission_id)
-		sub_id.merge(params.require(:comment).permit(:content, :parent_comment))
+		uncontained_params = params.permit(:submission_id, :parent_comment_id)
+		uncontained_params.merge(params.require(:comment).permit(:content))
 	end
 end

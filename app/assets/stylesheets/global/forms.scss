@@ -19,8 +19,15 @@
         &:focus {
             border-color: $gray-dark;
         }
+
     }
-    
+
+	&__comment {
+		max-width: 100rem;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+    }
+
     label {
         display: block;
         font-size: 1.6rem;
@@ -41,4 +48,8 @@
         align-items: center;
         margin-top: 2rem;
     }
+}
+
+.child_comment{
+    display: none;
 }

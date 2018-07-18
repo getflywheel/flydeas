@@ -1,19 +1,26 @@
-<p id="notice"><%= notice %></p>
-<p>
-    <strong>Title:</strong>
-    <%=@submission.title%>
-</p>
-<p>
-    <h5>Category</h5>
-    <%= @submission.category.name%>
-</p>
-<p>
-    <strong>Content:</strong>
-    <%= @submission.content%>
-</p>
+<section class="hero">
+    <h1><%=@submission.title%></h1>
+</section>
+
+<div class="index">
+    <p>
+        <strong>Category:</strong> <%= @submission.category.name%>
+    </p>
+    <p>
+        <strong>Content:</strong>
+        <%= @submission.content%>
+    </p>
+    <p>
+        <strong>User:</strong>
+        <%= @submission.user_id%>
+    </p>
+    <div class="form__actions">
+        <%= link_to 'Destroy', @submission, method: :delete, data: { confirm: 'Are you sure?' }, class:"form__link" %>
+        <%= link_to 'Back', submissions_path, class:"form__link"%>
+        <%= link_to 'Edit', edit_submission_path(@submission), class: "form__link"%>
+    </div>
+	<%= render partial: "new_comment", locals: {parent_comment: nil} %>
+	<% comments = @submission.comments.order(vote_count: :desc, created_at: :desc).where(parent_comment: nil) %>
+	<%= render partial: "comments", locals: {comments: comments, parent_comment: nil} %> 
 
 
-<%= link_to 'Edit', edit_submission_path(@submission) %> |
-<%= link_to 'Back', submissions_path %>
-<%= render "new_comment" %>
-<%= render "comments" %>

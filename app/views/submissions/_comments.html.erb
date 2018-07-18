@@ -1,17 +1,13 @@
-<hr><br>Place holder comment section<hr>
-<% @submission.comments.order(vote_count: :desc, created_at: :desc).each do |comment| %>
-	<br>
-	<%= comment.user.username %> says: 
-	"<%= comment.content %>" |
-	Post time: <%= comment.created_at %> |
-	Upvotes: <%= comment.vote_count %> | 
-     <% vote = Vote.find_by(post: comment, user_id: current_user.id) %>
-          <% if vote.nil? || vote.weight == 0 %> 
-            <%= link_to 'Upvote', submission_comment_vote_path(submission_id: @submission, comment_id: comment, user_id: current_user, weight: 1), method: :patch %>
-          <% else %>
-            <%= link_to 'Unvote', submission_comment_vote_path(submission_id: @submission, comment_id: comment, user_id: current_user, weight: 0), method: :patch %> 
-          <% end %>
-         <!-- <%= link_to 'Downvote', submission_comment_vote_path(submission_id: @submission, comment_id: comment, user_id: current_user, weight: -1), method: :patch %> -->
-          <br>
-		
+<% comments.each do |comment| %>
+	<div class="comment">
+		<%= render partial: 'comment', locals: {comment: comment, parent_comment: parent_comment } %>
+		<div class="child_comment" id="new_comment_<%=comment.id%>">
+			<%= render partial: 'new_comment', locals: { parent_comment: comment } %>
+		</div>
+		<% comment_children = Comment.where(parent_comment_id: comment.id) %>
+		<% if comment_children.any? %>
+			<br>	
+			<%= render partial: "comments", locals: { comments: comment_children, parent_comment: comment }%>	
+		<% end %>
+	</div>
 <% end %>

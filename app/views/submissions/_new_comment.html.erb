@@ -1,5 +1,6 @@
 <% @comment = Comment.new %>
-<%= form_for @comment, url: submission_comments_url(submission_id: @submission.id), html: {method: :post} do |f| %> 
-	<%= f.text_field :content %>
-	<%= f.submit "Submit comment" %>
+<%= form_for @comment, url: submission_comments_url(submission_id: @submission.id, parent_comment_id: parent_comment), html: {method: :post} do |f| %> 
+  	<div class="form__comment">
+		<%= f.text_field :content, placeholder: "Whaddaya think?" %>
+	</div>
 <% end %>
