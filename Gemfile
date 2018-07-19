@@ -31,6 +31,9 @@ source 'https://rubygems.org'
 	# For the Sendgrid
 	gem 'sendgrid-ruby'
 
+	# User text editor
+	gem 'ckeditor'
+
 	# Slack Not
 	
 	# Use Unicorn as the app server

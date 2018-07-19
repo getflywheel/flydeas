@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+	mount Ckeditor::Engine => "/ckeditor"
 	root :to => "submissions#index"
 	default_url_options :host => "localhost"
 

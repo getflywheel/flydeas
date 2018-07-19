@@ -13,8 +13,14 @@
     cursor: pointer;
     outline: none;
     transition: background .1s;  
-
+	
     &:hover {
         background: $primary-dark; 
     }
+}
+
+.comment-button {
+		display: flex;
+		margin-left: auto;
+		margin-top: 2rem;
 }

@@ -1,6 +1,5 @@
 <% @comment = Comment.new %>
 <%= form_for @comment, url: submission_comments_url(submission_id: @submission.id, parent_comment_id: parent_comment), html: {method: :post} do |f| %> 
-  	<div class="form__comment">
-		<%= f.text_field :content, placeholder: "Whaddaya think?" %>
-	</div>
+		<%= f.cktext_area :content, ckeditor: {toolbar: "mini"} %>
+		<%= f.submit "submit comment", class: "button comment-button" %>
 <% end %>

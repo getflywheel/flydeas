@@ -10,10 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require ckeditor/init
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
 /*
 var element = document.querySelectorAll('.upvote');
 element.forEach(function(item){ 
