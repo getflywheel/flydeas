@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 20180709212754) do
     t.string  "post_type"
   end
 
-  add_index "votes", ["user_id", "post_id"], name: "index_votes_on_user_id_and_post_id", unique: true
   add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end

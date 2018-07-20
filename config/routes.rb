@@ -9,9 +9,8 @@ Rails.application.routes.draw do
 		resources :comments do
 			resource :vote, only: %i[update]	
 		end
-
 	end
-	resources :categories, only: [:show]
+	resources :categories, only: %i[show]
 	# Sign up resource
 	resources :logins, only: %i[new create] 
 	resources :account_activations, only: %i[edit]

@@ -1,5 +1,5 @@
 <section class="hero">
-<h1>Flydeas</h1>
+	<h1>Flydeas</h1>
 </section>
 <div class="index">
 	<div class="dropdown">
@@ -20,12 +20,12 @@
 				<div class="vote" id="vote-box">
 					<% vote = Vote.find_by(post: submission, user_id: current_user.id) %>
 					<% if vote.nil? || vote. weight == 0 %> 
-						<%= link_to submission_vote_path(post_id: submission.id, user_id: current_user.id, weight: 1), method: :patch, class: "upvote", id: "upvote" do %>
+						<%= link_to submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 1), method: :patch, class: "upvote", id: "upvote" do %>
 							<%= image_tag "chevron_up.svg", alt: "Upvote", width: "20", height: "20" %>
 						<% end %>
 					<% else %>
 						
-						<%= link_to submission_vote_path(post_id: submission.id, user_id: current_user.id, weight: 0), method: :patch, class: "upvote", id: "upvote" do %>
+						<%= link_to submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 0), method: :patch, class: "upvote", id: "upvote" do %>
 							<%= image_tag "chevron_up.svg", alt:"Upvote", width: "20", height: "20" %>
 						<%end%>
 					<% end %>
@@ -51,5 +51,3 @@
 		<input type="submit" value="New Submission" class="button" />
 	</form>
 </div>
-
-

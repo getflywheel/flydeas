@@ -1,5 +1,5 @@
 <section class="hero">
-    <h1><%=@submission.title%></h1>
+	<h1><%=@submission.title%></h1>
 </section>
 
 <div class="index">
@@ -24,5 +24,3 @@
 <%= render partial: "new_comment", locals: {parent_comment: nil} %>
 <% comments = @submission.comments.order(vote_count: :desc, created_at: :desc).where(parent_comment: nil) %>
 <%= render partial: "comments", locals: {comments: comments, parent_comment: nil} %> 
-
-
