@@ -22,11 +22,16 @@ FactoryBot.define do
     factory :category do
         name 'some category'
     end
- 
+
+    factory :status do
+        name 'test'
+    end
+
     factory :submission do
         title "some submission#{random_int}"
         content "some info about idea/bug#{random_int}"
         category factory: :category
+        status factory: :status
         user factory: :user 
     end
 
@@ -34,6 +39,7 @@ FactoryBot.define do
         title nil
         content nil
         category factory: :category
+        status factory: :status
         invalid_user factory: :user
     end
 
