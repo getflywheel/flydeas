@@ -14,6 +14,10 @@
         <strong>User:</strong>
         <%= @submission.user_id%>
     </p>
+    <p>
+        <strong>Status:</strong>
+        <%=@submission.status.name%>
+    </p>
     <div class="form__actions">
         <%= link_to 'Destroy', @submission, method: :delete, data: { confirm: 'Are you sure?' }, class:"form__link" %>
         <%= link_to 'Back', submissions_path, class:"form__link"%>
@@ -24,3 +28,4 @@
 <%= render partial: "new_comment", locals: {parent_comment: nil} %>
 <% comments = @submission.comments.order(vote_count: :desc, created_at: :desc).where(parent_comment: nil) %>
 <%= render partial: "comments", locals: {comments: comments, parent_comment: nil} %> 
+<div>

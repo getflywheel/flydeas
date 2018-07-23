@@ -1,4 +1,40 @@
 <section class="hero">
     <h1>Editing Submission</h1>
 </section>
-<%= render 'form' %>
+<%= form_for(@submission, html: { class: "form" }) do |f| %>
+    <div class="field">
+        <%=f.label :status%><br>
+        <%=f.collection_select :status_id, Status.order(:name), :id, :name %>
+    </div>
+	<% if @submission.errors.any? %>
+		<div id="error_explanation">
+		<h2><%= pluralize(@submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
+
+		<ul>
+		<% @submission.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+		<% end %>
+		</ul>
+		</div>
+	<% end %>
+	<div class="field">
+		<%= f.label :categories %><br>
+		<%= f.collection_select :category_id, Category.order(:name), :id, :name %>
+	</div>
+	<div class="field">
+		<%= f.label :title %><br>
+		<%= f.text_field :title %>
+	</div>
+	<div class="field">
+		<%= f.label :content %><br>
+		<%= f.text_area :content %>
+	</div>
+	<div class="field">
+		<%= f.label :user_id %><br>
+		<%= f.text_field :user_id %>
+	</div>
+    <div class="form__actions">
+        <%= link_to "Cancel", root_path, class: "form__link" %>
+        <%= f.submit "Update Submission", class: "button", name: "update" %>
+    </div>	
+<%end%>

@@ -21,6 +21,7 @@ class SubmissionsController < ApplicationController
 
 	def create
 		@submission = Submission.new(submission_params)
+		@submission.status_id = 1
 		if @submission.save
 			Vote.create(
 				post: @submission, user_id: current_user.id,

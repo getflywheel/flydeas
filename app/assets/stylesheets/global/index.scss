@@ -22,16 +22,33 @@
         }
     }
 
+    &__vote {
+        padding-left: 1rem;
+        text-align: center;
+        text-decoration: none;
+
+        a {
+            font-size: 4rem;
+            color: $gray-dark;
+            height: 2.4rem;
+            text-decoration: none;
+        } 
+
+    }
+
+ 
     &__submission-vote-group {
        display: flex;
        align-items: center;
     }
 
     &__content {
-        padding-left: 2rem;
+		padding-left: 2rem;
+		margin: 0;
 
         h2 {
-            padding: 0rem;
+			padding: 0rem;
+			margin-bottom: .2rem;
         }
 
         a {
@@ -52,8 +69,16 @@
         a {
             text-decoration: none;
             color: $white;
-        }
-    }
+		}
+	}
+	&__statusTag {
+		margin-left: 2rem;
+		font-size:  1rem;
+		padding: 0.2rem;
+		max-width: 5rem;
+		margin: 0;
+		text-align: center;	
+	}
 
     select {
         border-radius: .4rem;
@@ -144,3 +169,32 @@
 .dropdown:hover .dropbtn {
     background-color: $gray15;
 }
+<<<<<<< HEAD
+=======
+
+.openTag {
+	background-color: $secondary;
+	margin-left: 2rem;
+	min-width: 5.5rem;
+}
+
+.closedTag {
+	background-color: $primary-dark;
+	margin-left: 2rem;
+	min-width: 5.5rem;
+}
+
+.rejectedTag {
+	background-color: $orange;
+	margin-left: 2rem;
+	min-width: 5.5rem;
+}
+
+.hasVoted {
+	background-color: $yellow;
+}
+
+.hasNotVoted {
+	background-color: $gray15;
+}
+>>>>>>> Adds status that is viewable and can be changed
