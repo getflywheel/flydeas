@@ -1,0 +1,45 @@
+@import "global/variables";
+
+.comment {
+	border-style: solid;
+	border-radius: 1rem;
+	border-color: $gray15;
+	padding: 2rem;
+	margin-bottom: 2rem;
+
+	&__header {
+		display: flex;
+		font-size: 1.4rem;
+	}
+
+	&__vote {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+	}
+	
+	&__content {
+		display: inline-flex;
+		justify-content: center;
+		font-size: 1.5rem;
+	}
+
+	&__text {
+		font-size: 1.5rem;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		flex-direction:	column;
+		padding-left: 2rem;
+	}
+	
+	&__icon {
+		color: $secondary;	
+		font-size: 2rem;
+	}
+}
+
+.new_comment {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}

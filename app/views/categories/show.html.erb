@@ -8,17 +8,8 @@
             <div class="index__submission">
                 <div class="index__submission-vote-group">
                     <div class="index__vote">
-                        <% vote = Vote.find_by(submission_id: submission.id, user_id: current_user.id) %>
-                        <% if vote.nil? || vote. weight == 0 %> 
-                            <%= link_to new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 1), class: "upvote" do %>
-                                <%= image_tag "chevron_up.svg", alt: "Upvote", width: "20", height: "20" %>
-                            <%end%>
-                        <% else %>
-                            <%= link_to  new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 0), class: "unvote" do %> 
-                                <%= image_tag "chevron_up.svg", alt:"Upvote", width: "20", height: "20" %>
-                            <%end%>
-                        <% end %>
-                        <!-- <%= link_to "Downvote: link version", new_submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: -1) %> -->
+                        <% vote = Vote.find_by(post: submission, user_id: current_user.id) %>
+						<% if vote.nil? || vote. weight == 0 %> 
                         <br><p><%= submission.vote_count%></p>
                     </div>
                     <div class="index__content">

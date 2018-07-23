@@ -1,6 +1,7 @@
 <section class="hero">
-    <h1><%=@submission.title%></h1>
+	<h1><%=@submission.title%></h1>
 </section>
+
 <div class="index">
     <p>
         <strong>Category:</strong> <%= @submission.category.name%>
@@ -18,5 +19,8 @@
         <%= link_to 'Back', submissions_path, class:"form__link"%>
         <%= link_to 'Edit', edit_submission_path(@submission), class: "form__link"%>
     </div>
-<div>
-
+	
+<%= javascript_include_tag Ckeditor.cdn_url %>
+<%= render partial: "new_comment", locals: {parent_comment: nil} %>
+<% comments = @submission.comments.order(vote_count: :desc, created_at: :desc).where(parent_comment: nil) %>
+<%= render partial: "comments", locals: {comments: comments, parent_comment: nil} %> 

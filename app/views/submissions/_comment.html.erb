@@ -1,0 +1,33 @@
+<br>
+<div class="comment__header">
+	<%= comment.user.username %> posted <%= time_ago_in_words(comment.created_at) %> ago |  
+	<%= link_to "Delete", submission_comment_path(submission_id: @submission.id, comment: comment), method: :delete, data: { confirm: "Are you sure?" }, class:"form__link" %> 
+		
+</div>
+<br>
+
+<div class="comment__content">
+	<div class="comment__vote">
+		<div class="vote">
+			<% vote = Vote.find_by(post: comment, user_id: current_user.id) %>
+			<% if vote.nil? || vote. weight == 0 %> 
+				<%= link_to submission_comment_vote_path(submission_id: @submission, comment_id: comment, user_id: current_user, weight: 1), method: :patch do %>
+					<%= image_tag "chevron_up.svg", alt: "Upvote", width: "20", height: "20" %>
+				<% end %>
+			<% else %>
+				<%= link_to submission_comment_vote_path(submission_id: @submission, comment_id: comment, user_id: current_user, weight: 0), method: :patch do %>
+					<%= image_tag "chevron_up.svg", alt:"Upvote", width: "20", height: "20" %>
+				<%end%>
+			<% end %>
+			<br><p><%= comment.vote_count %></p>
+<!-- disabled because of issues getting multiple ckeditor instances	
+		<a href="javascript:showReply('new_comment_<%=comment.id%>')"><i class="fas fa-comment-alt comment__icon"></i></a>	 
+-->
+		</div>
+	</div>
+	
+	<div class="comment__text">
+		<%= comment.content.html_safe %>
+	</div>
+</div>
+<br>

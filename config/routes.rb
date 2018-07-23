@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
+	mount Ckeditor::Engine => "/ckeditor"
 	root :to => "submissions#index"
 	default_url_options :host => "localhost"
 
 	# Resources
 	resources :submissions do
-		resources :votes
+		resource :vote, only: %i[update]
+		resources :comments do
+			resource :vote, only: %i[update]	
+		end
 	end
-	resources :categories, only: [:show]
-
+	resources :categories, only: %i[show]
 	# Sign up resource
 	resources :logins, only: %i[new create] 
 	resources :account_activations, only: %i[edit]

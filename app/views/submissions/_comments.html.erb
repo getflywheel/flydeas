@@ -1,0 +1,15 @@
+<% comments.each do |comment| %>
+	<div class="comment">
+		<%= render partial: "comment", locals: {comment: comment, parent_comment: parent_comment } %>
+		<!-- Threaded comments disabled because of issues getting multiple ckeditor instances
+		<div  id="new_comment_<%=comment.id%>">
+			<%= render partial: 'new_comment', locals: { parent_comment: comment } %>
+		</div>
+		<% comment_children = Comment.where(parent_comment_id: comment.id) %>
+		<% if comment_children.any? %>
+			<br>	
+			<%= render partial: "comments", locals: { comments: comment_children, parent_comment: comment }%>	
+		<% end %>
+		-->
+	</div>
+<% end %>

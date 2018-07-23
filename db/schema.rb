@@ -11,12 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180628161133) do
+ActiveRecord::Schema.define(version: 20180709212754) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "submission_id"
+    t.integer  "parent_comment_id"
+    t.string   "content"
+    t.integer  "vote_count",        default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "submissions", force: :cascade do |t|
@@ -47,12 +57,12 @@ ActiveRecord::Schema.define(version: 20180628161133) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer "submission_id"
-    t.integer "weight",        default: 1, null: false
+    t.integer "post_id"
+    t.integer "weight",    default: 1, null: false
     t.integer "user_id"
+    t.string  "post_type"
   end
 
-  add_index "votes", ["user_id", "submission_id"], name: "index_votes_on_user_id_and_submission_id", unique: true
   add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end

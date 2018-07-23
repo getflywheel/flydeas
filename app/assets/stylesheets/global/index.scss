@@ -22,20 +22,6 @@
         }
     }
 
-    &__vote {
-        padding-left: 1rem;
-        text-align: center;
-        text-decoration: none;
-
-        a {
-            font-size: 4rem;
-            color: $gray-dark;
-            height: 2.4rem;
-            text-decoration: none;
-        } 
-
-    }
-
     &__submission-vote-group {
        display: flex;
        align-items: center;
