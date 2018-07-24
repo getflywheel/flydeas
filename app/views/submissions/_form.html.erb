@@ -10,24 +10,31 @@
 		</ul>
 		</div>
 	<% end %>
-  	<div class="field">
-	<%= f.label :categories %><br>
+	<div class="field">
+		<%= f.label :categories %><br>
 		<%= f.collection_select :category_id, Category.order(:name), :id, :name %>
 	</div>
-    <div class="field">
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
-    </div>
-    <div class="field">
-      <%= f.label :content %><br>
-      <%= f.text_area :content %>
-    </div>
-    <div class="field">
-      <%= f.label :user_id %><br>
-      <%= f.text_field :user_id %>
-    </div>
-    <div class="form__actions">
-    	<%= link_to "Cancel", root_path, class: "form__link" %>
-		<%= f.submit "Create Submission", class: "button" %>
+	<div class="field">
+		<%= f.label :title %><br>
+		<%= f.text_field :title %>
 	</div>
-<% end %>
+	<div class="field">
+		<%= f.label :content %><br>
+		<%= f.text_area :content %>
+	</div>
+	<div class="field">
+		<%= f.label :user_id %><br>
+		<%= f.text_field :user_id %>
+	</div>
+	<%if type == "new"%>
+		<div class="form__actions">
+			<%= link_to "Cancel", root_path, class: "form__link" %>
+			<%= f.submit "Create Submission", class: "button" %>
+		</div>
+	<%elsif type == "update"%>
+		<div class="form__actions">
+			<%= link_to "Cancel", root_path, class: "form__link" %>
+			<%= f.submit "Update Submission", class: "button", name: "update" %>
+		</div>	
+	<%end%>
+<%end%>

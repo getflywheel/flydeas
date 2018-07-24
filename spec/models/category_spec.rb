@@ -19,16 +19,12 @@ RSpec.describe Category, type: :model do
                         email: "test@getflywheel.com", activated: true)
         user.encrypt_password
         user.save
-        submission1 = Submission.new(title: "some bug1", content: "some info", 
+        submission1 = Submission.create(title: "some bug1", content: "some info", 
                                         category: category, user: user)
-        submission2 = Submission.new(title: "some bug2", content: "more info",
-                                        category: category, user: user) 
-        submission1.save
-        submission2.save
-        bug_submissions = Submission.where(category: category) 
-        #binding.pry
-        expect(bug_submissions[0].title).to eq("some bug1")
-        expect(bug_submissions[1].title).to eq("some bug2")
+        submission2 = Submission.create(title: "some bug2", content: "more info",
+                                        category: category, user: user)
+        expect(submission1.title).to eq("some bug1")
+        expect(submission2.title).to eq("some bug2")
         expect(category).to be_valid
     end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180709212754) do
+ActiveRecord::Schema.define(version: 20180723201606) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 20180709212754) do
     t.datetime "updated_at"
   end
 
+  create_table "statuses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "statuses", ["name"], name: "index_statuses_on_name"
+
   create_table "submissions", force: :cascade do |t|
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
@@ -37,9 +45,11 @@ ActiveRecord::Schema.define(version: 20180709212754) do
     t.string   "user_id"
     t.integer  "category_id"
     t.integer  "vote_count",  default: 0
+    t.integer  "status_id"
   end
 
   add_index "submissions", ["category_id"], name: "index_submissions_on_category_id"
+  add_index "submissions", ["status_id"], name: "index_submissions_on_status_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username"

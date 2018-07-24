@@ -11,8 +11,12 @@ RSpec.describe SubmissionsController, type: :controller do
 
   describe "Get #index" do
       it "loads multiple submissions when logged in" do
-          @sub2 = create(:submission)
-          get :index 
+		  @sub2 = create(:submission)
+		  Vote.create(
+			post: @sub2, user_id: @sub2.user_id,
+			weight: 1
+			)
+          get :index
           expect(response.body).to include(@sub.title)
           expect(response.body).to include(@sub2.title)
       end

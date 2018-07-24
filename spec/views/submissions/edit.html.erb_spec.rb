@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "submissions/edit", type: :view do
   before(:each) do
-    @submission = assign(:submission, Submission.create!(category_id: 1, title: 'title', content:'content', user_id:'username'))
+    @submission = assign(:submission, Submission.create!(category_id: 1, title: 'title', content:'content', user_id:'username', status_id: 1))
   end
 
   it "renders the edit submission form" do
