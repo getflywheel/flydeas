@@ -1,31 +1,59 @@
-<section class="hero">
-	<h1><%=@submission.title%></h1>
-</section>
-
-<div class="index">
-    <p>
-        <strong>Category:</strong> <%= @submission.category.name%>
-    </p>
-    <p>
-        <strong>Content:</strong>
-        <%= @submission.content%>
-    </p>
-    <p>
-        <strong>User:</strong>
-        <%= @submission.user_id%>
-    </p>
-    <p>
-        <strong>Status:</strong>
-        <%=@submission.status.name%>
-    </p>
-    <div class="form__actions">
-        <%= link_to 'Destroy', @submission, method: :delete, data: { confirm: 'Are you sure?' }, class:"form__link" %>
-        <%= link_to 'Back', submissions_path, class:"form__link"%>
-        <%= link_to 'Edit', edit_submission_path(@submission), class: "form__link"%>
-    </div>
-	
-<%= javascript_include_tag Ckeditor.cdn_url %>
-<%= render partial: "new_comment", locals: {parent_comment: nil} %>
-<% comments = @submission.comments.order(vote_count: :desc, created_at: :desc).where(parent_comment: nil) %>
-<%= render partial: "comments", locals: {comments: comments, parent_comment: nil} %> 
-<div>
+<div class = "show index">
+	<div class = "show__dropdownVoteGroup">
+		<div class = "show__voteTitleGroup">
+			<div class="vote">
+				<% vote = Vote.find_by(post_id: @submission.id, user_id: current_user.id) %>
+				<% if vote.nil? || vote. weight == 0 %> 
+					<%= link_to submission_vote_path(submission_id: @submission.id, user_id: current_user.id, weight: 1), method: :patch, class: "upvote", id: "upvote" do %>
+						<%= image_tag "chevron_up.svg", alt: "Upvote", width: "20", height: "20" %>
+					<% end %>
+				<% else %>
+					<%= link_to submission_vote_path(submission_id: @submission.id, user_id: current_user.id, weight: 0), method: :patch, class: "unvote", id: "uvote" do %>
+						<%= image_tag "chevron_up.svg", alt:"Upvote", width: "20", height: "20" %>
+					<%end%>
+				<% end %>
+				<br><p><%= @submission.vote_count%></p>
+			</div>
+			<div class = "show__titleStatusUser">
+				<h1><%=@submission.title%></h1>
+				<div class = "show__status">
+					<%status = @submission.status.name%>
+					<%if @submission.status.name == "Open"%>
+						<%status = "openTag"%>
+					<%elsif @submission.status.name == "Completed"%>
+						<%status = "closedTag"%>
+					<%else%>
+						<%status = "rejectedTag"%>
+					<%end%>
+					<h3>Status:</h3>
+					<div class="index__tag index__statusTag <%=status%>" data-info = "<%= @submission.status.name%>">
+						<a href="#">
+							<%= @submission.status.name%>
+						</a>
+					</div>
+				</div>
+				<!-- TODO: Change to pull the User from db instead of what the user entered as their username" -->
+				<h3>Submitted By: <%=@submission.user_id%></h3>
+			</div>
+		</div>
+		<div class = "dropdown">
+			<span class="dropbtn"> <%= image_tag "ellipsis.svg", class: "header__logo", alt: "Menu", width: "15", length: "15"%></span>
+			<div class = "dropdown-content">
+				<%= link_to 'Destroy', @submission, method: :delete, data: { confirm: 'Are you sure?' }, class:"form__link" %>
+				<%= link_to 'Back', submissions_path, class:"form__link"%>
+				<%= link_to 'Edit', edit_submission_path(@submission), class: "form__link"%>
+				<a href="#"> Watch</a>
+			</div>	
+		</div>
+	</div>
+	<div class = "show__content">
+	<h2 class = "contentHeader"> Content </h2><hr>
+		<%=@submission.content%>
+	</div>
+	<div class = "show__comments">
+		<%= javascript_include_tag Ckeditor.cdn_url %>
+		<%= render partial: "new_comment", locals: {parent_comment: nil} %>
+		<% comments = @submission.comments.order(vote_count: :desc, created_at: :desc).where(parent_comment: nil) %>
+		<%= render partial: "comments", locals: {comments: comments, parent_comment: nil} %> 
+	</div>
+</div>
