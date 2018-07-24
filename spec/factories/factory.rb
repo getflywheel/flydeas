@@ -50,5 +50,3 @@ FactoryBot.define do
 		user factory: :user
 	end
 end
-
-

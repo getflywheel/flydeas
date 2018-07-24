@@ -9,7 +9,7 @@
                 <div class="index__submission-vote-group">
                     <div class="index__vote">
                         <% vote = Vote.find_by(post_id: submission.id, user_id: current_user.id) %>
-                        <% if vote.nil? || vote. weight == 0 %> 
+                        <% if vote.nil? || vote.weight == 0 %> 
 						    <%= link_to submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 1), method: :patch, class: "upvote", id: "upvote" do %>
 							<%= image_tag "chevron_up.svg", alt: "Upvote", width: "20", height: "20" %>
 						    <% end %>

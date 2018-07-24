@@ -6,7 +6,11 @@ RSpec.describe Vote, type: :model do
 		@com = create(:comment)
 		@user = create(:user)        
 	end 
-
+	it "denies duplicate creation" do
+		vote1 = Vote.create(post: @sub, user: @user)
+		vote2 = Vote.new(post: @sub, user: @user)
+		expect(vote2).to be_invalid
+	end
 	it "allows valid submission vote" do
 		vote = Vote.new(post: @sub, user: @user)
 		expect(vote).to be_valid  
@@ -17,11 +21,7 @@ RSpec.describe Vote, type: :model do
 		expect(vote).to be_valid 	
 	end 
 
-	it "denies duplicate creation" do
-		vote1 = Vote.create(post: @sub, user: @user)
-		vote2 = Vote.new(post: @sub, user: @user)
-		expect(vote2).to be_invalid
-	end
+
 
 	it "does not count submission vote as comment vote or vice versa" do
 		@sub.id = 500
