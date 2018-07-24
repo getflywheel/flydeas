@@ -1,0 +1,44 @@
+@import "global/variables";
+
+.show {
+    max-width: 100rem;
+    &__dropdownVoteGroup {
+        display: flex;
+    }
+    &__voteTitleGroup {
+        display: flex;
+    }
+    &__titleStatusUser {
+        padding-left: 1rem;
+    }
+    
+    .dropdown {
+        padding-top: 10rem;
+        text-align: right;
+        margin-right: 0;
+        .dropbtn img {
+            margin: 0;
+        }
+    }
+
+    &__content {
+        font-size: 1.5rem;
+        padding: 1rem;
+        border-style: solid;
+        border-radius: 1rem;
+        border-color: $gray15;
+        padding: 2rem;
+    }
+    .contentHeader {
+        margin: 0;
+    }
+    
+    &__status {
+        display: flex;
+        align-items: center;
+    }
+
+    h3 {
+        margin: .5rem 0;
+    }
+}
