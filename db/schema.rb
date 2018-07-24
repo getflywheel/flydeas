@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20180730164801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -28,6 +27,22 @@ ActiveRecord::Schema.define(version: 20180730164801) do
     t.integer  "parent_comment_id"
     t.string   "content"
     t.integer  "vote_count",        default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "post_change_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "post_changes", force: :cascade do |t|
+    t.integer  "submission_id"
+    t.integer  "change_object_id"
+    t.string   "change_object_type"
+    t.integer  "post_change_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -80,4 +95,11 @@ ActiveRecord::Schema.define(version: 20180730164801) do
 
   add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
 
+  create_table "watches", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "submission_id"
+  end
+
+  add_index "watches", ["submission_id"], name: "index_watches_on_submission_id"
+  add_index "watches", ["user_id"], name: "index_watches_on_user_id"
 end

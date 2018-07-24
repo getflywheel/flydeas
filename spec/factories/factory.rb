@@ -3,14 +3,22 @@ def random_int
 end
 
 FactoryBot.define do
-	factory :user do
-		username { "test#{random_int}" }
-		email "test#{random_int}@getflywheel.com"
-		activated true
-		password "Flywheel1!"
-		after(:build) { |user| user.encrypt_password }
+	sequence :email do |n|
+		"person#{n}@getflywheel.com"
 	end
 
+	sequence :username do |n|
+		"user#{n}"
+	end
+
+    factory :user do
+        username
+        email
+        activated true
+        password 'Flywheel1!'
+        after(:build) { |user| user.encrypt_password } 
+    end
+ 
 	factory :invalid_user do
 		username { nil }
 		email nil
@@ -48,5 +56,29 @@ FactoryBot.define do
 		submission factory: :submission
 		parent_comment nil
 		user factory: :user
+	end
+
+	factory :watcher do
+		user factory: :user
+		submission factory: :submission
+	end
+
+	factory :post_change do
+		change_object factory: :comment 
+		submission factory: :submission
+		post_change_type "comment"
+
+		factory :status_post_change do
+			post_change_type "status"
+		end
+
+		factory :vote_post_change do
+			post_change_type "vote"	
+		end
+	end
+
+	factory :notification do
+		user factory: :user
+		post_change factory: :post_change
 	end
 end

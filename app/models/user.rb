@@ -1,6 +1,12 @@
 class User < ActiveRecord::Base
 	has_many :submissions
 	has_many :votes
+	has_and_belongs_to_many :watched_submissions, 
+		class_name: "Submission", 
+		join_table: :watches
+	has_many :notifications, dependent: :destroy
+	has_many :post_changes, through: :notifications
+
 	USERNAME_REGEX = /[a-zA-Z0-9\-_]{0,20}/
 	EMAIL_REGEX = /[a-zA-Z_0-9.-]+@getflywheel.com/i
 	PASSWORD_REGEX = /.*(?=.{8,32})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^+=]).*/
