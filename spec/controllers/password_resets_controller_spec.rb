@@ -38,7 +38,6 @@ RSpec.describe PasswordResetsController, type: :controller do
             # Issue: Getting token to access update  
             #get :create, {:password_reset => {email: 'test@getflywheel.com' } }
             get :update, {id: "1234", email: "test@getflywheel.com", :user => {password: "Flywheel2!"} }       
-            binding.pry 
 =end
         end
 
