@@ -1,11 +1,8 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "logins/new.html.erb", type: :view do
-=begin
-        it "displays the proper copy" do
-		
-                render :template => "logins/new.html.erb"
-		expect(rendered).to match("login")
-        end	
-=end
+	# it "displays the proper copy" do
+	# 	render template: "logins/new.html.erb"
+	# 	expect(rendered).to match("login")
+	# end
 end

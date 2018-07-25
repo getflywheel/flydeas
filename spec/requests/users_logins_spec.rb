@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "UsersLogins", type: :request do
-    it "should deny an invalid login attempt" do
-    end
+	it "should deny an invalid login attempt" do
+	end
 end
