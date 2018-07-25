@@ -1,6 +1,7 @@
 <section class="hero">
     <h1>New Submission</h1>
 </section>
+<%= javascript_include_tag Ckeditor.cdn_url %>
 <%= form_for(@submission, html: { class: "form" }) do |f| %>
 	<% if @submission.errors.any? %>
 		<div id="error_explanation">
@@ -21,13 +22,10 @@
 		<%= f.label :title %><br>
 		<%= f.text_field :title %>
 	</div>
+	<%@submission.user_id = current_user.id%>
 	<div class="field">
 		<%= f.label :content %><br>
-		<%= f.text_area :content %>
-	</div>
-	<div class="field">
-		<%= f.label :user_id %><br>
-		<%= f.text_field :user_id %>
+		<%= f.cktext_area :content, ckeditor: {toolbar: "mini"}%>
 	</div>
     <div class="form__actions">
         <%= link_to "Cancel", root_path, class: "form__link" %>
