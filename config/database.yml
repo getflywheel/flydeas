@@ -13,5 +13,5 @@ test:
  encoding: unicode
  database: flydeas_test
  pool: 5
- username: bethhaubert
+ username:
  password:
