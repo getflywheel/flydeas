@@ -59,6 +59,7 @@ GEM
     crass (1.0.4)
     debug_inspector (0.0.3)
     diff-lcs (1.3)
+    docile (1.1.5)
     erubis (2.7.0)
     execjs (2.7.0)
     factory_bot (4.10.0)
@@ -172,6 +173,11 @@ GEM
     sendgrid-ruby (5.2.0)
       ruby_http_client (~> 3.2)
       sinatra (>= 1.4.7, < 3)
+    simplecov (0.13.0)
+      docile (~> 1.1.0)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
     sinatra (1.4.8)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -224,6 +230,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   sendgrid-ruby
+  simplecov
   spring
   sqlite3
   turbolinks

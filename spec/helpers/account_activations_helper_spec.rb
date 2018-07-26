@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 # Specs in this file have access to a helper object that includes
 # the AccountActivationsHelper. For example:
@@ -11,9 +11,9 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe AccountActivationsHelper, type: :helper do
-  let(:user) {User.create(username: "testus3e4drw1", email: "test@getflywheel.com", password: "123456xX$", salt: "1234")}
-  it "Authenticates the User" do
-      user.email_activate
-      expect(user.activated?).to be true
-  end
+	let(:user) { User.create(username: "testus3e4drw1", email: "test@getflywheel.com", password: "123456xX$", salt: "1234") }
+	it "Authenticates the User" do
+		user.email_activate
+		expect(user.activated?).to be true
+	end
 end

@@ -1,9 +1,9 @@
 class Vote < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :post, polymorphic: true
-		
-	validates_uniqueness_of :user, scope: [:post_id, :post_type]
-	validates_inclusion_of :weight, :in => -1..1
+
+	validates :user, uniqueness: { scope: %i[post_id post_type] }
+	validates :weight, inclusion: { in: -1..1 }
 	after_save :update_post
 
 	private

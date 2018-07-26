@@ -1,6 +1,12 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "submissions/show", type: :view do
+	before(:each) do
+		@category = create(:category)
+		@submission = create(:submission)
+		@user = create(:user)
+		# login(@user)
+	end
 
 	before(:each) do
 		@category = create(:category)

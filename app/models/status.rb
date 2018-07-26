@@ -1,4 +1,4 @@
 class Status < ActiveRecord::Base
-    has_many :submissions
-    validates :name, :presence => true
+	has_many :submissions
+	validates :name, presence: true
 end

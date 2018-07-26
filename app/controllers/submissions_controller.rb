@@ -23,10 +23,7 @@ class SubmissionsController < ApplicationController
 		@submission = Submission.new(submission_params)
 		@submission.status_id = 1
 		if @submission.save
-			Vote.create(
-				post: @submission, user_id: current_user.id,
-				weight: 1
-			)
+			create_vote
 			redirect_to @submission
 			return
 		end
@@ -58,5 +55,12 @@ class SubmissionsController < ApplicationController
 	# Use callbacks to share common setup or constraints between actions.
 	def set_submission
 		@submission = Submission.find(params[:id])
+	end
+
+	def create_vote
+		Vote.create(
+			post: @submission, user_id: current_user.id,
+			weight: 1
+		)
 	end
 end

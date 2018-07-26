@@ -3,6 +3,6 @@ module VoteHelper
 		upvotes = Vote.where(post: self, weight: 1)
 		downvotes = Vote.where(post: self, weight: -1)
 		self.vote_count = upvotes.length - downvotes.length
-		self.save	
-	end	
+		save
+	end
 end
