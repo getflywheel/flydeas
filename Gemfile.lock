@@ -93,6 +93,7 @@ GEM
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
+    pg (0.21.0)
     protected_attributes (1.1.4)
       activemodel (>= 4.0.1, < 5.0)
     pry (0.11.3)
@@ -191,7 +192,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.3.13)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (0.20.0)
@@ -221,6 +221,7 @@ DEPENDENCIES
   factory_bot_rails
   jbuilder (~> 2.0)
   jquery-rails
+  pg (~> 0.14)
   protected_attributes
   pry
   pry-rails
@@ -232,7 +233,6 @@ DEPENDENCIES
   sendgrid-ruby
   simplecov
   spring
-  sqlite3
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

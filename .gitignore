@@ -5,5 +5,6 @@
 /tmp/*
 /log/*
 /public/fonts/*
-.DS_Store*
-coverage/*
+.DS_Store
+coverage*
+
