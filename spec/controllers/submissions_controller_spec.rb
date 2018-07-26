@@ -49,8 +49,8 @@ RSpec.describe SubmissionsController, type: :controller do
 	end
 
 	describe "Get #Edit" do
-		it "allows edit and shos the changes" do
-			get :edit, id: 1
+		it "allows edit and shows the changes" do
+			get :edit, id: @sub.id
 			expect(response.body).to include("Editing")
 		end
 		it "redirects when not logged in" do
