@@ -48,7 +48,7 @@
 	</div>
 	<div class = "show__content">
 	<h2 class = "contentHeader"> Content </h2><hr>
-		<%=@submission.content%>
+		<%=@submission.content.html_safe%>
 	</div>
 	<div class = "show__comments">
 		<%= javascript_include_tag Ckeditor.cdn_url %>
