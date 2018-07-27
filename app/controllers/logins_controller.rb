@@ -16,7 +16,7 @@ class LoginsController < ApplicationController
 		@user.encrypt_password
 	end
 
-	def send_activate_email
+	def send_activation_email
 		@user.create_activation_digest
 		if @user.save
 			UserMailer.account_activation(@user).deliver_now

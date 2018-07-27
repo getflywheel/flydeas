@@ -21,8 +21,7 @@
 	<div class="field">
 		<%= f.label :title %><br>
 		<%= f.text_field :title %>
-	</div>
-	<%@submission.user_id = current_user.id%>
+	</div><%@submission.user_id = current_user.id%>
 	<div class="field">
 		<%= f.label :content %><br>
 		<%= f.cktext_area :content, ckeditor: {toolbar: "mini"}%>

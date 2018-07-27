@@ -3,17 +3,23 @@
 </section>
 
     <%= form_for(:user, :url => {:controller => 'logins', :action => 'create'}, html: { class: "form" }) do |f| %>
-       <%= f.label :username %>
-       <%= f.text_field :username %>
+        <%=f.label :first_name %>
+        <%=f.text_field :first_name %>
 
-       <%= f.label :email %>
-       <%= f.email_field :email %>
+        <%=f.label :last_name %>
+        <%=f.text_field :last_name %>
 
-       <%= f.label :password %>
-       <%= f.password_field :password %>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
 
-       <%= f.label :password_confirmation, "Confirmation" %>
-       <%= f.password_field :password_confirmation %>
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field :password_confirmation %>
 
         <div class="form__actions">
             <%= link_to "Cancel", root_path, class: "form__link" %>
