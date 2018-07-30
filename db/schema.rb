@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180723201606) do
+ActiveRecord::Schema.define(version: 20180730164801) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -35,7 +38,7 @@ ActiveRecord::Schema.define(version: 20180723201606) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "statuses", ["name"], name: "index_statuses_on_name"
+  add_index "statuses", ["name"], name: "index_statuses_on_name", using: :btree
 
   create_table "submissions", force: :cascade do |t|
     t.datetime "created_at",              null: false
@@ -48,8 +51,8 @@ ActiveRecord::Schema.define(version: 20180723201606) do
     t.integer  "status_id"
   end
 
-  add_index "submissions", ["category_id"], name: "index_submissions_on_category_id"
-  add_index "submissions", ["status_id"], name: "index_submissions_on_status_id"
+  add_index "submissions", ["category_id"], name: "index_submissions_on_category_id", using: :btree
+  add_index "submissions", ["status_id"], name: "index_submissions_on_status_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -64,6 +67,8 @@ ActiveRecord::Schema.define(version: 20180723201606) do
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   create_table "votes", force: :cascade do |t|
@@ -73,6 +78,6 @@ ActiveRecord::Schema.define(version: 20180723201606) do
     t.string  "post_type"
   end
 
-  add_index "votes", ["user_id"], name: "index_votes_on_user_id"
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
 
 end

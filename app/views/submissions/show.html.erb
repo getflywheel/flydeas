@@ -33,7 +33,7 @@
 					</div>
 				</div>
 				<!-- TODO: Change to pull the User from db instead of what the user entered as their username" -->
-				<h3>Submitted By: <%=@submission.user_id%></h3>
+				<h3>Submitted By: <%=@submission.user.username%></h3>
 			</div>
 		</div>
 		<div class = "dropdown">
@@ -48,7 +48,7 @@
 	</div>
 	<div class = "show__content">
 	<h2 class = "contentHeader"> Content </h2><hr>
-		<%=@submission.content%>
+		<%=@submission.content.html_safe%>
 	</div>
 	<div class = "show__comments">
 		<%= javascript_include_tag Ckeditor.cdn_url %>
