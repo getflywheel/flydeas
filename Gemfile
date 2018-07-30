@@ -14,6 +14,10 @@ source "https://rubygems.org"
 	gem "sendgrid-ruby"
 	gem "ckeditor"
 
+	# Redis based task handler and scheduler
+	gem 'resque'
+	gem 'resque-scheduler'
+
 group :development, :test do
 	gem "byebug"
 	gem "rspec"

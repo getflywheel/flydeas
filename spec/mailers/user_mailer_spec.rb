@@ -18,18 +18,10 @@ RSpec.describe UserMailer, type: :mailer do
 		end
 	end
 
-	# TODO: implementation, commented out to make tests pass for current pr
-	# describe "password_reset" do
-	#   let(:mail) { UserMailer.password_reset }
-	#
-	#   it "renders the headers" do
-	#     expect(mail.subject).to eq("Password reset")
-	#     expect(mail.to).to eq(["to@example.org"])
-	#     expect(mail.from).to eq(["Flydeas@getflywheel.com"])
-	#   end
-	#
-	#   it "renders the body" do
-	#     expect(mail.body.encoded).to match("Hi")
-	#   end
-	# end
+	describe "notifications" do
+		it "sends email" do
+			notification = create(:notification)
+			expect { UserMailer.notifications(notification.user).deliver_now }.to change {ActionMailer::Base.deliveries.count }.by(1)
+		end
+	end	
 end

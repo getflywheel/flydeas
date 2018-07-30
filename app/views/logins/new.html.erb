@@ -2,22 +2,28 @@
     <h1>Sign up</h1>
 </section>
 
-    <%= form_for(:user, :url => {:controller => 'logins', :action => 'create'}, html: { class: "form" }) do |f| %>
-       <%= f.label :username %>
-       <%= f.text_field :username %>
+<%= form_for(:user, :url => {:controller => 'logins', :action => 'create'}, html: { class: "form" }) do |f| %>
+    <%= f.label :first_name%>
+    <%= f.text_field :first_name%>
 
-       <%= f.label :email %>
-       <%= f.email_field :email %>
+    <%= f.label :last_name%>
+    <%= f.text_field :last_name%>
+    
+    <%= f.label :username %>
+    <%= f.text_field :username %>
 
-       <%= f.label :password %>
-       <%= f.password_field :password %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
 
-       <%= f.label :password_confirmation, "Confirmation" %>
-       <%= f.password_field :password_confirmation %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
 
-        <div class="form__actions">
-            <%= link_to "Cancel", root_path, class: "form__link" %>
-            <%= f.submit "Create my account", class: "button" %>
-        </div>
-        <%= render 'shared/error_messages' %>
-    <% end %>
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation %>
+
+    <div class="form__actions">
+        <%= link_to "Cancel", root_path, class: "form__link" %>
+        <%= f.submit "Create my account", class: "button" %>
+    </div>
+    <%= render 'shared/error_messages' %>
+<% end %>

@@ -1,5 +1,6 @@
 AllCops:
   #TargetRubyVersion: 2.4
+  TargetRailsVersion: 4.2
   Include:
     - bin/setup
   Exclude:

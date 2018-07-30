@@ -33,22 +33,26 @@
 					</div>
 				</div>
 				<!-- TODO: Change to pull the User from db instead of what the user entered as their username" -->
-				<h3>Submitted By: <%=@submission.user_id%></h3>
+				<h3>Submitted By: <%=@submission.user.username%></h3>
 			</div>
 		</div>
 		<div class = "dropdown">
 			<span class="dropbtn"> <%= image_tag "ellipsis.svg", class: "header__logo", alt: "Menu", width: "15", length: "15"%></span>
 			<div class = "dropdown-content">
-				<%= link_to 'Destroy', @submission, method: :delete, data: { confirm: 'Are you sure?' }, class:"form__link" %>
-				<%= link_to 'Back', submissions_path, class:"form__link"%>
-				<%= link_to 'Edit', edit_submission_path(@submission), class: "form__link"%>
-				<a href="#"> Watch</a>
+				<%= link_to "Destroy", @submission, method: :delete, data: { confirm: 'Are you sure?' }, class:"form__link" %>
+				<%= link_to "Back", submissions_path, class:"form__link"%>
+				<%= link_to "Edit", edit_submission_path(@submission), class: "form__link"%>
+				<% if @submission.watchers.include? current_user %>
+					<%= link_to "Unwatch", remove_watcher_submission_path(submission_id: @submission.id, user_id: current_user.id), method: :patch %>
+				<% else %>
+					<%= link_to "Watch", add_watcher_submission_path(submission_id: @submission.id, user_id: current_user.id), method: :patch %>
+				<% end %>
 			</div>	
 		</div>
 	</div>
 	<div class = "show__content">
 	<h2 class = "contentHeader"> Content </h2><hr>
-		<%=@submission.content%>
+		<%=@submission.content.html_safe%>
 	</div>
 	<div class = "show__comments">
 		<%= javascript_include_tag Ckeditor.cdn_url %>
