@@ -99,6 +99,7 @@ class User < ActiveRecord::Base
 		reset_digest == self.reset_digest
 	end
 
+
     # encrypts the password
 	def encrypt_password
 		if self.salt.nil?

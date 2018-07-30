@@ -18,6 +18,10 @@ module NotificationHelper
 			end
 		end
 
-		def enqueue_emails; end
+		def enqueue_emails
+			@post_change.submission.watchers.each do |user|
+				UserMailer.notifications(user).deliver_now
+			end
+		end
 	end
 end

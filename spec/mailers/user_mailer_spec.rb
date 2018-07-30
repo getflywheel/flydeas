@@ -4,7 +4,7 @@ RSpec.describe UserMailer, type: :mailer do
 	describe "account_activation" do
 		let(:user) { User.create(username: "testus3e4drw1", email: "test@getflywheel.com", password: "123456xX$", salt: "1234") }
 		let(:mail) { UserMailer.account_activation(user) }
-
+		
 		it "renders the headers" do
 			user.create_activation_digest
 			expect(mail.subject).to eq("Account activation")
@@ -18,18 +18,10 @@ RSpec.describe UserMailer, type: :mailer do
 		end
 	end
 
-	# TODO: implementation, commented out to make tests pass for current pr
-	# describe "password_reset" do
-	#   let(:mail) { UserMailer.password_reset }
-	#
-	#   it "renders the headers" do
-	#     expect(mail.subject).to eq("Password reset")
-	#     expect(mail.to).to eq(["to@example.org"])
-	#     expect(mail.from).to eq(["Flydeas@getflywheel.com"])
-	#   end
-	#
-	#   it "renders the body" do
-	#     expect(mail.body.encoded).to match("Hi")
-	#   end
-	# end
+	describe "notifications" do
+		it "sends email" do
+			notification = create(:notification)
+			expect { UserMailer.notifications(notification.user).deliver_now }.to change {ActionMailer::Base.deliveries.count }.by(1)
+		end
+	end	
 end
