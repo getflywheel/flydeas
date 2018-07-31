@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
 	has_many :submissions
 	has_many :votes
-	has_and_belongs_to_many :watched_submissions, 
-		class_name: "Submission", 
+	has_and_belongs_to_many :watched_submissions,
+		class_name: "Submission",
 		join_table: :watches
 	has_many :notifications, dependent: :destroy
 	has_many :post_changes, through: :notifications

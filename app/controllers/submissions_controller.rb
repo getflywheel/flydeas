@@ -1,5 +1,5 @@
 class SubmissionsController < ApplicationController
-	before_action :set_submission,
+	before_action 	:set_submission,
 		only: %i[show edit update destroy add_watcher remove_watcher]
 	before_action :logged_in
 

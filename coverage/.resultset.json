@@ -1,11 +1,11 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/neilkoul/Projects/flypoll/app/helpers/account_activations_helper.rb": [
+      "/Users/grahmmanley/code/flydeas/app/helpers/account_activations_helper.rb": [
         1,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/helpers/application_helper.rb": [
+      "/Users/grahmmanley/code/flydeas/app/helpers/application_helper.rb": [
         1,
         1,
         0,
@@ -16,26 +16,87 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/helpers/categories_helper.rb": [
+      "/Users/grahmmanley/code/flydeas/app/helpers/categories_helper.rb": [
         1,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/helpers/logins_helper.rb": [
+      "/Users/grahmmanley/code/flydeas/app/helpers/logins_helper.rb": [
         1,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/helpers/password_resets_helper.rb": [
+      "/Users/grahmmanley/code/flydeas/app/helpers/notification_helper.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        67,
+        67,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        67,
+        67,
+        67,
+        null,
+        null,
+        1,
+        67,
+        11,
+        null,
+        null,
+        null,
+        1,
+        67,
+        67,
+        11,
+        11,
+        1,
+        null,
+        10,
+        null,
+        null,
+        null,
+        null,
+        1,
+        10,
+        null,
+        10,
+        10,
+        10,
+        10,
+        10,
+        null,
+        0,
+        null,
+        10,
+        null,
+        null,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/app/helpers/password_resets_helper.rb": [
         1,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/helpers/sessions_helper.rb": [
+      "/Users/grahmmanley/code/flydeas/app/helpers/sessions_helper.rb": [
         1,
         1,
         1,
         null,
         null,
         1,
-        46,
+        45,
         null,
         null,
         1,
@@ -48,15 +109,15 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/helpers/statuses_helper.rb": [
+      "/Users/grahmmanley/code/flydeas/app/helpers/statuses_helper.rb": [
         1,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/helpers/submissions_helper.rb": [
+      "/Users/grahmmanley/code/flydeas/app/helpers/submissions_helper.rb": [
         1,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/helpers/vote_helper.rb": [
+      "/Users/grahmmanley/code/flydeas/app/helpers/vote_helper.rb": [
         1,
         1,
         7,
@@ -66,7 +127,7 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/controllers/account_activations_controller.rb": [
+      "/Users/grahmmanley/code/flydeas/app/controllers/account_activations_controller.rb": [
         1,
         1,
         0,
@@ -80,7 +141,7 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/controllers/application_controller.rb": [
+      "/Users/grahmmanley/code/flydeas/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -88,72 +149,72 @@
         1,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/controllers/categories_controller_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/controllers/categories_controller_spec.rb": [
         1,
         null,
         1,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/controllers/categories_controller.rb": [
+      "/Users/grahmmanley/code/flydeas/app/controllers/categories_controller.rb": [
         1,
         1,
         null,
         1,
         null,
         1,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/neilkoul/Projects/flypoll/spec/controllers/logins_controller_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/neilkoul/Projects/flypoll/app/controllers/logins_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
         null,
         1,
         0,
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/controllers/password_resets_controller_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/controllers/logins_controller_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/app/controllers/logins_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/spec/controllers/password_resets_controller_spec.rb": [
         1,
         null,
         1,
@@ -204,7 +265,7 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/controllers/password_resets_controller.rb": [
+      "/Users/grahmmanley/code/flydeas/app/controllers/password_resets_controller.rb": [
         1,
         1,
         1,
@@ -273,7 +334,7 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/controllers/sessions_controller_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/controllers/sessions_controller_spec.rb": [
         1,
         null,
         1,
@@ -305,7 +366,7 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/controllers/sessions_controller.rb": [
+      "/Users/grahmmanley/code/flydeas/app/controllers/sessions_controller.rb": [
         1,
         1,
         1,
@@ -340,13 +401,13 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/controllers/statuses_controller_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/controllers/statuses_controller_spec.rb": [
         1,
         null,
         1,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/controllers/statuses_controller.rb": [
+      "/Users/grahmmanley/code/flydeas/app/controllers/statuses_controller.rb": [
         1,
         1,
         1,
@@ -362,7 +423,7 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/controllers/submissions_controller_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/controllers/submissions_controller_spec.rb": [
         1,
         null,
         1,
@@ -491,9 +552,10 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/controllers/submissions_controller.rb": [
+      "/Users/grahmmanley/code/flydeas/app/controllers/submissions_controller.rb": [
         1,
         1,
+        null,
         1,
         null,
         1,
@@ -535,6 +597,18 @@
         null,
         null,
         1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
         1,
         1,
         null,
@@ -559,13 +633,13 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/controllers/vote_controller_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/controllers/vote_controller_spec.rb": [
         1,
         null,
         1,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/controllers/votes_controller.rb": [
+      "/Users/grahmmanley/code/flydeas/app/controllers/votes_controller.rb": [
         1,
         1,
         0,
@@ -607,7 +681,7 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/helpers/account_activations_helper_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/helpers/account_activations_helper_spec.rb": [
         1,
         null,
         null,
@@ -628,7 +702,7 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/helpers/categories_helper_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/helpers/categories_helper_spec.rb": [
         1,
         null,
         null,
@@ -642,23 +716,7 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/helpers/logins_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null
-      ],
-      "/Users/neilkoul/Projects/flypoll/spec/helpers/sessions_helper_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/helpers/logins_helper_spec.rb": [
         1,
         null,
         null,
@@ -674,7 +732,26 @@
         1,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/helpers/submissions_helper_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/helpers/notification_helper_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/spec/helpers/sessions_helper_spec.rb": [
         1,
         null,
         null,
@@ -690,7 +767,7 @@
         1,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/helpers/vote_helper_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/helpers/submissions_helper_spec.rb": [
         1,
         null,
         null,
@@ -706,7 +783,23 @@
         1,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/mailers/user_mailer_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/helpers/vote_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/spec/mailers/user_mailer_spec.rb": [
         1,
         null,
         1,
@@ -727,94 +820,21 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
+        1,
+        1,
+        4,
         null,
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/mailers/user_mailer.rb": [
+      "/Users/grahmmanley/code/flydeas/app/mailers/user_mailer.rb": [
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
         1,
         2,
         2,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/neilkoul/Projects/flypoll/app/mailers/application_mailer.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/neilkoul/Projects/flypoll/spec/models/category_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/neilkoul/Projects/flypoll/app/models/category.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/neilkoul/Projects/flypoll/spec/models/status_spec.rb": [
-        1,
-        null,
-        1,
-        1,
         1,
         1,
         1,
@@ -826,36 +846,249 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/models/status.rb": [
-        1,
+      "/Users/grahmmanley/code/flydeas/app/mailers/application_mailer.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/models/submission_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/models/category_spec.rb": [
         1,
         null,
-        1,
-        null,
-        null
-      ],
-      "/Users/neilkoul/Projects/flypoll/app/models/submission.rb": [
-        1,
-        1,
-        1,
         1,
         1,
         1,
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/app/models/category.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/models/user_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/models/comment_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/app/models/comment.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        14,
+        null,
+        null,
+        null,
+        null,
+        14,
+        null,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/spec/models/notification_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/app/models/notification.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/spec/models/post_change_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/app/models/post_change.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/spec/models/status_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/app/models/status.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/spec/models/submission_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/app/models/submission.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        60,
+        5,
+        5,
+        null,
+        null,
+        60,
+        47,
+        null,
+        null,
+        null,
+        47,
+        null,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/spec/models/user_spec.rb": [
         1,
         null,
         1,
@@ -898,10 +1131,16 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/models/user.rb": [
+      "/Users/grahmmanley/code/flydeas/app/models/user.rb": [
         1,
         1,
         1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
         1,
         1,
         1,
@@ -914,8 +1153,8 @@
         1,
         null,
         1,
-        76,
-        76,
+        108,
+        108,
         null,
         null,
         null,
@@ -979,8 +1218,8 @@
         null,
         null,
         1,
-        67,
-        67,
+        99,
+        99,
         null,
         null,
         null,
@@ -995,17 +1234,18 @@
         null,
         null,
         null,
-        1,
-        67,
-        67,
         null,
-        67,
-        67,
+        1,
+        99,
+        99,
+        null,
+        99,
+        99,
         null,
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/models/vote_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/models/vote_spec.rb": [
         1,
         null,
         1,
@@ -1060,7 +1300,7 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/models/vote.rb": [
+      "/Users/grahmmanley/code/flydeas/app/models/vote.rb": [
         1,
         1,
         1,
@@ -1076,7 +1316,7 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/requests/submissions_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/requests/submissions_spec.rb": [
         1,
         null,
         1,
@@ -1088,7 +1328,7 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/requests/users_logins_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/requests/users_logins_spec.rb": [
         1,
         null,
         1,
@@ -1096,7 +1336,7 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/routing/submissions_routing_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/routing/submissions_routing_spec.rb": [
         1,
         null,
         1,
@@ -1135,7 +1375,7 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/views/logins/new.html.erb_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/views/logins/new.html.erb_spec.rb": [
         1,
         null,
         1,
@@ -1145,46 +1385,9 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/views/submissions/edit.html.erb_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/views/submissions/edit.html.erb_spec.rb": [
         1,
         null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/neilkoul/Projects/flypoll/spec/views/submissions/index.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/neilkoul/Projects/flypoll/spec/views/submissions/new.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
         1,
         1,
         1,
@@ -1198,18 +1401,14 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/spec/views/submissions/show.html.erb_spec.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/views/submissions/index.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         1,
         1,
-        1,
         null,
-        null,
-        null,
-        1,
         1,
         1,
         1,
@@ -1221,22 +1420,31 @@
         null,
         null
       ],
-      "/Users/neilkoul/Projects/flypoll/app/models/comment.rb": [
+      "/Users/grahmmanley/code/flydeas/spec/views/submissions/new.html.erb_spec.rb": [
         1,
-        1,
-        1,
+        null,
         1,
         1,
         1,
         1,
         1,
         null,
+        null,
         1,
         1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/grahmmanley/code/flydeas/spec/views/submissions/show.html.erb_spec.rb": [
+        1,
+        null,
         1,
         null
       ]
     },
-    "timestamp": 1533051945
+    "timestamp": 1533074090
   }
 }

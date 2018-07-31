@@ -1,3 +1,4 @@
+<!-- email html placeholder text -->
 <h1> Yo <%=@user.username%> some stuff happened today</h1>
 <% notifications = @user.notifications %>
 <% @user.watched_submissions.each do |submission| %>
@@ -15,14 +16,15 @@
 		<% end %>
 		<% comment_changes = post_changes.select { |post_change| post_change.post_change_type == "comment" } %>
 		<% if comment_changes.any? %>
-			<h4>Here's words people made</h4>
+			<h4>Here's words people made about the post</h4>
 			<% comment_changes.first(3).each do |comment_change| %>
 				<% comment = comment_change.change_object %>	
-				<%= comment.user.username%> said <%=comment.content.html_safe%> 
+				<%= comment.user.username%> said <%=comment.content.html_safe%>
+			<br>
 			<% end %>
 			<% if comment_changes.count > 3 %>
 				Check the post for <%= comment_changes.count - 3 %> other comment<%="s" if comment_changes.count > 4%>	
 			<% end %>
 		<% end %>
-	<%end%>
-<%end%>
+	<% end %>
+<% end %>

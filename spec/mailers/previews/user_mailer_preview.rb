@@ -15,36 +15,42 @@ class UserMailerPreview < ActionMailer::Preview
 	end
 
 	def notifications
-		user = User.find_by(username: "emailtestuser")
-		create_email_preview_data if user.nil? 
-		UserMailer.notifications(user)
-	end	
+		@u = User.find_by(username: "emailtestuser")
+		@s = Submission.find_by(title: "test submission for email")
+		create_user if @u.nil?
+		create_submission if @s.nil?
+		make_changes unless @u.notifications.any?
+		UserMailer.notifications(@u)
+	end
 
 	private
 
-	def create_email_preview_data
-		u = User.new(
+	def make_changes
+		@s.vote_count = 2
+		@s.save
+		Comment.create(submission_id: @s.id, content: "stuffs", user: @u)
+	end
+
+	def create_user
+		@u = User.new(
 			username: "emailtestuser",
 			email: "emailtestuser@getflywheel.com",
 			password: "Flywheel1!",
 			activated: true
 		)
-		u.encrypt_password
-		u.save
-		s = Submission.new(
+		@u.encrypt_password
+		@u.save
+	end
+
+	def create_submission
+		@s = Submission.new(
 			title: "test submission for email",
 			content: "nothing important",
-			user: u, 
+			user: @u,
 			category: Category.first,
 			status: Status.first
 		)
-		s.watchers << u
-		u.save
-		s.save
-		s.status = Status.second
-		s.vote_count = 2
-		s.save
-		c = Comment.create(submission_id: s.id, content: "stuffs", user: u)
-		return u
+		@s.watchers << @u
+		@s.save
 	end
 end
