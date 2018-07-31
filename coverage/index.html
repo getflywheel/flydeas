@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-07-30T12:14:39-05:00">2018-07-30T12:14:39-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-07-31T10:45:45-05:00">2018-07-31T10:45:45-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">87.29%</span></span>
+    (<span class="covered_percent"><span class="yellow">87.19%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>53</b> files in total.
-    <b>606</b> relevant lines. 
-    <span class="green"><b>529</b> lines covered</span> and
-    <span class="red"><b>77</b> lines missed </span>
+    <b>609</b> relevant lines. 
+    <span class="green"><b>531</b> lines covered</span> and
+    <span class="red"><b>78</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -112,11 +112,11 @@
       
       <tr>
         <td class="strong"><a href="#d86fd06ec9c38d925d3130793e2e5f3672c28769" class="src_link" title="app/controllers/statuses_controller.rb">app/controllers/statuses_controller.rb</a></td>
-        <td class="yellow strong">83.33 %</td>
-        <td>10</td>
+        <td class="red strong">75.0 %</td>
+        <td>14</td>
+        <td>8</td>
         <td>6</td>
-        <td>5</td>
-        <td>1</td>
+        <td>2</td>
         <td>0.8</td>
       </tr>
       
@@ -197,7 +197,7 @@
         <td>10</td>
         <td>8</td>
         <td>2</td>
-        <td>7.5</td>
+        <td>7.7</td>
       </tr>
       
       <tr>
@@ -273,9 +273,9 @@
       <tr>
         <td class="strong"><a href="#34fc14f1f07ccec88cb216cb5b73ac4c857b7214" class="src_link" title="app/models/status.rb">app/models/status.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>5</td>
         <td>4</td>
-        <td>3</td>
-        <td>3</td>
+        <td>4</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -1691,11 +1691,11 @@
         <div class="source_table" id="d86fd06ec9c38d925d3130793e2e5f3672c28769">
   <div class="header">
     <h3>app/controllers/statuses_controller.rb</h3>
-    <h4><span class="yellow">83.33 %</span> covered</h4>
+    <h4><span class="red">75.0 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <b>8</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -1717,25 +1717,25 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">	def show; end</code>
+          <code class="ruby">	def show </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
           
           
+          <code class="ruby">	end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
           <code class="ruby">	private</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
@@ -1757,6 +1757,30 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">	</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	def status_params</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">		params.require(:status).permit(:status_id, :name, :password)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">	end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">end</code>
@@ -2688,8 +2712,8 @@
           <code class="ruby">	def current_user</code>
         </li>
       
-        <li class="covered" data-hits="44" data-linenumber="7">
-          <span class="hits">44</span>
+        <li class="covered" data-hits="46" data-linenumber="7">
+          <span class="hits">46</span>
           
           <code class="ruby">		@current_user ||= User.find_by(id: session[:user_id])</code>
         </li>
@@ -3239,8 +3263,8 @@
     <h3>app/models/status.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3263,10 +3287,16 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">	validates :name, presence: true</code>
+          <code class="ruby">	validates :name, :presence =&gt; true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	attr_accessor :status_id</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby">end</code>

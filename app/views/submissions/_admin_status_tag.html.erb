@@ -1,0 +1,7 @@
+<div class="tag">
+	<%= form_for(@submission, html: { class: "form" }) do |f| %>
+		<div class="field">
+			<%=f.collection_select :status_id, Status.order(:name), :id, :name, {}, {onchange:"this.form.submit();", class:"tag__select"} %>
+		</div>
+	<%end%>	
+</div>
