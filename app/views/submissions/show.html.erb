@@ -17,22 +17,13 @@
 			<div class = "show__titleStatusUser">
 				<h1><%=@submission.title%></h1>
 				<div class = "show__status">
-					<%status = @submission.status.name%>
-					<%if @submission.status.name == "Open"%>
-						<%status = "openTag"%>
-					<%elsif @submission.status.name == "Completed"%>
-						<%status = "closedTag"%>
-					<%else%>
-						<%status = "rejectedTag"%>
-					<%end%>
 					<h3>Status:</h3>
-					<div class="index__tag index__statusTag <%=status%>" data-info = "<%= @submission.status.name%>">
-						<a href="#">
-							<%= @submission.status.name%>
-						</a>
-					</div>
+					<% if current_user.admin?%>
+						<%= render partial: "admin_status_tag"%>
+					<%else%>
+						<%= render partial: "status_tag"%>
+					<%end%>
 				</div>
-				<!-- TODO: Change to pull the User from db instead of what the user entered as their username" -->
 				<h3>Submitted By: <%=@submission.user.username%></h3>
 			</div>
 		</div>

@@ -1,25 +1,8 @@
 @import "global/variables";
 
 .form {
-    max-width: 50rem;
-    margin: 0 auto;
-    input[type="text"],
-    input[type="email"],
-    input[type="password"],
-    textarea,
-    select {
-        border-radius: .4rem;
-        padding: 2rem;
-        font-size: 1.5rem;
-        border: .1rem solid $gray15;
-        outline: none;
-        width: 100%;
-        margin-bottom: 2rem;
-
-        &:focus {
-            border-color: $gray-dark;
-        }
-    }
+	max-width: 50rem;
+	margin: 0 auto;
 
 	&__comment {
 		max-width: 100rem;
@@ -27,24 +10,42 @@
 		padding-bottom: 2rem;
 	}
 
-    label {
-        display: block;
-        font-size: 1.6rem;
-        width: 100%;
-        text-align: left;
-        margin-bottom: .5rem;
-    }
+	label {
+		display: block;
+		font-size: 1.6rem;
+		width: 100%;
+		text-align: left;
+		margin-bottom: .5rem;
+	}
 
-    &__link {
-        text-decoration: none;
-        font-size: 1.6rem;
-        color: $secondary;
-    }
+	&__link {
+		text-decoration: none;
+		font-size: 1.6rem;
+		color: $secondary;
+	}
 
-    &__actions {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 2rem;
-    }
+	&__actions {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 2rem;
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+.selector {
+	border-radius: .4rem;
+	padding: 2rem;
+	font-size: 1.5rem;
+	border: .1rem solid $gray15;
+	outline: none;
+	width: 100%;
+	margin-bottom: 2rem;
+
+	&:focus {
+		border-color: $gray-dark;
+	}
 }

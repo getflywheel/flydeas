@@ -65,7 +65,7 @@
         border: .2rem $pink;
         border-radius: .3rem;
         background-color: $secondary;
-        
+        text-decoration: none;
         a {
             text-decoration: none;
             color: $white;
@@ -80,16 +80,6 @@
 		text-align: center;	
 	}
 
-    select {
-        border-radius: .4rem;
-        padding: 2rem;
-        font-size: 1.5rem;
-        border: .1rem solid $gray15;
-        outline: none;
-        width: 100%;
-        margin-bottom: 2rem;
-        text-transform: uppercase;
-    }
     p {
         padding-right: .8rem;
         font-size: 1.5rem;
@@ -193,4 +183,15 @@
 
 .hasNotVoted {
 	background-color: $gray15;
+}
+
+.selector {
+    border-radius: .4rem;
+    padding: 2rem;
+    font-size: 1.5rem;
+    border: .1rem solid $gray15;
+    outline: none;
+    width: 100%;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
 }
