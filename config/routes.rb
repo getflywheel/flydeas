@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 		resources :comments do
 			resource :vote, only: %i[update]
 		end
+		patch "add_watcher", on: :member
+		patch "remove_watcher", on: :member
 	end
 	resources :categories, only: %i[show]
 	# Sign up resource
