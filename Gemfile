@@ -13,8 +13,7 @@ source "https://rubygems.org"
 	gem "protected_attributes"
 	gem "sendgrid-ruby"
 	gem "ckeditor"
-
-	# Redis based task handler and scheduler
+	gem "premailer-rails"
 	gem 'resque'
 	gem 'resque-scheduler'
 
@@ -25,8 +24,11 @@ group :development, :test do
 	gem "pry"
 	gem "pry-rails"
 	gem "factory_bot_rails"
-	gem "fakeredis"
 end
+
+group :test do
+	gem "fakeredis"
+end	
 
 group :development do
 	gem "simplecov", require: false

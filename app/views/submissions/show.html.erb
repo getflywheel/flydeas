@@ -24,7 +24,9 @@
 						<%= render partial: "status_tag"%>
 					<%end%>
 				</div>
-				<h3>Submitted By: <%=@submission.user.username%></h3>
+				
+				<% poster = @submission.user.username rescue "The fourth founder" %> 
+				<h3>Submitted By: <%=poster%></h3>
 			</div>
 		</div>
 		<div class = "dropdown">

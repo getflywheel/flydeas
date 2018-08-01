@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20180730164801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -75,13 +76,13 @@ ActiveRecord::Schema.define(version: 20180730164801) do
     t.string   "password"
     t.string   "salt"
     t.boolean  "admin"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "activation_digest"
-    t.boolean  "activated"
-    t.datetime "activated_at"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.string   "activation_digest"
+    t.boolean  "activated",         default: false
+    t.datetime "activated_at"
     t.string   "first_name"
     t.string   "last_name"
   end
@@ -93,13 +94,12 @@ ActiveRecord::Schema.define(version: 20180730164801) do
     t.string  "post_type"
   end
 
-  add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
-
   create_table "watches", id: false, force: :cascade do |t|
     t.integer "user_id"
     t.integer "submission_id"
   end
 
-  add_index "watches", ["submission_id"], name: "index_watches_on_submission_id"
-  add_index "watches", ["user_id"], name: "index_watches_on_user_id"
+  add_index "watches", ["submission_id"], name: "index_watches_on_submission_id", using: :btree
+  add_index "watches", ["user_id"], name: "index_watches_on_user_id", using: :btree
+
 end

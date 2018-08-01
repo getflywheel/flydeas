@@ -6,5 +6,5 @@
 /log/*
 /public/fonts/*
 .DS_Store
-coverage*
-
+coverage/
+dump.rdb

@@ -1,0 +1,72 @@
+@import "global/variables";
+
+.email {
+	&__link {
+		text-decoration: none;
+		color: $secondary;
+		font-size: 1.5rem;
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem;
+	}
+
+	&__header__text {
+		text-align: center;
+		font-size: 1.8rem;
+	}
+
+	&__logo {
+		display: flex;
+		align-items: center;
+	}	
+	
+	&__info {
+		border-style: solid;
+		border-radius: 1rem;
+		border-color: $primary;
+		padding: 5rem;
+		margin: 2rem;
+		background: $gray5;
+		text-align: center;
+		font-size: 1.5rem;
+		h2 {
+			font-size: 1.5rem;
+		}
+		p {
+			font-size: 1.3rem;  
+		}		
+		hr {
+			background: $primary;
+		}	
+	}	
+
+	&__button {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 2rem;
+		background: $primary;
+		color: $white;
+		border-radius: 3rem;
+		height: 5rem;
+		border: 0;
+		font-size: 1.4rem;
+		font-weight: 700;
+		padding: 0 3rem;
+		text-transform: uppercase;
+		cursor: pointer;
+		outline: none;
+		transition: background .1s;  
+		text-decoration: none;
+		width: 20rem;
+		vertical-align: middle;
+		text-align: center;
+		display: table-cell;
+	}
+}
+
+

@@ -14,7 +14,7 @@ RSpec.describe UserMailer, type: :mailer do
 
 		it "renders the body" do
 			user.create_activation_digest
-			expect(mail.body.encoded).to match("Account Activation")
+			expect(mail.body.encoded).to match("Flydeas")
 		end
 	end
 

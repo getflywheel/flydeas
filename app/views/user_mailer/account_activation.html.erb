@@ -1,8 +1,23 @@
-<html>
-<h1>Flydeas Account Activation</h1>
+<%= stylesheet_link_tag "application", media: "all" %>
+<div class="email__header">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td align="center">
+				<%= image_tag attachments["logo-green.png"].url, alt: "Flydeas logo", width: "200", height: "200", class: "email__logo" %>
+			</td>
+		</tr>	
+	</table>	
+</div>
+<div class="email__info">
+	<div>
+		<p> 
+			Welcome to Flydeas <%= @user.username %>!! 
+		</p>
+	</div>
 
-<p>
-    Welcome to Flydeas!! Thanks for signing up, <%= @user.username %>. Click on the link below to activate your account:
-</p>
-<%= link_to "Activate", edit_account_activation_url(@user.activation_digest, host: "http://localhost:3000")%>
-</html>
+	<div>
+		<!-- #TODO: change host name for production -->
+		<%= link_to "Activate account", edit_account_activation_url(@user.activation_digest,
+			 host: "http://localhost:3000"), class: "email__button"%>
+	</div>
+</div>
