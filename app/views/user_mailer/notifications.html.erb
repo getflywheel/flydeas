@@ -1,0 +1,30 @@
+<!-- email html placeholder text -->
+<h1> Yo <%=@user.username%> some stuff happened today</h1>
+<% notifications = @user.notifications %>
+<% @user.watched_submissions.each do |submission| %>
+	<% post_changes = @user.post_changes.select {|post_change| post_change.submission == submission } %>
+	<% if post_changes.any? %>
+		<h2><%= submission.title %> has some changes</h2>
+		<hr>
+		<% status_change = post_changes.select { |post_change| post_change.post_change_type == "status" } %>
+		<% if status_change.any? %>
+			<h4>The status has changed to <%= submission.status.name%></h4>
+		<% end %>
+		<% vote_change = post_changes.select { |post_change| post_change.post_change_type == "vote" } %>
+		<% if vote_change.any? %>
+			<h4>Votes are now at <%=submission.vote_count%></h4>
+		<% end %>
+		<% comment_changes = post_changes.select { |post_change| post_change.post_change_type == "comment" } %>
+		<% if comment_changes.any? %>
+			<h4>Here's words people made about the post</h4>
+			<% comment_changes.first(3).each do |comment_change| %>
+				<% comment = comment_change.change_object %>	
+				<%= comment.user.username%> said <%=comment.content.html_safe%>
+			<br>
+			<% end %>
+			<% if comment_changes.count > 3 %>
+				Check the post for <%= comment_changes.count - 3 %> other comment<%="s" if comment_changes.count > 4%>	
+			<% end %>
+		<% end %>
+	<% end %>
+<% end %>

@@ -1,5 +1,6 @@
 class SubmissionsController < ApplicationController
-	before_action :set_submission, only: %i[show edit update destroy]
+	before_action 	:set_submission,
+		only: %i[show edit update destroy add_watcher remove_watcher]
 	before_action :logged_in
 
 	def logged_in
@@ -38,6 +39,18 @@ class SubmissionsController < ApplicationController
 			flash[:info] = "Submission edit failed"
 			render :edit
 		end
+	end
+
+	def add_watcher
+		@submission.watchers << User.find(params[:user_id])
+		@submission.save
+		redirect_to :back
+	end
+
+	def remove_watcher
+		@submission.watchers.delete(User.find(params[:user_id]))
+		@submission.save
+		redirect_to :back
 	end
 
 	def destroy

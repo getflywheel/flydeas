@@ -13,4 +13,44 @@ class UserMailerPreview < ActionMailer::Preview
 		user.reset_token = user.new_token
 		UserMailer.password_reset(user)
 	end
+
+	def notifications
+		@u = User.find_by(username: "emailtestuser")
+		@s = Submission.find_by(title: "test submission for email")
+		create_user if @u.nil?
+		create_submission if @s.nil?
+		make_changes unless @u.notifications.any?
+		UserMailer.notifications(@u)
+	end
+
+	private
+
+	def make_changes
+		@s.vote_count = 2
+		@s.save
+		Comment.create(submission_id: @s.id, content: "stuffs", user: @u)
+	end
+
+	def create_user
+		@u = User.new(
+			username: "emailtestuser",
+			email: "emailtestuser@getflywheel.com",
+			password: "Flywheel1!",
+			activated: true
+		)
+		@u.encrypt_password
+		@u.save
+	end
+
+	def create_submission
+		@s = Submission.new(
+			title: "test submission for email",
+			content: "nothing important",
+			user: @u,
+			category: Category.first,
+			status: Status.first
+		)
+		@s.watchers << @u
+		@s.save
+	end
 end
