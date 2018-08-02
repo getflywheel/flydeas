@@ -1,30 +1,52 @@
-<!-- email html placeholder text -->
-<h1> Yo <%=@user.username%> some stuff happened today</h1>
+<%= stylesheet_link_tag "application", media: "all" %>
+<div class="email__header">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td align="center">
+				<%= image_tag attachments["logo-green.png"].url, alt: "Flydeas logo", width: "200", height: "200", class: "email__logo" %>
+			</td>
+		</tr>	
+	</table>
+</div>
+<div class="email__header__text">
+	<h1> Yo <%=@user.username%>, some stuff happened today</h1>
+</div>	
 <% notifications = @user.notifications %>
 <% @user.watched_submissions.each do |submission| %>
 	<% post_changes = @user.post_changes.select {|post_change| post_change.submission == submission } %>
 	<% if post_changes.any? %>
-		<h2><%= submission.title %> has some changes</h2>
-		<hr>
-		<% status_change = post_changes.select { |post_change| post_change.post_change_type == "status" } %>
-		<% if status_change.any? %>
-			<h4>The status has changed to <%= submission.status.name%></h4>
+		<div class="email__info">
+			<% status_change = post_changes.select { |post_change| post_change.post_change_type == "status" } %>
+			<% vote_change = post_changes.select { |post_change| post_change.post_change_type == "vote" } %>
+			<!-- #TODO: Add host for production -->
+		<h2><%= link_to submission.title, submission_url(submission, host: "http://localhost:3000"), class: "email__link" %> 
+		<% if status_change.any? and vote_change.any? %>
+			has had its status changed to 
+				<%= submission.status.name %> and now has 
+				<%= submission.vote_count %> 
+				vote<%="s" if submission.vote_count > 1 %>.</h2>
+		<% elsif status_change.any? %>
+			has had its status changed to 
+				<%= submission.status.name %>.</h2>
+		<% elsif vote_change.any? %>
+			now has <%= submission.vote_count %> 
+			vote<%="s" if submission.vote_count > 1 %>.</h2>
+		<% else %>
+			has new comments.</h2>
 		<% end %>
-		<% vote_change = post_changes.select { |post_change| post_change.post_change_type == "vote" } %>
-		<% if vote_change.any? %>
-			<h4>Votes are now at <%=submission.vote_count%></h4>
-		<% end %>
+
 		<% comment_changes = post_changes.select { |post_change| post_change.post_change_type == "comment" } %>
 		<% if comment_changes.any? %>
-			<h4>Here's words people made about the post</h4>
-			<% comment_changes.first(3).each do |comment_change| %>
+			<hr class="email">
+			<% comment_changes.sort_by {|c| c.created_at }.first(3).each do |comment_change| %>
 				<% comment = comment_change.change_object %>	
-				<%= comment.user.username%> said <%=comment.content.html_safe%>
+				<h2><%= comment.user.username%> said <%=comment.content.html_safe%></h2>
 			<br>
 			<% end %>
 			<% if comment_changes.count > 3 %>
 				Check the post for <%= comment_changes.count - 3 %> other comment<%="s" if comment_changes.count > 4%>	
 			<% end %>
 		<% end %>
+		</div>
 	<% end %>
 <% end %>
