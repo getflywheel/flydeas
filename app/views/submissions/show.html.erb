@@ -32,7 +32,7 @@
 		<div class = "dropdown">
 			<span class="dropbtn"> <%= image_tag "ellipsis.svg", class: "header__logo", alt: "Menu", width: "15", length: "15"%></span>
 			<div class = "dropdown-content">
-				<%= link_to "Destroy", @submission, method: :delete, data: { confirm: 'Are you sure?' }, class:"form__link" %>
+				<%= link_to "Delete", @submission, method: :delete, data: { confirm: 'Are you sure?' }, class:"form__link" %>
 				<%= link_to "Back", submissions_path, class:"form__link"%>
 				<%= link_to "Edit", edit_submission_path(@submission), class: "form__link"%>
 				<% if @submission.watchers.include? current_user %>

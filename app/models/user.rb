@@ -9,13 +9,16 @@ class User < ActiveRecord::Base
 
 	USERNAME_REGEX = /[a-zA-Z0-9\-_]{0,20}/
 	EMAIL_REGEX = /[a-zA-Z_0-9.-]+@getflywheel.com/i
-	PASSWORD_REGEX = /.*(?=.{8,32})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^+=]).*/
+	PASSWORD_REGEX = /(?=.*[a-zA-Z])(?=.*[0-9])/ # at least 1 lowercase and 1 uppercase
 	attr_accessor :remember_token, :activation_token, :reset_token
 
 	validates :username, presence: true, uniqueness: { case_sensitive: false },
 						format: { with: USERNAME_REGEX }
 	validates :email, presence: true, format: { with: EMAIL_REGEX }
-	validates :password, presence: true, format: { with: PASSWORD_REGEX }
+	validates :password, 	confirmation: true,
+							length: {within: 8..100},
+							presence: true,
+							format: {with: PASSWORD_REGEX}
 	validates :salt, presence: true
 
 	def email=(value)

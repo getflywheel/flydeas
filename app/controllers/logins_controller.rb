@@ -23,7 +23,7 @@ class LoginsController < ApplicationController
 			flash[:sucess] = "Please check your email to activate your account."
 			redirect_to root_url
 		else
-			flash[:notice] = "Form is invalid"
+			flash[:notice] = @user.errors.full_messages.to_sentence 
 			render "new"
 		end
 	end
