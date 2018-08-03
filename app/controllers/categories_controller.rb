@@ -1,19 +1,25 @@
 class CategoriesController < ApplicationController
-	#before_action :set_category, only: [:show, :create]
+	before_action :set_category, only: %i[show create]
+	before_action :admin, only: %i[new create]
 
 	def show; end
 
-	def create 
-		@category = Category.new(category_params)
-		@category.color = Color.find_by_id(rand(40)).name
-		if @category.save
-			redirect_to root_url
-			return
-		end
+	def new
+		@category = Category.new
+	end
 
+	def create
+		@category = Category.new(category_params)
+		@category.color = Color.find_by(rand(40)).name
+		@category.save
+		redirect_to :root
 	end
 
 	private
+
+	def admin
+		redirect_to :root unless current_user.admin
+	end
 
 	def set_category
 		@category = Category.find(params[:id])

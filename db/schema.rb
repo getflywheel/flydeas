@@ -100,8 +100,6 @@ ActiveRecord::Schema.define(version: 20180731191334) do
     t.string  "post_type"
   end
 
-  add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
-
   create_table "watches", id: false, force: :cascade do |t|
     t.integer "user_id"
     t.integer "submission_id"
