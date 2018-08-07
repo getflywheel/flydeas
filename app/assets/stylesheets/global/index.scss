@@ -6,19 +6,18 @@
     border-radius: 1rem;
 
     &__submission {
+		background-color: $white;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: $gray5;
-        padding: .5rem 0;
-        border-top: .1rem $gray-dark;
+        border-top: .1rem $gray-light;
         border-bottom: 0;
         border-left: 0;
         border-right: 0;
         border-style: solid;
 
         &:last-child {
-            border-bottom: .1rem solid $gray-dark;
+            border-bottom: .1rem solid $gray-light;
         }
     }
 
@@ -32,6 +31,7 @@
             color: $gray-dark;
             height: 2.4rem;
             text-decoration: none;
+			
         } 
 
     }
@@ -49,11 +49,13 @@
         h2 {
 			padding: 0rem;
 			margin-bottom: .2rem;
+			font-weight: 500;
         }
 
         a {
             text-decoration: none;
             color: $gray-dark;
+
         }
     }
 
@@ -121,7 +123,7 @@
     padding: 1rem;
     margin: 1rem;
     width: 20rem;
-    margin: 0 auto;
+    margin: 3rem auto;
     hr {
         margin: 0;
         margin-top: 1rem;
@@ -178,11 +180,20 @@
 }
 
 .hasVoted {
-	background-color: $yellow;
+	background-color: $gray15;
+	color: $yellow-dark;	
+	.index__vote {
+		background-color: $yellow-light;
+	} 
 }
 
 .hasNotVoted {
-	background-color: $gray15;
+	.index__vote {
+		background-color: $gray15;
+	}
+	p { 
+		color: $gray-mid;
+	}
 }
 
 .selector {
