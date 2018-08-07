@@ -1,0 +1,14 @@
+<section class="hero">
+    <h1>New Category</h1>
+</section>
+
+<%=form_for(:category, :url => {:controller => 'categories', :action => 'create'}, html: { class: "form"}) do |f| %>
+	<div class="field">
+		<%=f.label :name %>
+		<%=f.text_field :name%>
+	</div>
+
+	<div class = "form__actions">
+		<%=f.submit "Create Category", class: "button"%>
+	</div>
+<%end%>

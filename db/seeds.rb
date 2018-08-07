@@ -10,7 +10,7 @@ Category.create(name: "Bugs")
 Category.create(name: "Ideas")
 
 if Rails.env == "development"
-	u = User.new(username: "test", password: "Flywheel1!", email: "test@getflywheel.com", activated: true)
+	u = User.new(username: "test", password: "Flywheel1!", email: "test@getflywheel.com", activated: true, admin: true)
 	u.encrypt_password
 	u.save
 
@@ -27,6 +27,7 @@ color_list = [
     ['blue25', false],
     ['gray', false],
     ['gray-dark', false],
+    ['gray-dark50', false],
     ['gray-75', false],
     ['gray25', false],
     ['gray15', false],
@@ -37,6 +38,7 @@ color_list = [
     ['green75', false],
     ['green25', false],
     ['yellow', false],
+    ['yellow-dark', false],
     ['yellow-dark50', false],
     ['yellow75', false],
     ['yellow25', false],
