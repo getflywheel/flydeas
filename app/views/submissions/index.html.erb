@@ -5,11 +5,34 @@
 		<div class="dropdown-content">
 			<% category = Category.all %>
 			<% category.each do |category| %>
-				<a href="<%= category_url(category.id)%>"><%=category.name%></a>
+				<!--		<a href="<%= category_url(category.id)%>"><%=category.name%></a> -->
+			<% end %>
+		</div>
+		<div>
+			<% order = ["votes high to low", "votes low to high", "date newest to oldest", "date oldest to newest"] %>
+			<%= form_for :filters, method: :get do |f| %>
+				<%= f.collection_select :order, order, :itself, :itself, prompt: "Sort by", html_options: { onchange:"this.form.submit();" } %>
+				<%= f.submit "apply" %>
 			<% end %>
 		</div>
 	</div>
-
+	<div>
+		<%= form_for :filters, method: :get do |s| %>
+			Categories: 
+			<% Category.all.each do |category| %>
+				<% name = category.name %>
+				<%= s.check_box :categories, {multiple: true, checked: persist_category_checkbox(name)}, name, nil %> <%= name %> 
+			<% end %>
+			<br>
+			Status:
+			<% Status.all.each do |status| %>
+				<% name = status.name %>
+				<%= s.check_box :statuses, {multiple: true, checked: persist_status_checkbox(name)}, name, nil %> <%= name %> 
+			<% end %>
+			<br>
+			<%= s.submit "Apply filters"%>
+		<% end %>	
+	</div>		
 	<div>
 	<% @submissions.each do |submission| %>
 		<% vote = Vote.find_by(post: submission, user_id: current_user.id) %>
@@ -33,7 +56,6 @@
 							<%= image_tag "chevron_up-yellow.svg", alt:"Upvote", width: "20", height: "20" %>
 						<%end%>
 					<% end %>
-					
 					<br><p><%= submission.vote_count%></p>
 				</div>
 				<div class="index__contentStatusGroup">

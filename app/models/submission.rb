@@ -17,6 +17,14 @@ class Submission < ActiveRecord::Base
 
 	after_save :notify_users
 
+	def self.status(statuses)
+		self.where(status: Status.where(name: statuses))
+	end
+
+	def self.category(categories)
+		self.where(category: Category.where(name: categories))
+	end
+
 	private
 
 	def notify_users

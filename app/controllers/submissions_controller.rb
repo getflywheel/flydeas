@@ -1,15 +1,29 @@
 class SubmissionsController < ApplicationController
-	before_action 	:set_submission,
+	before_action(
+		:set_submission,
 		only: %i[show edit update destroy add_watcher remove_watcher]
+	)
 	before_action :logged_in
 
 	def logged_in
-		return if logged_in?
-		redirect_to "/login"
+		redirect_to "/login" unless logged_in?
 	end
 
+	def persist_status_checkbox(name)
+		persist_checkbox(name, :statuses)
+	end
+	helper_method :persist_status_checkbox
+
+	def persist_category_checkbox(name)
+		persist_checkbox(name, :categories)
+	end
+	helper_method :persist_category_checkbox
+
 	def index
-		@submissions = Submission.order(vote_count: :desc, created_at: :desc)
+		@submissions = Submission.all
+		filters = params[:filters]
+		@submissions = SubmissionsHelper.filter(@submissions, filters) unless filters.nil?
+		@submissions = SubmissionsHelper.sort(@submissions, order)
 	end
 
 	def show; end
@@ -55,10 +69,24 @@ class SubmissionsController < ApplicationController
 
 	def destroy
 		@submission.destroy
+		flash[:info] = "Submission successfully deleted"
 		redirect_to submissions_url
 	end
 
 	private
+
+	def order
+		if params[:filters].nil? || params[:filters][:order].nil?
+			"votes high to low"
+		else
+			params[:filters][:order]
+		end
+	end
+
+	def persist_checkbox(name, type)
+		return true if params[:filters].nil? || params[:filters][type].nil?
+		params[:filters][type].include? name
+	end
 
 	def submission_params
 		sub = params.require(:submission).permit(:title, :content, :category_id, :status_id)
