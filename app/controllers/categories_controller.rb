@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-	#before_action :set_category ,only: [:show, :create]
+	#before_action :set_category, only: [:show, :create]
 
 	def show; end
 
