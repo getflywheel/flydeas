@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 		patch "add_watcher", on: :member
 		patch "remove_watcher", on: :member
 	end
-	resources :categories, only: [:show, :new, :create]
+	resources :categories, only: %i[show new create]
+
 	# Sign up resource
 	resources :logins, only: %i[new create]
 	resources :account_activations, only: %i[edit]
