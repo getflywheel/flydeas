@@ -1,14 +1,13 @@
 @import "global/variables";
-.tag {
-    select {
-        font-size: inherit;
-        padding: 0;
-        font-size: 1.5rem;
-        border: 0.1rem solid #E7E7E7;
-        outline: none;
-        width: 100%;
-    }
-
+#select_for_show {	
+	select{
+		font-size: 1.17rem !important;
+        margin-bottom: 0 !important;
+        border: 0.1rem solid #E7E7E7 !important;
+        outline: none !important;
+        width: 100% !important;
+		height: auto !important;
+	}		
 }
 .field {
     text-transform: lowercase;

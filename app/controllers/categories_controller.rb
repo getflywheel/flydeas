@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-	before_action :set_category, only: %i[show create]
+	before_action :set_category, only: %i[show]
 	before_action :admin, only: %i[new create]
 
 	def show; end
@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
 
 	def create
 		@category = Category.new(category_params)
-		@category.color = Color.find_by(rand(40)).name
+		@category.color = Color.find(rand(40)).name
 		@category.save
 		redirect_to :root
 	end

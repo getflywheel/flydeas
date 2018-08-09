@@ -60,7 +60,7 @@ class PasswordResetsController < ApplicationController
 	end
 
 	def valid_token
-		return if @user.valid_reset_token(params[:id])
+		return if @user.valid_reset_token? params[:id]
 		flash[:danger] = "Invalid token"
 		redirect_to root_url
 	end
