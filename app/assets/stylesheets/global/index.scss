@@ -1,78 +1,111 @@
 @import "global/variables";
 
 .index {
-    max-width: 100rem;
-    margin: 0 auto;
-    border-radius: 1rem;
+	margin: 0 auto;
+	border-radius: 1rem;
+	width: 100rem;
 
-    &__submission {
+	&__filters {
+		margin-top: 4rem;
+		border-style: solid;
+		border-radius: .7rem;
+		border-color: $secondary;
+		border-width: .2rem;
+		background-color: $gray-light;
+		width: 12rem;
+		float: left;
+		padding: .3rem;
+	}
+
+	&__filter-header{
+
+	}
+
+	&__filter-content{
+		display: none;	
+	}
+
+	&__header{
+		float:right;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		
+	}
+
+	&__rows {
+		width: 86rem;
+		float: right;
+	}
+
+	&__submission {
 		background-color: $white;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-top: .1rem $gray-light;
-        border-bottom: 0;
-        border-left: 0;
-        border-right: 0;
-        border-style: solid;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-top: .1rem $gray-light;
+		border-bottom: 0;
+		border-left: 0;
+		border-right: 0;
+		border-style: solid;
 
-        &:last-child {
-            border-bottom: .1rem solid $gray-light;
-        }
-    }
+		&:last-child {
+			border-bottom: .1rem solid $gray-light;
+		}
+	}
 
-    &__vote {
-        padding-left: 1rem;
-        text-align: center;
-        text-decoration: none;
+	&__vote {
+		padding-left: 1rem;
+		text-align: center;
+		text-decoration: none;
 
-        a {
-            font-size: 4rem;
-            color: $gray-dark;
-            height: 2.4rem;
-            text-decoration: none;
+		a {
+			font-size: 4rem;
+			color: $gray-dark;
+			height: 2.4rem;
+			text-decoration: none;
 			
-        } 
+		} 
 
-    }
+	}
 
  
-    &__submission-vote-group {
-       display: flex;
-       align-items: center;
-    }
+	&__submission-vote-group {
+	   display: flex;
+	   align-items: center;
+	}
 
-    &__content {
+	&__content {
 		padding-left: 2rem;
 		margin: 0;
 
-        h2 {
+		h2 {
 			padding: 0rem;
 			margin-bottom: .2rem;
 			font-weight: 500;
-        }
+		}
 
-        a {
-            text-decoration: none;
-            color: $gray-dark;
+		a {
+			text-decoration: none;
+			color: $gray-dark;
 
-        }
-    }
-
-    &__tag {
-        font-size: 1.3rem;
-        color: $white;
-        margin: 0 2rem;
-        padding: .5rem 1rem;
-        border: .2rem $pink;
-        border-radius: .3rem;
-        background-color: $secondary;
-        text-decoration: none;
-        a {
-            text-decoration: none;
-            color: $white;
 		}
 	}
+
+	&__tag {
+		font-size: 1.3rem;
+		color: $white;
+		margin: 0 2rem;
+		padding: .5rem 1rem;
+		border: .2rem $pink;
+		border-radius: .3rem;
+		background-color: $secondary;
+		text-decoration: none;
+		a {
+			text-decoration: none;
+			color: $white;
+		}
+	}
+
 	&__statusTag {
 		margin-left: 2rem;
 		font-size:  1rem;
@@ -82,84 +115,84 @@
 		text-align: center;	
 	}
 
-    p {
-        padding-right: .8rem;
-        font-size: 1.5rem;
-    }
+	p {
+		padding-right: .8rem;
+		font-size: 1.5rem;
+	}
 
-    .upvote {
-        color: $secondary;
-        font-weight: 900;
-    } 
+	.upvote {
+		color: $secondary;
+		font-weight: 900;
+	} 
 
-    .unvote {
-        color: $primary-dark;
-        font-weight: 900;
-    }
+	.unvote {
+		color: $primary-dark;
+		font-weight: 900;
+	}
 }
 
 .dropbtn {
-    background-color: inherit;
-    color: inherit;
-    padding: 1rem 1.6rem;
-    font-size: 1.6rem;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    
-    img {
-        display: inline;
-        margin: 0;
-        margin-left: 1rem;
-        margin-bottom: -.3rem;
-        transform: rotate(180deg);
-    }
+	background-color: inherit;
+	color: inherit;
+	padding: 1rem 1.6rem;
+	font-size: 1.6rem;
+	border: none;
+	cursor: pointer;
+	text-align: center;
+	
+	img {
+		display: inline;
+		margin: 0;
+		margin-left: 1rem;
+		margin-bottom: -.3rem;
+		transform: rotate(180deg);
+	}
 }
 
 .dropdown {
-    text-align: center;
-    position: relative;
-    display: block;
-    padding: 1rem;
-    margin: 1rem;
-    width: 20rem;
-    margin: 3rem auto;
-    hr {
-        margin: 0;
-        margin-top: 1rem;
-    }
+	text-align: center;
+	position: relative;
+	display: block;
+	padding: 1rem;
+	margin: 1rem;
+	width: 20rem;
+	margin: 3rem auto;
+	hr {
+		margin: 0;
+		margin-top: 1rem;
+	}
 
 }
 
 .dropdown-content {
-    text-align: center;
-    display: none;
-    position: absolute;
-    right: 0;
-    left: 0;
-    background-color: $gray5;
-    min-width: 16rem;
-    z-index: 1;
+	text-align: center;
+	display: none;
+	position: absolute;
+	right: 0;
+	left: 0;
+	background-color: $gray5;
+	min-width: 16rem;
+	z-index: 1;
 }
 
 .dropdown-content a {
-    color: black;
-    font-size: 1.5rem;
-    padding: 1rem;
-    text-decoration: none;
-    display: block;
+	color: black;
+	font-size: 1.5rem;
+	padding: 1rem;
+	text-decoration: none;
+	display: block;
 
-    &:hover {
-        background-color: $gray15;
-    }
+	&:hover {
+		background-color: $gray15;
+	}
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+	display: block;
 }
 
 .dropdown:hover .dropbtn {
-    background-color: $gray15;
+	background-color: $gray15;
 }
 .openTag {
 	background-color: $secondary;
@@ -197,12 +230,19 @@
 }
 
 .selector {
-    border-radius: .4rem;
-    padding: 2rem;
-    font-size: 1.5rem;
-    border: .1rem solid $gray15;
-    outline: none;
-    width: 100%;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
+	border-radius: .4rem;
+	padding: 2rem;
+	font-size: 1.5rem;
+	border: .1rem solid $gray15;
+	outline: none;
+	width: 100%;
+	margin-bottom: 2rem;
+	text-transform: uppercase;
+}
+
+.dropdownOpen {
+	img {
+		transform: rotate(0deg);
+	}
+	
 }

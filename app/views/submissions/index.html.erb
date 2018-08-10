@@ -1,39 +1,35 @@
 <div class="index">
-	<div class="dropdown">
-		<span class="dropbtn">All Categories <%= image_tag "chevron_up.svg", class: "header__logo", alt: "Dropdown icon", width: "15", height: "15" %></span>
-		<hr>
-		<div class="dropdown-content">
-			<% category = Category.all %>
-			<% category.each do |category| %>
-				<!--		<a href="<%= category_url(category.id)%>"><%=category.name%></a> -->
-			<% end %>
-		</div>
-		<div>
-			<% order = ["votes high to low", "votes low to high", "date newest to oldest", "date oldest to newest"] %>
-			<%= form_for :filters, method: :get do |f| %>
-				<%= f.collection_select :order, order, :itself, :itself, prompt: "Sort by", html_options: { onchange:"this.form.submit();" } %>
-				<%= f.submit "apply" %>
-			<% end %>
-		</div>
+	<div class="index__header">
+		<% order = ["votes high to low", "votes low to high", "date newest to oldest", "date oldest to newest"] %>
+		<%= form_for :filters, method: :get do |f| %>
+			<%= f.collection_select :order, order, :itself, :itself, prompt: "Sort by", html_options: { onchange:"this.form.submit();" } %>
+			<%= f.submit "apply" %>
+		<% end %>
 	</div>
-	<div>
-		<%= form_for :filters, method: :get do |s| %>
-			Categories: 
-			<% Category.all.each do |category| %>
-				<% name = category.name %>
-				<%= s.check_box :categories, {multiple: true, checked: persist_category_checkbox(name)}, name, nil %> <%= name %> 
+	<div class="index__filters form">
+		<div class="index__filter-header">
+			<span onclick="showFilters()" class="dropbtn">Filters<%= image_tag "chevron_up.svg", id: "filter-chevron", class: "header__logo", alt: "Dropdown icon", width: "15", height: "15" %></span>
+		</div>
+		<div class="index__filter-content" id="filter-content">
+			<%= form_for :filters, method: :get do |s| %>
+				<h3>Categories: </h3>
+				<% Category.all.each do |category| %>
+					<% name = category.name %>
+					<%= s.check_box :categories, {multiple: true, checked: persist_category_checkbox(name)}, name, nil %> <%= name %>
+					<br>
+				<% end %>
+				<h3>Statuses:</h3>
+				<% Status.all.each do |status| %>
+					<% name = status.name %>
+					<%= s.check_box :statuses, {multiple: true, checked: persist_status_checkbox(name)}, name, nil %> <%= name %> 
+					<br>
+				<% end %>
+				<br>
+				<%= s.submit "Apply filters"%>
 			<% end %>
-			<br>
-			Status:
-			<% Status.all.each do |status| %>
-				<% name = status.name %>
-				<%= s.check_box :statuses, {multiple: true, checked: persist_status_checkbox(name)}, name, nil %> <%= name %> 
-			<% end %>
-			<br>
-			<%= s.submit "Apply filters"%>
-		<% end %>	
-	</div>		
-	<div>
+		</div>		
+	</div>
+	<div class="index__rows">
 	<% @submissions.each do |submission| %>
 		<% vote = Vote.find_by(post: submission, user_id: current_user.id) %>
 		<%submission_class_id = ""%>
@@ -88,9 +84,10 @@
 			</div>
 		</div>
 	<% end %>
-</div>	
 <div class="form__actions">
 	<form action="<%=new_submission_url%>">
 		<input type="submit" value="New Submission" class="button" />
 	</form>
 </div>
+</div>	
+

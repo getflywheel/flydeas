@@ -15,3 +15,21 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+var rotated = false;
+function showFilters() {
+	$("#filter-content").toggle("slow");
+	chevron = $("#filter-chevron");
+	var chevron = document.getElementById("filter-chevron");
+	if(rotated){
+		deg = 180;
+	}
+	else {
+		deg = 0;
+	}
+	chevron.style.webkitTransform = "rotate("+deg+"deg)";
+	chevron.style.mozTransform    = 'rotate('+deg+'deg)';
+    chevron.style.msTransform     = 'rotate('+deg+'deg)';
+    chevron.style.oTransform      = 'rotate('+deg+'deg)';
+    chevron.style.transform       = 'rotate('+deg+'deg)';
+	rotated = !rotated;	
+}
