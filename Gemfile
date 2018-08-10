@@ -16,6 +16,7 @@ source "https://rubygems.org"
 	gem "premailer-rails"
 	gem "resque"
 	gem "resque-scheduler"
+	gem "puma"
 
 group :development, :test do
 	gem "byebug"
