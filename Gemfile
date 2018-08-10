@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 	gem "rails", "4.2.10"
-	gem "pg", "~> 0.14"
+	gem "pg", "< 1"
 	gem "sass-rails", "~> 5.0"
 	gem "uglifier", ">= 1.3.0"
 	gem "coffee-rails", "~> 4.1.0"
@@ -14,8 +14,10 @@ source "https://rubygems.org"
 	gem "sendgrid-ruby"
 	gem "ckeditor"
 	gem "premailer-rails"
-	gem 'resque'
-	gem 'resque-scheduler'
+	gem "resque"
+	gem "resque-scheduler"
+	gem "puma"
+	gem "honeybadger", "~> 3.1"
 
 group :development, :test do
 	gem "byebug"

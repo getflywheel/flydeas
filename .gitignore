@@ -8,3 +8,5 @@
 .DS_Store
 coverage/
 dump.rdb
+/.ruby-version
+/config/database.yml
