@@ -81,6 +81,7 @@ GEM
       raabro (~> 1.1)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    honeybadger (3.3.1)
     htmlentities (4.3.4)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
@@ -261,9 +262,10 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   factory_bot_rails
   fakeredis
+  honeybadger (~> 3.1)
   jbuilder (~> 2.0)
   jquery-rails
-  pg (~> 0.20)
+  pg (< 1)
   premailer-rails
   protected_attributes
   pry

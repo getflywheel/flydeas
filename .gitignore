@@ -9,3 +9,4 @@
 coverage/
 dump.rdb
 /.ruby-version
+/config/database.yml
