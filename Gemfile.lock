@@ -262,7 +262,7 @@ DEPENDENCIES
   fakeredis
   jbuilder (~> 2.0)
   jquery-rails
-  pg (~> 0.14)
+  pg (~> 0.20)
   premailer-rails
   protected_attributes
   pry
