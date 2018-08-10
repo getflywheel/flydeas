@@ -1,3 +1,11 @@
+production:
+ adapter: postgresql
+ encoding: unicode
+ database: flydeas_production
+ pool: 5
+ username: root
+ password:
+
 development:
  adapter: postgresql
  encoding: unicode
