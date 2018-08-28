@@ -1,0 +1,74 @@
+<%if logged_in?%>
+	<section class="hero">
+		<h1>Hi, <%=@current_user.first_name%></h1>
+	</section>
+	<div class="profile">
+		<div class="profile__image">
+			<div class="image">
+
+			</div>
+			<p> Heres some dummy text an image should be here</p>
+		</div>
+		<div class="profile__info">
+			<p>heres some dummy text, profile information should be here</p>
+			<%submissions = Submission.where(user_id: @current_user.id)%>
+			<% submissions.each do |submission| %>
+				<% vote = Vote.find_by(post: submission, user_id: current_user.id) %>
+				<%submission_class_id = ""%>
+				<%if vote.nil?%>
+					<%submission_class_id = "hasNotVoted"%>
+				<%elsif vote.weight == 1%>
+					<%submission_class_id = "hasVoted"%>
+				<%else%>
+					<%submission_class_id = "hasNotVoted"%>
+				<%end%>
+				<div class="index__submission <%=submission_class_id%>" id="submission">
+					<div class="index__submission-vote-group">
+						<div class="index__vote">
+							<% if vote.nil? || vote.weight == 0 %> 
+								<%= link_to submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 1), method: :patch, class: "upvote", id: "upvote" do %>
+									<%= image_tag "chevron_up-gray.svg", alt: "Upvote", width: "20", height: "20" %>
+								<% end %>
+							<% else %>
+								<%= link_to submission_vote_path(submission_id: submission.id, user_id: current_user.id, weight: 0), method: :patch, class: "unvote", id: "unvote" do %>
+									<%= image_tag "chevron_up-yellow.svg", alt:"Upvote", width: "20", height: "20" %>
+								<%end%>
+							<% end %>
+							
+							<br><p><%= submission.vote_count%></p>
+						</div>
+						<div class="index__contentStatusGroup">
+							<div class="index__content" id="submission-content">
+								<%= link_to submission do%>
+									<h2><%= submission.title%></h2>
+								<%end%>
+							</div>
+							<%status = submission.status.name%>
+							<%if submission.status.name == "Open"%>
+								<%status = "openTag"%>
+							<%elsif submission.status.name == "Completed"%>
+								<%status = "closedTag"%>
+							<%else%>
+								<%status = "rejectedTag"%>
+							<%end%>
+							<div class="index__tag index__statusTag <%=status%>" data-info = "<%= submission.status.name%>">
+								<a href="#">
+									<%= submission.status.name%>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class = "index__tagGroup">
+						<div class="index__tag color-<%=submission.category.color%>">
+							<a href="<%=category_url(submission.category.id)%>">
+							<%= submission.category.name.upcase%>
+							</a>
+						</div>
+					</div>
+				</div>
+			<%end%>
+		<div>
+	</div>
+<%else%>
+
+<%end%>

@@ -7,7 +7,8 @@
 
 		<ul class="header__nav">
 			<% if logged_in? %>
-				<li><%= link_to "Log out #{@current_user.username}", logout_path, method: :delete %></li>
+				<li><%= link_to "Log out #{@current_user.first_name}", logout_path, method: :delete %></li>
+				<li><%= link_to "Profile", login_path(@current_user.id)%> <%=gravatar_for(@current_user)%></li>
 			<% else %>
 				<li><%= link_to "Log in", login_path %> </li>
 				<li> <%= link_to "Sign up", new_login_path %></li>

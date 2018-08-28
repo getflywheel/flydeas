@@ -18,6 +18,7 @@ source "https://rubygems.org"
 	gem "resque-scheduler"
 	gem "puma"
 	gem "honeybadger", "~> 3.1"
+	gem "gravatar_image_tag"
 
 group :development, :test do
 	gem "byebug"

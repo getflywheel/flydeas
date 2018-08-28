@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 	resources :categories, only: %i[show new create]
 
 	# Sign up resource
-	resources :logins, only: %i[new create]
+	resources :logins, only: %i[new create show]
 	resources :account_activations, only: %i[edit]
 	resources :password_resets, only: %i[new create edit update]
 

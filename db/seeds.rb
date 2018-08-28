@@ -10,7 +10,7 @@ Category.create(name: "Bugs")
 Category.create(name: "Ideas")
 
 if Rails.env == "development"
-	u = User.new(username: "test", password: "Flywheel1!", email: "test@getflywheel.com", activated: true, admin: true)
+	u = User.new(username: "test", password: "Flywheel1!", email: "test@getflywheel.com", activated: true, admin: true, first_name: "John", last_name: "Doe")
 	u.encrypt_password
 	u.save
 

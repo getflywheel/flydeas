@@ -1,0 +1,17 @@
+@import "global/variables";
+
+.profile{
+	max-width: 100rem;
+    margin: 0 auto;
+	border-radius: 1rem;
+	display: flex;
+
+	&__image{
+		max-width: 30rem;
+		padding: 0.5rem;
+	}
+
+	&__info{
+		padding: 0.5rem;
+	}
+}

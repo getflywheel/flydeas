@@ -9,6 +9,10 @@ class LoginsController < ApplicationController
 		send_activation_email
 	end
 
+	def show
+
+	end
+
 	private
 
 	def encrypt
