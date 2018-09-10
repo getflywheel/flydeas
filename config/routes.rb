@@ -15,12 +15,12 @@ Rails.application.routes.draw do
 	resources :categories, only: %i[show new create]
 
 	# Sign up resource
-	resources :logins, only: %i[new create show]
+	resources :logins, only: %i[new create destroy show update edit]
 	resources :account_activations, only: %i[edit]
 	resources :password_resets, only: %i[new create edit update]
 
 	# Named session control routes
-	get "/login", to: "sessions#new"
+	get "/login/(.:format)" => "sessions#new", as: :loginApp
 	post "/login", to: "sessions#create"
 	delete "/logout", to: "sessions#destroy"
 end

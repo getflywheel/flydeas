@@ -1,0 +1,34 @@
+<%if logged_in?%>
+	<section class="hero">
+		<h1>Editing User <%=@current_user.username%></h1>
+	</section>
+	<%= form_for(@current_user, url: {controller: 'logins', action: 'update'}, html: { class:"form" }) do |f|%>
+		<% if @current_user.errors.any? %>
+			<div id="error_explanation">
+			<h2><%= pluralize(@current_user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+			<ul>
+			<% @current_user.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+			</ul>
+			</div>
+		<% end %>
+		<%= f.label :first_name%>
+		<%= f.text_field :first_name%>
+
+		<%= f.label :last_name%>
+		<%= f.text_field :last_name%>
+		
+		<%= f.label :username %>
+		<%= f.text_field :username %>
+
+		<%= f.label :email %>
+		<%= f.email_field :email %>
+
+		<div class="form__actions">
+        	<%= link_to "Cancel", root_path, class: "form__link" %>
+        	<%= f.submit "Edit my", class: "button", name: "update" %>
+    	</div>
+	<%end%>
+<%end%>

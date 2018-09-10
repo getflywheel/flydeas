@@ -31,6 +31,7 @@ end
 
 group :test do
 	gem "fakeredis"
+	gem "rubocop-rspec"
 end	
 
 group :development do

@@ -12,6 +12,21 @@ class LoginsController < ApplicationController
 	def show
 
 	end
+	
+	def destroy
+		@user.destroy
+		redirect_to root_url
+	end
+
+	def update
+		if current_user.update(user_params)
+			flash[:info] = "User was successfully updated."
+			redirect_to root_url
+		else
+			flash[:info] = "User Edit Failed"
+			render :edit
+		end
+	end
 
 	private
 

@@ -2,15 +2,24 @@
 	<section class="hero">
 		<h1>Hi, <%=@current_user.first_name%></h1>
 	</section>
+
 	<div class="profile">
 		<div class="profile__image">
 			<div class="image">
 
 			</div>
-			<p> Heres some dummy text an image should be here</p>
+			<p> <%=@current_user.first_name%> <%=@current_user.last_name%></p><br>
+			<%= image_tag "user-astronaut-solid.svg", alt: "Upvote", width: "150", height: "150" %><br>
+			
+			<%= link_to "Edit", edit_login_path(@current_user.id), class:"form__link"%>
 		</div>
+
 		<div class="profile__info">
-			<p>heres some dummy text, profile information should be here</p>
+		
+			<p><b>First name:</b><br>	<%=@current_user.first_name%><br></p>
+			<p><b>Last name:</b><br>	<%=@current_user.last_name%><br></p>
+			<p><b>Username:</b><br>	<%=@current_user.username%><br></p>
+			<p><b>Email:</b><br>	<%=@current_user.email%></p>
 			<%submissions = Submission.where(user_id: @current_user.id)%>
 			<% submissions.each do |submission| %>
 				<% vote = Vote.find_by(post: submission, user_id: current_user.id) %>

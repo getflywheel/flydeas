@@ -7,11 +7,14 @@
 	display: flex;
 
 	&__image{
-		max-width: 30rem;
+		min-width: 30rem;
 		padding: 0.5rem;
+		text-align: center;
 	}
 
 	&__info{
+		display: inline;
 		padding: 0.5rem;
+		min-width: 70rem;
 	}
 }

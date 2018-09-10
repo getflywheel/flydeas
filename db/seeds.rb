@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Category.create(name: "Bugs")
-Category.create(name: "Ideas")
+Category.create(name: "Bugs", color: "red")
+Category.create(name: "Ideas", color: "green")
 
 if Rails.env == "development"
 	u = User.new(username: "test", password: "Flywheel1!", email: "test@getflywheel.com", activated: true, admin: true, first_name: "John", last_name: "Doe")

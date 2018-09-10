@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
 
 	def create
 		@category = Category.new(category_params)
-		@category.color = Color.find_by(rand(40)).name
+		@category.color = Color.find_by_id(rand(40)).name
 		@category.save
 		redirect_to :root
 	end
@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
 	end
 
 	def set_category
-		@category = Category.find(params[:id])
+		@category = Category.find_by_id(params[:id])
 	end
 
 	def category_params
