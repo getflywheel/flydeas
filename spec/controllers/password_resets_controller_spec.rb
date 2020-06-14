@@ -2,11 +2,12 @@ require "rails_helper"
 
 RSpec.describe PasswordResetsController, type: :controller do
 	render_views
-	before do
+	before(:each) do
 		@user = User.new(
 			username: "test",
 			email: "test@getflywheel.com",
-			password: "Flywheel1!"
+			password: "Flywheel1!",
+			activated: true
 		)
 		@user.encrypt_password
 		@user.save
@@ -27,7 +28,7 @@ RSpec.describe PasswordResetsController, type: :controller do
 
 		it "denies unactivated account changing its password" do
 			get :create, password_reset: { email: "test@getflywheel.com" }
-			expect(response).to redirect_to(root_url)
+			expect(response).to redirect_to root_url
 		end
 
 		# TODO: Implement this test after testing workshop
@@ -41,9 +42,6 @@ RSpec.describe PasswordResetsController, type: :controller do
 			# get :update, {id: "1234",
 			# 							email: "test@getflywheel.com",
 			# 							user: password: "Flywheel2!"}
-		end
-
-		it "allows a valid user and request to reset the password" do
 		end
 	end
 end

@@ -9,7 +9,7 @@
 	</table>
 </div>
 <div class="email__header__text">
-	<h1> Yo <%=@user.username%>, some stuff happened today</h1>
+	<h1> Hi <%=@user.username%>, some posts that you are watching had some changes</h1>
 </div>	
 <% notifications = @user.notifications %>
 <% @user.watched_submissions.each do |submission| %>
