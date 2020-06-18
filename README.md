@@ -112,7 +112,7 @@ To seed the development database
 
 To start a server so that you can access the site locally, run the following:
 
-`rails server` or equivalently `rails s
+`rails server` or equivalently `rails s`
 
 #### Redis & Resque
 We use redis and resque to delay tasks like sending emails 
@@ -139,14 +139,14 @@ If its not working, I'm sure one of the other devs would be happy to help as
 this stage can be frustrating when you're not sure what does what. 
 
 #### Logging in with the test user
-username: 'test'
-password: 'Flywheel1!'
+- username: 'test'
+- password: 'Flywheel1!'
 
 #### Signing up a new user
-- Click 'SignUp' in the running application.
+- Click `SignUp` in the running application.
 - Fill out the application information
     - `getflywheel.com` domain required for Email
-- Click 'Create Account'
+- Click `Create Account`
 
 #### Activating the new username
 The new user account must be activated to allow login. In the case that the provided
