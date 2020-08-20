@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 	# Resources
 	resources :submissions do
 		resource :vote, only: %i[update]
-		resources :comments do
+		resources :comments do # currently only need create and destroy routes
 			resource :vote, only: %i[update]
 		end
 		patch "add_watcher", on: :member

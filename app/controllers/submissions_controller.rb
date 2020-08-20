@@ -1,11 +1,11 @@
 class SubmissionsController < ApplicationController
-	before_action 	:set_submission,
-		only: %i[show edit update destroy add_watcher remove_watcher]
+	before_action :set_submission,
+		only: %i[show edit update destroy add_watcher remove_watcher] #maybe use except intead of only since there are so many
 	before_action :logged_in
 
 	def logged_in
 		return if logged_in?
-		redirect_to "/login"
+		redirect_to login_url
 	end
 
 	def index
@@ -22,13 +22,13 @@ class SubmissionsController < ApplicationController
 
 	def create
 		@submission = Submission.new(submission_params)
-		@submission.status_id = 1
+		@submission.status_id = 1 #always sets the status to "open" on new submissions
 		if @submission.save
 			create_vote
 			redirect_to @submission
 			return
 		end
-		render "new"
+		render :new
 	end
 
 	def update
@@ -42,13 +42,13 @@ class SubmissionsController < ApplicationController
 	end
 
 	def add_watcher
-		@submission.watchers << User.find(params[:user_id])
+		@submission.watchers << User.find(params[:user_id]) #this should be the current_user esp since we already check for logged_in?
 		@submission.save
 		redirect_to :back
 	end
 
 	def remove_watcher
-		@submission.watchers.delete(User.find(params[:user_id]))
+		@submission.watchers.delete(User.find(params[:user_id])) # ^^
 		@submission.save
 		redirect_to :back
 	end

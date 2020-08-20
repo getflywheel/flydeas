@@ -4,7 +4,7 @@ class StatusesController < ApplicationController
 	end
 
 	private
-	def set_category
+	def set_status
 		@status = Status.find(params[:id])
 	end
 	

@@ -60,7 +60,7 @@ RSpec.describe SubmissionsController, type: :controller do
 		end
 	end
 
-	describe "get #create" do
+	describe "Post #create" do
 		it "allows for a submission to be created" do
 			get :create, submission:
 															 {
@@ -84,7 +84,7 @@ RSpec.describe SubmissionsController, type: :controller do
 		end
 	end
 
-	describe "Put #update" do
+	describe "Patch #update" do
 		it "allows update to content" do
 			content = "something other than what was there"
 			get :update, submission:
@@ -111,7 +111,7 @@ RSpec.describe SubmissionsController, type: :controller do
 		end
 	end
 
-	describe "#Destroy " do
+	describe "Delete #destroy" do
 		it "allows a post to be destroyed" do
 			get :destroy, id: @sub.id
 			expect(Submission.find_by(id: @sub.id)).to_not be true

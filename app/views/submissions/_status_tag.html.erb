@@ -1,11 +1,4 @@
-<%status = @submission.status.name%>
-<%if @submission.status.name == "Open"%>
-    <%status = "openTag"%>
-<%elsif @submission.status.name == "Completed"%>
-    <%status = "closedTag"%>
-<%else%>
-    <%status = "rejectedTag"%>
-<%end%>
+<% status = SubmissionDecorator.new(@submission).set_submission_status %>
 <div class="index__tag index__statusTag <%=status%>" data-info = "<%= @submission.status.name%>">
     <a href="#">
         <%= @submission.status.name%>

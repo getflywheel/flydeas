@@ -1,16 +1,17 @@
 class CategoriesController < ApplicationController
-	before_action :set_category, only: %i[show create]
+	before_action :set_category, only: :show
 	before_action :admin, only: %i[new create]
 
 	def show; end
-
+# there is no path for getting to a new category,
+# suggestion: add button at root path for admins
 	def new
 		@category = Category.new
 	end
 
 	def create
 		@category = Category.new(category_params)
-		@category.color = Color.find_by(rand(40)).name
+		@category.color = Color.find_by(id: rand(40)).name # needed to include id: or use find_by_id
 		@category.save
 		redirect_to :root
 	end

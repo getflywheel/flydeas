@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
 		@comment = Comment.find(params[:comment])
 		# If comment has children, just delete content so that children
 		# can continue to exist
-		if Comment.where(parent_comment_id: @comment.id).any?
+		if Comment.where(parent_comment_id: @comment.id).any? #this code is not ever hit since threaded comments are disabled
 			@comment.content = "[DELETED]"
 			@comment.save
 		else
