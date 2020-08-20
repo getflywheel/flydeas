@@ -44,6 +44,9 @@ RSpec.describe PasswordResetsController, type: :controller do
 		end
 
 		it "allows a valid user and request to reset the password" do
+			user = create(:user)
+			post :create, password_reset: { email: user.email }
+			expect(response).to redirect_to root_url
 		end
 	end
 end

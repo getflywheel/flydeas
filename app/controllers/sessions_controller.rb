@@ -15,9 +15,10 @@ class SessionsController < ApplicationController
 	# Log out
 	def destroy
 		log_out
-		render "new"
+		render :new
 	end
 
+	private
 	def valid_user(user)
 		error = nil
 		if !user || !user.match_password(params[:session][:password])
@@ -27,7 +28,7 @@ class SessionsController < ApplicationController
 		end
 		return true if error.nil?
 		flash.now[:danger] = error
-		render "new"
+		render :new
 		false
 	end
 end

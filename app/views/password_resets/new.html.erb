@@ -2,11 +2,11 @@
     <h1>Forgot password</h1>
 </section>
 
-    <%= form_for(:password_reset, url: password_resets_path, html: { class: "form" })   do |f| %>
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+<%= form_for(:password_reset, url: password_resets_path, html: { class: "form" }) do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
     <div class="form__actions">
         <%= link_to "Cancel", root_path, class: "form__link" %>
         <%= f.submit "Submit", class: "button" %>
     </div>
-    <% end %>
+<% end %>

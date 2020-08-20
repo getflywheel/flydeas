@@ -5,9 +5,9 @@ class Comment < ActiveRecord::Base
 	include VoteHelper
 	belongs_to :user
 	belongs_to :submission
-	belongs_to :parent_comment
+	belongs_to :parent_comment # this is not happening due to the ckEditor issue
 	has_many :votes
-	has_many :comments
+	has_many :comments # this is not happening due to the ckEditor issue
 	has_many :post_changes, as: :change_object, dependent: :destroy
 
 	validates :content, presence: true

@@ -11,7 +11,7 @@
 <div class="email__header__text">
 	<h1> Yo <%=@user.username%>, some stuff happened today</h1>
 </div>	
-<% notifications = @user.notifications %>
+<% notifications = @user.notifications %> <!-- unused variable -->
 <% @user.watched_submissions.each do |submission| %>
 	<% post_changes = @user.post_changes.select {|post_change| post_change.submission == submission } %>
 	<% if post_changes.any? %>

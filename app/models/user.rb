@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 	USERNAME_REGEX = /[a-zA-Z0-9\-_]{0,20}/
 	EMAIL_REGEX = /[a-zA-Z_0-9.-]+@getflywheel.com/i
 	PASSWORD_REGEX = /(?=.*[a-zA-Z])(?=.*[0-9])/ # at least 1 lowercase and 1 uppercase
-	attr_accessor :remember_token, :activation_token, :reset_token
+	attr_accessor :remember_token, :activation_token, :reset_token # remember token is not yet being used
 
 	validates :username, presence: true, uniqueness: { case_sensitive: false },
 						format: { with: USERNAME_REGEX }

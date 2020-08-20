@@ -35,6 +35,13 @@ FactoryBot.define do
 		name "test"
 	end
 
+	factory :vote do
+		post factory: :submission
+		user factory: :user
+		post_type "Submission"
+		weight 0
+	end
+
 	factory :submission do
 		title "some submission#{random_int}"
 		content "some info about idea/bug#{random_int}"

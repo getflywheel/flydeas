@@ -22,7 +22,7 @@
 		<%= f.label :title %><br>
 		<%= f.text_field :title %>
 	</div>
-	<%@submission.user_id = current_user.id%>
+	<% @submission.user_id = current_user.id%> <!-- hidden_tag field?, not sure what this is for since we merge on current_user info in submission_params method of controller -->
 	<div class="field">
 		<%= f.label :content %><br>
 		<%= f.cktext_area :content, ckeditor: {toolbar: "mini"}%>

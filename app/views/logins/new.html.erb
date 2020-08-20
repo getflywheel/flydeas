@@ -3,11 +3,11 @@
 </section>
 
 <%= form_for(:user, :url => {:controller => 'logins', :action => 'create'}, html: { class: "form" }) do |f| %>
-    <%= f.label :first_name%>
-    <%= f.text_field :first_name%>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
 
-    <%= f.label :last_name%>
-    <%= f.text_field :last_name%>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
     
     <%= f.label :username %>
     <%= f.text_field :username %>

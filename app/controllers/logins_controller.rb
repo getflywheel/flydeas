@@ -24,7 +24,7 @@ class LoginsController < ApplicationController
 			redirect_to root_url
 		else
 			flash[:notice] = @user.errors.full_messages.to_sentence 
-			render "new"
+			render :new
 		end
 	end
 
