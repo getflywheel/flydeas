@@ -6,7 +6,6 @@ class SubmissionDecorator < SimpleDelegator
   include ActionView::Helpers::UrlHelper
   include ActionView::Context
   include ActionView::Helpers::DateHelper
-   
 
   def display_vote_link(current_user, color_image = false)
     vote = get_vote_count(current_user)
